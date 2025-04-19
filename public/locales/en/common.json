@@ -1,0 +1,72 @@
+{
+  "site": {
+    "title": "Big Rock Intelligence",
+    "description": "AI-driven cybersecurity advisory firm headquartered in Frankfurt and operating across Germany and Europe.",
+    "tagline": "Bridging AI Innovation with Enterprise Security"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact",
+    "frankfurtHub": "Frankfurt Hub"
+  },
+  "home": {
+    "hero": {
+      "title": "Strategic Cybersecurity & AI Advisory",
+      "subtitle": "Empowering organizations with strategic guidance in cybersecurity and AI integration to enable secure digital transformation.",
+      "cta": "Explore Our Services"
+    },
+    "overview": {
+      "title": "Executive Overview",
+      "description": "Big Rock Intelligence provides executive-level advisory services in cybersecurity and AI integration. With 25+ years of experience in global leadership, we offer tailored solutions for enterprises, SMBs, VCs/PEs, and Boards.",
+      "expertise": "Expertise in cybersecurity, AI and global leadership",
+      "tailored": "Services tailored for enterprise, SMBs, VCs/PEs, and Boards",
+      "recognized": "Recognized \"Leading Voice\" in Security & AI"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Comprehensive cybersecurity and AI advisory services tailored to your organization's needs.",
+    "aiSecurity": {
+      "title": "AI Security Advisory",
+      "description": "Strategic AI integration into enterprise security with risk assessment using advanced AI/ML models. Tailored for mid-large enterprises and boards."
+    },
+    "governance": {
+      "title": "Governance & Risk Consulting",
+      "description": "CISO-level guidance for boards and founders with governance frameworks and compliance alignment. Focused on boards and SMBs."
+    },
+    "dueDiligence": {
+      "title": "M&A Due Diligence",
+      "description": "Specialized technical evaluation for investors, providing comprehensive security and technology assessment for acquisition targets. Designed for VC, PE, and strategic buyers."
+    },
+    "education": {
+      "title": "Executive Education",
+      "description": "Customized training sessions for C-suite executives and board committees on cybersecurity and AI integration strategies."
+    },
+    "audits": {
+      "title": "Platform Security Audits",
+      "description": "Comprehensive security auditing, tech stack review, and functionality testing, with specialized focus on fintech and crowdinvesting platforms."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with our team to discuss how we can help your organization.",
+    "name": "James Cameron",
+    "role": "Founder & Executive Advisor",
+    "email": "james@jamcam.me",
+    "phone": "+49 175 584 4546",
+    "linkedin": "linkedin.com/in/jamcam-cyberleader"
+  },
+  "frankfurtHub": {
+    "title": "Frankfurt Hub",
+    "description": "Our European headquarters in Frankfurt, Germany.",
+    "europeanReach": "European Reach",
+    "reachDescription": "From our Frankfurt hub, we serve clients across Europe with a focus on Germany, Austria, Switzerland, and the UK.",
+    "expertise": "Local Expertise, Global Perspective",
+    "expertiseDescription": "Our team combines deep local knowledge with global cybersecurity and AI expertise."
+  },
+  "footer": {
+    "copyright": "© 2025 Big Rock Intelligence. All rights reserved.",
+    "language": "Language"
+  }
+}

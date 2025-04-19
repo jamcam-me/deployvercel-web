@@ -1,0 +1,72 @@
+{
+  "site": {
+    "title": "Big Rock Intelligence",
+    "description": "KI-gestütztes Cybersicherheitsberatungsunternehmen mit Hauptsitz in Frankfurt und Tätigkeiten in ganz Deutschland und Europa.",
+    "tagline": "Verbindung von KI-Innovation mit Unternehmenssicherheit"
+  },
+  "nav": {
+    "home": "Startseite",
+    "services": "Dienstleistungen",
+    "contact": "Kontakt",
+    "frankfurtHub": "Frankfurt Hub"
+  },
+  "home": {
+    "hero": {
+      "title": "Strategische Cybersicherheits- & KI-Beratung",
+      "subtitle": "Wir befähigen Organisationen durch strategische Beratung in Cybersicherheit und KI-Integration zu einer sicheren digitalen Transformation.",
+      "cta": "Unsere Dienstleistungen entdecken"
+    },
+    "overview": {
+      "title": "Executive Overview",
+      "description": "Big Rock Intelligence bietet Beratungsdienste auf Führungsebene in den Bereichen Cybersicherheit und KI-Integration. Mit über 25 Jahren Erfahrung in globaler Führung bieten wir maßgeschneiderte Lösungen für Unternehmen, KMUs, VCs/PEs und Vorstände.",
+      "expertise": "Expertise in Cybersicherheit, KI und globaler Führung",
+      "tailored": "Maßgeschneiderte Dienstleistungen für Unternehmen, KMUs, VCs/PEs und Vorstände",
+      "recognized": "Anerkannte \"führende Stimme\" in Sicherheit & KI"
+    }
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "description": "Umfassende Beratungsdienste für Cybersicherheit und KI, maßgeschneidert für die Bedürfnisse Ihrer Organisation.",
+    "aiSecurity": {
+      "title": "KI-Sicherheitsberatung",
+      "description": "Strategische KI-Integration in die Unternehmenssicherheit mit Risikobewertung durch fortschrittliche KI/ML-Modelle. Maßgeschneidert für mittelgroße bis große Unternehmen und Vorstände."
+    },
+    "governance": {
+      "title": "Governance & Risikoberatung",
+      "description": "CISO-Level-Beratung für Vorstände und Gründer mit Governance-Frameworks und Compliance-Ausrichtung. Fokussiert auf Vorstände und KMUs."
+    },
+    "dueDiligence": {
+      "title": "M&A Due Diligence",
+      "description": "Spezialisierte technische Bewertung für Investoren, die eine umfassende Sicherheits- und Technologiebewertung für Akquisitionsziele bietet. Konzipiert für VC, PE und strategische Käufer."
+    },
+    "education": {
+      "title": "Executive Education",
+      "description": "Maßgeschneiderte Schulungen für C-Suite-Führungskräfte und Vorstandsausschüsse zu Strategien für Cybersicherheit und KI-Integration."
+    },
+    "audits": {
+      "title": "Plattform-Sicherheitsaudits",
+      "description": "Umfassende Sicherheitsaudits, Tech-Stack-Reviews und Funktionstests, mit speziellem Fokus auf Fintech- und Crowdinvesting-Plattformen."
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "description": "Nehmen Sie Kontakt mit unserem Team auf, um zu besprechen, wie wir Ihrer Organisation helfen können.",
+    "name": "James Cameron",
+    "role": "Gründer & Executive Advisor",
+    "email": "james@jamcam.me",
+    "phone": "+49 175 584 4546",
+    "linkedin": "linkedin.com/in/jamcam-cyberleader"
+  },
+  "frankfurtHub": {
+    "title": "Frankfurt Hub",
+    "description": "Unser europäischer Hauptsitz in Frankfurt, Deutschland.",
+    "europeanReach": "Europäische Reichweite",
+    "reachDescription": "Von unserem Frankfurter Standort aus betreuen wir Kunden in ganz Europa mit Schwerpunkt auf Deutschland, Österreich, der Schweiz und Großbritannien.",
+    "expertise": "Lokale Expertise, Globale Perspektive",
+    "expertiseDescription": "Unser Team verbindet tiefes lokales Wissen mit globaler Expertise in Cybersicherheit und KI."
+  },
+  "footer": {
+    "copyright": "© 2025 Big Rock Intelligence. Alle Rechte vorbehalten.",
+    "language": "Sprache"
+  }
+}
