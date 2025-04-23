@@ -1,0 +1,88 @@
+
+/* FONT IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+/* FONT-FACE BLOCK FOR LOCAL FUTURA FALLBACK (IF HOSTED) */
+@font-face {
+  font-family: 'Futura Cyrillic Bold';
+  src: url('../fonts/FuturaCyrillic-Bold.woff2') format('woff2'),
+       url('../fonts/FuturaCyrillic-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura Cyrillic Medium';
+  src: url('../fonts/FuturaCyrillic-Medium.woff2') format('woff2'),
+       url('../fonts/FuturaCyrillic-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura Cyrillic Book';
+  src: url('../fonts/FuturaCyrillic-Book.woff2') format('woff2'),
+       url('../fonts/FuturaCyrillic-Book.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* Brand Colors */
+  --bri-navy: #0a1f44;
+  --bri-gold: #dab86e;
+  --bri-green: #1f302d;
+  --bri-graphite: #2b2b2d;
+  --bri-steel: #a4aba4;
+  --bri-stone: #d9ded9;
+  --bri-brown: #574536;
+  --bri-desat-green: #5d9182;
+
+  /* Typography System */
+  --font-hero: 'Cinzel', serif;
+  --font-heading: 'Futura Cyrillic Bold', 'Roboto', sans-serif;
+  --font-subheading: 'Futura Cyrillic Medium', 'Roboto', sans-serif;
+  --font-body: 'Futura Cyrillic Book', 'Roboto', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bri-navy);
+  color: var(--bri-steel);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  color: var(--bri-gold);
+}
+
+h4, h5 {
+  font-family: var(--font-subheading);
+  color: var(--bri-gold);
+}
+
+a.cta-button {
+  background-color: var(--bri-gold);
+  color: var(--bri-navy);
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.section-divider {
+  background-color: var(--bri-green);
+  height: 4px;
+  margin: 40px 0;
+}
+
+.hero h1 {
+  font-family: var(--font-hero);
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: var(--bri-gold);
+}
