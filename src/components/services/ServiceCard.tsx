@@ -1,38 +1,24 @@
-import { Locale } from '@/lib/i18n';
-import Image from 'next/image';
+'use client';
 
-interface ServiceCardProps {
-  id: string;
+import { ReactNode } from 'react';
+import Link from 'next/link';
+
+type ServiceCardProps = {
   title: string;
   description: string;
-  icon: string;
-  locale: Locale;
-}
+  icon: ReactNode;
+  href: string;
+};
 
-export default function ServiceCard({ id, title, description, icon, locale }: ServiceCardProps) {
+export default function ServiceCard({ title, description, icon, href }: ServiceCardProps) {
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-all hover:shadow-xl">
-      <div className="p-6">
-        <div className="flex items-center mb-4">
-          <div className="bg-cyber-navy p-3 rounded-full mr-4">
-            {/* Use regular img tag for SVG files instead of Next.js Image component */}
-            <img
-              src={icon}
-              alt={title}
-              width={32}
-              height={32}
-              className="text-white"
-            />
-          </div>
-          <h3 className="text-2xl font-bold text-cyber-navy">{title}</h3>
-        </div>
-        <p className="text-gray-700 mb-6">{description}</p>
-        <div className="mt-auto pt-4 border-t border-gray-100">
-          <span className="text-forest-green font-medium">
-            {locale === 'en' ? 'Learn more' : 'Mehr erfahren'} →
-          </span>
-        </div>
-      </div>
+    <div className="rounded-2xl border border-steel/30 p-6 shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg bg-white">
+      <div className="mb-4 text-cyber-navy text-3xl">{icon}</div>
+      <h3 className="text-xl font-bold text-cyber-navy mb-2">{title}</h3>
+      <p className="text-cyber-navy/80 text-sm mb-4">{description}</p>
+      <Link href={href}>
+        <span className="text-gold font-medium hover:underline">Learn more →</span>
+      </Link>
     </div>
   );
 }

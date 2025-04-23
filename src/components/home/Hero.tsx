@@ -1,48 +1,31 @@
-import { Locale } from '@/lib/i18n';
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface HeroProps {
-  locale: Locale;
-}
-
-export default function Hero({ locale }: HeroProps) {
-  const translations = {
-    title: locale === 'en' 
-      ? 'Strategic Cybersecurity & AI Advisory' 
-      : 'Strategische Cybersicherheits- & KI-Beratung',
-    subtitle: locale === 'en'
-      ? 'Empowering organizations with strategic guidance in cybersecurity and AI integration to enable secure digital transformation.'
-      : 'Wir befähigen Organisationen durch strategische Beratung in Cybersicherheit und KI-Integration zu einer sicheren digitalen Transformation.',
-    cta: locale === 'en' 
-      ? 'Explore Our Services' 
-      : 'Unsere Dienstleistungen entdecken'
-  };
-
+export default function Hero() {
   return (
     <div className="relative h-[80vh] w-full">
       <Image
-        src="/images/hero_frankfurt.jpg"
+        src="/images/frankfurt-skyline.jpg"
         alt="Frankfurt skyline"
         fill
-        style={{ objectFit: 'cover' }}
+        className="object-cover"
         priority
       />
-      <div className="absolute inset-0 bg-cyber-navy bg-opacity-60 flex items-center justify-center">
-        <div className="container-custom text-center text-white">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            {translations.title}
-          </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
-            {translations.subtitle}
-          </p>
-          <Link
-            href="/services"
-            className="inline-block bg-forest-green hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-md transition-all transform hover:scale-105"
-          >
-            {translations.cta}
-          </Link>
-        </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1f44]/80 to-transparent z-10" />
+      <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4">
+        <h1 className="font-['Cinzel'] text-white text-4xl md:text-6xl font-bold tracking-tight uppercase">
+          Strategic Cybersecurity & AI Advisory
+        </h1>
+        <p className="text-white text-lg max-w-3xl mt-4 font-light">
+          Empowering organizations with strategic guidance in cybersecurity and AI integration to enable secure digital transformation.
+        </p>
+        <Link href="/services">
+          <button className="mt-6 bg-[#dab86e] text-black px-6 py-3 font-medium rounded-lg shadow-md hover:bg-[#caa950] transition">
+            Explore Our Services
+          </button>
+        </Link>
       </div>
     </div>
   );

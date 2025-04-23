@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "start:tunnel": "node mcp-servers/ngrok-tunnel.js"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.2",
     "clsx": "^2.1.1",
     "framer-motion": "^12.7.4",
     "next": "^14.0.0",
