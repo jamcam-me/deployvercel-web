@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Access URLs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .url-container {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+      word-break: break-all;
+    }
+    .copy-btn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .section {
+      margin: 30px 0;
+      padding: 15px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      text-align: left;
+    }
+    code {
+      background-color: #f5f5f5;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Website Access URLs</h1>
+  
+  <div class="section">
+    <h2>Local Access (Same Computer)</h2>
+    <p>Use this URL to access the website from this computer:</p>
+    <div class="url-container">
+      <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>
+    </div>
+    <button class="copy-btn" onclick="copyUrl('http://localhost:3000')">Copy URL</button>
+  </div>
+  
+  <div class="section">
+    <h2>Local Network Access (Other Devices)</h2>
+    <p>Use this URL to access the website from other devices on the same network:</p>
+    <div class="url-container">
+      <a href="http://10.1.1.250:3000" target="_blank">http://10.1.1.250:3000</a>
+    </div>
+    <button class="copy-btn" onclick="copyUrl('http://10.1.1.250:3000')">Copy URL</button>
+    <p><strong>Note:</strong> This only works for devices on the same network.</p>
+  </div>
+  
+  <div class="section">
+    <h2>External Access (Internet)</h2>
+    <p>To access the website from the internet, you need to use ngrok:</p>
+    <ol>
+      <li>Open a new terminal/command prompt</li>
+      <li>Run the following command:</li>
+    </ol>
+    <pre>npx ngrok http 3000</pre>
+    <p>This will display a public URL that you can use to access your website from anywhere.</p>
+  </div>
+  
+  <script>
+    function copyUrl(url) {
+      navigator.clipboard.writeText(url)
+        .then(() => {
+          alert('URL copied to clipboard!');
+        })
+        .catch(err => {
+          console.error('Error copying URL: ', err);
+        });
+    }
+  </script>
+</body>
+</html>
