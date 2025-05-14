@@ -1,34 +1,32 @@
-import { Locale, locales } from '@/lib/i18n';
-import { notFound } from 'next/navigation';
-import { ReactNode } from 'react';
+import React from 'react';
 import Header from '@/components/layout/Header';
-import { Providers } from './providers';
+import Footer from '@/components/layout/Footer';
 
 interface LocaleLayoutProps {
-  children: ReactNode;
+  children: React.ReactNode;
   params: {
-    locale: string;
+    locale: 'en' | 'de';
   };
 }
 
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
+  const { locale } = params;
+  
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Header locale={locale} />
+      <main className="flex-grow">
+        {children}
+      </main>
+      <Footer locale={locale} />
+    </div>
+  );
 }
 
-export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
-  const isValidLocale = locales.some((locale) => locale === params.locale);
-
-  if (!isValidLocale) {
-    notFound();
-  }
-
-  // Get messages for the current locale
-  const messages = (await import(`../../../public/locales/${params.locale}/common.json`)).default;
-
-  return (
-    <Providers locale={params.locale} messages={messages}>
-      <Header locale={params.locale as Locale} />
-      <main className="min-h-screen">{children}</main>
-    </Providers>
-  );
+// Define the locales you support
+export function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'de' }
+  ];
 }
