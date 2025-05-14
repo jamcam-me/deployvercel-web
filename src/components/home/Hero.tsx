@@ -13,7 +13,7 @@ const Hero: React.FC<HeroProps> = ({ locale }) => {
   return (
     <div className="relative h-[80vh] w-full">
       <Image
-        src="/images/frankfurt-skyline.jpg"
+        src="/images/hero_frankfurt.jpg"
         alt="Frankfurt skyline"
         fill
         className="object-cover"
