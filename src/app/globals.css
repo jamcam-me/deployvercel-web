@@ -1,118 +1,114 @@
-/* src/app/globals.css */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --cyber-navy: #0a1f44;
-  --evergreen-intel: #1f302d;
-  --executive-gold: #dab86e;
-  --cyber-graphite: #2b2b2d;
-  --soft-steel: #a4aba4;
-  --light-stone: #d9ded9;
-  --warm-rock: #574536;
-  --forest-green: #5d9182;
-}
-
 @layer base {
-  html {
-    scroll-behavior: smooth;
+  :root {
+    /* Primary Colors */
+    --cyber-navy: #0a1f44;
+    --evergreen-intel: #1f302d;
+    --executive-gold: #dab86e;
+    
+    /* Secondary Colors */
+    --cyber-graphite: #2b2b2d;
+    --soft-steel: #a4aba4;
+    --light-stone: #d9ded9;
+    --warm-rock: #574536;
+    --desaturated-green: #5d9182;
+    
+    /* Navy Variations */
+    --navy-90: #05101f;
+    --navy-70: #071732;
+    --navy-base: #0a1f44;
+    --navy-30: #3a4c6c;
+    --navy-60: #6b7a94;
+    
+    /* Green Variations */
+    --green-90: #101a18;
+    --green-70: #162220;
+    --green-base: #1f302d;
+    --green-30: #4c5957;
+    --green-60: #798381;
+    
+    /* Gold Variations */
+    --gold-30: #ae933c;
+    --gold-15: #c4a555;
+    --gold-base: #dab86e;
+    --gold-15t: #e1c689;
+    --gold-30t: #e9d4a4;
   }
   
-  body {
-    @apply text-gray-900 bg-gray-50;
+  /* Typography Hierarchy */
+  h1, h2, h3 {
+    @apply font-cinzel;
   }
   
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
   }
   
-  .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-4 text-cyber-navy;
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-bold;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl lg:text-3xl font-bold;
+  }
+  
+  h4, h5, h6 {
+    @apply font-futura font-bold;
+  }
+  
+  p, a, li, button {
+    @apply font-futura;
   }
 }
 
 @layer components {
-  .container-custom {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  /* Typography Components */
+  .hero-title {
+    @apply font-cinzel uppercase font-bold text-executive-gold;
   }
   
-  .btn-primary {
-    @apply px-6 py-3 bg-executive-gold text-cyber-navy font-medium rounded-lg shadow-md hover:bg-[#caa950] transition-colors;
+  .section-title {
+    @apply font-cinzel uppercase font-bold text-cyber-navy;
   }
   
-  .btn-secondary {
-    @apply px-6 py-3 bg-evergreen-intel text-white font-medium rounded-lg shadow-md hover:bg-[#2a423d] transition-colors;
+  /* Button Components */
+  .primary-button {
+    @apply bg-executive-gold text-cyber-navy font-medium px-6 py-3 rounded transition-all hover:bg-gold-15 active:bg-gold-30;
   }
   
-  .btn-outline {
-    @apply px-6 py-3 bg-transparent border border-executive-gold text-executive-gold font-medium rounded-lg hover:bg-executive-gold hover:bg-opacity-10 transition-colors;
-  }
-}
-
-@layer utilities {
-  .bg-cyber-navy {
-    background-color: var(--cyber-navy);
+  .secondary-button {
+    @apply bg-transparent border border-executive-gold text-executive-gold font-medium px-6 py-3 rounded transition-colors hover:bg-executive-gold hover:bg-opacity-10;
   }
   
-  .bg-evergreen-intel {
-    background-color: var(--evergreen-intel);
+  .navy-button {
+    @apply bg-cyber-navy text-executive-gold font-medium px-6 py-3 rounded transition-colors hover:bg-navy-70;
   }
   
-  .bg-executive-gold {
-    background-color: var(--executive-gold);
+  /* Text Color Combinations */
+  .primary-text {
+    @apply bg-cyber-navy text-executive-gold;
   }
   
-  .bg-cyber-graphite {
-    background-color: var(--cyber-graphite);
+  .secondary-text {
+    @apply bg-evergreen-intel text-light-stone;
   }
   
-  .bg-soft-steel {
-    background-color: var(--soft-steel);
+  .inverted-text {
+    @apply bg-light-stone text-cyber-navy;
   }
   
-  .bg-light-stone {
-    background-color: var(--light-stone);
+  .accent-text {
+    @apply bg-desaturated-green text-cyber-navy;
   }
   
-  .bg-warm-rock {
-    background-color: var(--warm-rock);
+  .warm-text {
+    @apply bg-warm-rock text-executive-gold;
   }
   
-  .bg-forest-green {
-    background-color: var(--forest-green);
-  }
-  
-  .text-cyber-navy {
-    color: var(--cyber-navy);
-  }
-  
-  .text-evergreen-intel {
-    color: var(--evergreen-intel);
-  }
-  
-  .text-executive-gold {
-    color: var(--executive-gold);
-  }
-  
-  .text-cyber-graphite {
-    color: var(--cyber-graphite);
-  }
-  
-  .text-soft-steel {
-    color: var(--soft-steel);
-  }
-  
-  .text-light-stone {
-    color: var(--light-stone);
-  }
-  
-  .text-warm-rock {
-    color: var(--warm-rock);
-  }
-  
-  .text-forest-green {
-    color: var(--forest-green);
+  .graphite-text {
+    @apply bg-cyber-graphite text-desaturated-green;
   }
 }
