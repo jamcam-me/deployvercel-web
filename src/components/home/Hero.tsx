@@ -3,6 +3,23 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+
+// src/components/home/Hero.tsx
+import React from 'react';
+
+// Define the props interface
+interface HeroProps {
+  locale: "en" | "de";
+}
+const Hero: React.FC<HeroProps> = ({ locale }) => {
+  // Your existing component code
+  // You can now use the locale prop inside the component
+   return (
+    // JSX content
+  );
+};
+export default Hero;
+
 export default function Hero() {
   return (
     <div className="relative h-[80vh] w-full">
