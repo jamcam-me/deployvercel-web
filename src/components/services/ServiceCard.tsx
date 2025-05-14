@@ -1,24 +1,40 @@
 'use client';
 
-import { ReactNode } from 'react';
-import Link from 'next/link';
+import React, { ReactNode } from 'react';
+import { cn } from '@/lib/utils';
 
-type ServiceCardProps = {
+interface ServiceCardProps {
   title: string;
   description: string;
-  icon: ReactNode;
-  href: string;
-};
+  icon?: ReactNode;
+  className?: string;
+}
 
-export default function ServiceCard({ title, description, icon, href }: ServiceCardProps) {
+export const ServiceCard: React.FC<ServiceCardProps> = ({ 
+  title, 
+  description, 
+  icon, 
+  className = '' 
+}) => {
   return (
-    <div className="rounded-2xl border border-steel/30 p-6 shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg bg-white">
-      <div className="mb-4 text-cyber-navy text-3xl">{icon}</div>
-      <h3 className="text-xl font-bold text-cyber-navy mb-2">{title}</h3>
-      <p className="text-cyber-navy/80 text-sm mb-4">{description}</p>
-      <Link href={href}>
-        <span className="text-gold font-medium hover:underline">Learn more →</span>
-      </Link>
+    <div className={cn(
+      'bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex flex-col h-full',
+      className
+    )}>
+      <div className="flex items-center mb-4">
+        {icon && (
+          <div className="bg-cyber-navy text-white p-3 rounded-full mr-4">
+            {icon}
+          </div>
+        )}
+        <h3 className="text-xl font-bold text-cyber-navy">{title}</h3>
+      </div>
+      <p className="text-gray-700 flex-grow">{description}</p>
+      <button className="mt-4 text-forest-green font-medium hover:text-gold transition">
+        Learn More →
+      </button>
     </div>
   );
-}
+};
+
+export default ServiceCard;
