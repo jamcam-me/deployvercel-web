@@ -1,0 +1,118 @@
+/* src/app/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cyber-navy: #0a1f44;
+  --evergreen-intel: #1f302d;
+  --executive-gold: #dab86e;
+  --cyber-graphite: #2b2b2d;
+  --soft-steel: #a4aba4;
+  --light-stone: #d9ded9;
+  --warm-rock: #574536;
+  --forest-green: #5d9182;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-900 bg-gray-50;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4 text-cyber-navy;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-executive-gold text-cyber-navy font-medium rounded-lg shadow-md hover:bg-[#caa950] transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-evergreen-intel text-white font-medium rounded-lg shadow-md hover:bg-[#2a423d] transition-colors;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 bg-transparent border border-executive-gold text-executive-gold font-medium rounded-lg hover:bg-executive-gold hover:bg-opacity-10 transition-colors;
+  }
+}
+
+@layer utilities {
+  .bg-cyber-navy {
+    background-color: var(--cyber-navy);
+  }
+  
+  .bg-evergreen-intel {
+    background-color: var(--evergreen-intel);
+  }
+  
+  .bg-executive-gold {
+    background-color: var(--executive-gold);
+  }
+  
+  .bg-cyber-graphite {
+    background-color: var(--cyber-graphite);
+  }
+  
+  .bg-soft-steel {
+    background-color: var(--soft-steel);
+  }
+  
+  .bg-light-stone {
+    background-color: var(--light-stone);
+  }
+  
+  .bg-warm-rock {
+    background-color: var(--warm-rock);
+  }
+  
+  .bg-forest-green {
+    background-color: var(--forest-green);
+  }
+  
+  .text-cyber-navy {
+    color: var(--cyber-navy);
+  }
+  
+  .text-evergreen-intel {
+    color: var(--evergreen-intel);
+  }
+  
+  .text-executive-gold {
+    color: var(--executive-gold);
+  }
+  
+  .text-cyber-graphite {
+    color: var(--cyber-graphite);
+  }
+  
+  .text-soft-steel {
+    color: var(--soft-steel);
+  }
+  
+  .text-light-stone {
+    color: var(--light-stone);
+  }
+  
+  .text-warm-rock {
+    color: var(--warm-rock);
+  }
+  
+  .text-forest-green {
+    color: var(--forest-green);
+  }
+}
