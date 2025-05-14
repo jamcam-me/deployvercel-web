@@ -1,25 +1,24 @@
-'use client';
-
-import { ReactNode, ButtonHTMLAttributes } from 'react';
-import { cn } from '@/lib/utils';
+// Fix for src/components/ui/PrimaryButton.tsx
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 
-interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  className?: string;
+interface PrimaryButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
   children: ReactNode;
+  className?: string;
 }
 
-export function PrimaryButton({ 
-  className = '', 
-  children, 
-  ...props 
+export function PrimaryButton({
+  children,
+  className = '',
+  ...props
 }: PrimaryButtonProps) {
   return (
     <motion.button
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
       className={cn(
-        'px-6 py-3 bg-[#dab86e] text-[#0a1f44] font-medium rounded-lg shadow-md hover:bg-[#caa950] transition-colors',
+        'px-6 py-3 bg-executive-gold text-cyber-navy font-medium rounded-md transition-colors',
         className
       )}
       {...props}
@@ -28,5 +27,3 @@ export function PrimaryButton({
     </motion.button>
   );
 }
-
-export default PrimaryButton;
