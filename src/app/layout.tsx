@@ -8,65 +8,46 @@ const futuraStd = localFont({
   variable: '--font-futura',
   src: [
     {
-      path: '../../public/fonts/futura/FuturaStd-Book.woff2',
+      path: '../fonts/futura/FuturaStd-Book.woff',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/futura/FuturaStd-Medium.woff2',
+      path: '../fonts/futura/FuturaStd-Medium.woff',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/futura/FuturaStd-Bold.woff2',
+      path: '../fonts/futura/FuturaStd-Bold.woff',
       weight: '700',
       style: 'normal',
     },
-    // Add other weights if available
   ],
   display: 'swap',
 });
 
-// Define either Trajan Pro or Cinzel (I see both are options in your brand guide)
+// Define Cinzel for hero/logo text
 const cinzel = localFont({
   variable: '--font-cinzel',
   src: [
     {
-      path: '../../public/fonts/cinzel/Cinzel-Regular.woff2',
+      path: '../fonts/cinzel/Cinzel-Regular.ttf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/cinzel/Cinzel-Medium.woff2',
+      path: '../fonts/cinzel/Cinzel-Medium.ttf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/cinzel/Cinzel-Bold.woff2',
+      path: '../fonts/cinzel/Cinzel-Bold.ttf',
       weight: '700',
       style: 'normal',
     },
   ],
   display: 'swap',
 });
-
-// You could also add Trajan Pro if you have the font files
-// const trajanPro = localFont({
-//   variable: '--font-trajan',
-//   src: [
-//     {
-//       path: '../../public/fonts/trajan/TrajanPro-Regular.woff2',
-//       weight: '400',
-//       style: 'normal',
-//     },
-//     {
-//       path: '../../public/fonts/trajan/TrajanPro-Bold.woff2',
-//       weight: '700',
-//       style: 'normal',
-//     },
-//   ],
-//   display: 'swap',
-// });
 
 export const metadata: Metadata = {
   title: 'Big Rock Intelligence | Strategic Cybersecurity & AI Advisory',
