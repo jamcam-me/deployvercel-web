@@ -1,68 +1,48 @@
-import { ReactNode } from 'react';
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
+'use client';
 
-interface ButtonProps {
-  children: ReactNode;
+import { ReactNode, ButtonHTMLAttributes } from 'react';
+import { cn } from '@/lib/utils';
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
-  href?: string;
   className?: string;
-  onClick?: () => void;
-  type?: 'button' | 'submit' | 'reset';
-  disabled?: boolean;
+  children: ReactNode;
 }
 
-export default function Button({
-  children,
+export function Button({ 
   variant = 'primary',
   size = 'md',
-  href,
-  className,
-  onClick,
-  type = 'button',
-  disabled = false,
+  className = '', 
+  children, 
+  ...props 
 }: ButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';
   
-  const variantStyles = {
-    primary: 'bg-forest-green text-white hover:bg-opacity-90 focus:ring-forest-green',
-    secondary: 'bg-gold text-cyber-navy hover:bg-opacity-90 focus:ring-gold',
-    outline: 'bg-transparent border border-cyber-navy text-cyber-navy hover:bg-cyber-navy hover:text-white focus:ring-cyber-navy',
+  const variantClasses = {
+    primary: 'bg-[#dab86e] text-[#0a1f44] hover:bg-[#caa950]',
+    secondary: 'bg-[#1f302d] text-white hover:bg-[#2a423d]',
+    outline: 'bg-transparent border border-[#dab86e] text-[#dab86e] hover:bg-[#dab86e] hover:bg-opacity-10'
   };
   
-  const sizeStyles = {
-    sm: 'py-1.5 px-3 text-sm',
-    md: 'py-2 px-4 text-base',
-    lg: 'py-3 px-6 text-lg',
+  const sizeClasses = {
+    sm: 'px-3 py-1.5 text-sm',
+    md: 'px-5 py-2.5',
+    lg: 'px-7 py-3 text-lg'
   };
-  
-  const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer';
-  
-  const buttonStyles = cn(
-    baseStyles,
-    variantStyles[variant],
-    sizeStyles[size],
-    disabledStyles,
-    className
-  );
-  
-  if (href) {
-    return (
-      <Link href={href} className={buttonStyles}>
-        {children}
-      </Link>
-    );
-  }
   
   return (
     <button
-      type={type}
-      className={buttonStyles}
-      onClick={onClick}
-      disabled={disabled}
+      className={cn(
+        'font-medium rounded-lg transition-colors',
+        variantClasses[variant],
+        sizeClasses[size],
+        className
+      )}
+      {...props}
     >
       {children}
     </button>
   );
 }
+
+export default Button;
