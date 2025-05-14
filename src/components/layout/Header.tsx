@@ -1,120 +1,103 @@
-
 'use client';
 
-import { useState } from 'react';
-import { Locale, Link, getDisplayName, getFlag } from '@/lib/i18n';
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import React from 'react';
+import Link from 'next/link';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface HeaderProps {
-  locale: Locale;
+  locale: 'en' | 'de';
 }
 
-export default function Header({ locale }: HeaderProps) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const pathname = usePathname();
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-  const navItems = [
-    { href: '/', label: locale === 'en' ? 'Home' : 'Startseite' },
-    { href: '/services', label: locale === 'en' ? 'Services' : 'Dienstleistungen' },
-    { href: '/contact', label: locale === 'en' ? 'Contact' : 'Kontakt' },
-    { href: '/frankfurt-hub', label: 'Frankfurt Hub' },
-  ];
-
-  const otherLocale = locale === 'en' ? 'de' : 'en';
-
+export const Header: React.FC<HeaderProps> = ({ locale }) => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  
+  const translations = {
+    home: locale === 'en' ? 'Home' : 'Startseite',
+    services: locale === 'en' ? 'Services' : 'Dienstleistungen',
+    about: locale === 'en' ? 'About Us' : 'Über Uns',
+    contact: locale === 'en' ? 'Contact' : 'Kontakt'
+  };
+  
   return (
-    <header className="bg-white shadow-sm shadow-steel/30 z-50">
-      <div className="container-custom py-4">
-        <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/images/logo.png"
-              alt="Big Rock Intelligence Logo"
-              width={64}
-              height={64}
-              className="mr-3 h-12 w-auto"
+    <header className="bg-white shadow-sm py-4">
+      <div className="container-custom flex justify-between items-center">
+        <Link href={`/${locale}`}>
+          <div className="flex items-center">
+            <img 
+              src="/images/logo.png" 
+              alt="Big Rock Intelligence" 
+              className="h-10" 
             />
-            <span className="text-2xl font-bold text-cyber-navy tracking-tight leading-tight">
-              Big Rock Intelligence
-            </span>
+            <span className="ml-2 text-xl font-bold text-cyber-navy">Big Rock Intelligence</span>
+          </div>
+        </Link>
+        
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-8">
+          <Link href={`/${locale}`} className="text-gray-800 hover:text-gold transition">
+            {translations.home}
           </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 text-base">
-            <ul className="flex space-x-6">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      'text-cyber-navy hover:text-gold transition-colors font-medium px-2 pb-1',
-                      pathname === item.href && 'border-b-2 border-gold'
-                    )}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <div className="border-l border-gray-300 pl-6">
-              <Link
-                href="/"
-                locale={otherLocale}
-                className="flex items-center text-cyber-navy hover:text-gold transition-colors"
+          <Link href={`/${locale}/services`} className="text-gray-800 hover:text-gold transition">
+            {translations.services}
+          </Link>
+          <Link href={`/${locale}/about`} className="text-gray-800 hover:text-gold transition">
+            {translations.about}
+          </Link>
+          <Link href={`/${locale}/contact`} className="text-gray-800 hover:text-gold transition">
+            {translations.contact}
+          </Link>
+          <LanguageSwitcher locale={locale} />
+        </nav>
+        
+        {/* Mobile Menu Button */}
+        <button 
+          className="md:hidden text-cyber-navy" 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-md z-50">
+            <nav className="flex flex-col p-4">
+              <Link 
+                href={`/${locale}`} 
+                className="py-2 text-gray-800 hover:text-gold transition"
+                onClick={() => setIsMenuOpen(false)}
               >
-                <span className="mr-2">{getFlag(otherLocale)}</span>
-                <span>{getDisplayName(otherLocale)}</span>
+                {translations.home}
               </Link>
-            </div>
-          </nav>
-
-          {/* Mobile Toggle */}
-          <button className="md:hidden text-cyber-navy" onClick={toggleMenu} aria-label="Toggle menu">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
-        </div>
-
-        {/* Mobile Nav */}
-        <div className={cn('md:hidden', isMenuOpen ? 'block' : 'hidden')}>
-          <nav className="mt-4 pb-4">
-            <ul className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-cyber-navy hover:text-gold transition-colors font-medium block"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-              <li className="pt-2 border-t border-gray-200">
-                <Link
-                  href="/"
-                  locale={otherLocale}
-                  className="flex items-center text-cyber-navy hover:text-gold transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <span className="mr-2">{getFlag(otherLocale)}</span>
-                  <span>{getDisplayName(otherLocale)}</span>
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
+              <Link 
+                href={`/${locale}/services`} 
+                className="py-2 text-gray-800 hover:text-gold transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {translations.services}
+              </Link>
+              <Link 
+                href={`/${locale}/about`} 
+                className="py-2 text-gray-800 hover:text-gold transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {translations.about}
+              </Link>
+              <Link 
+                href={`/${locale}/contact`} 
+                className="py-2 text-gray-800 hover:text-gold transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {translations.contact}
+              </Link>
+              <LanguageSwitcher locale={locale} className="mt-2" />
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );
-}
+};
+
+export default Header;
