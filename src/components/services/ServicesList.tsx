@@ -11,7 +11,7 @@ export default function ServicesList() {
           Our Services
         </h2>
         <p className="text-center text-cyber-navy/80 max-w-2xl mx-auto mb-12">
-          Comprehensive cybersecurity and AI advisory services tailored to your organization's needs.
+          Comprehensive cybersecurity and AI advisory services tailored to your organization&apos;s needs.
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
