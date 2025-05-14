@@ -1,12 +1,12 @@
-// Fix for src/components/ui/PrimaryButton.tsx
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
-interface PrimaryButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
+// Create a specific type that properly merges the motion props with our custom props
+type PrimaryButtonProps = HTMLMotionProps<"button"> & {
   children: ReactNode;
   className?: string;
-}
+};
 
 export function PrimaryButton({
   children,
