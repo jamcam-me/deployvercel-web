@@ -1,9 +1,21 @@
 import { Locale } from '@/lib/i18n';
 import Image from 'next/image';
 
+// src/components/home/ExecutiveOverview.tsx
+import React from 'react';
+// Define the props interface
 interface ExecutiveOverviewProps {
-  locale: Locale;
+  locale: "en" | "de";
 }
+const ExecutiveOverview: React.FC<ExecutiveOverviewProps> = ({ locale }) => {
+  // Your existing component code
+  // You can now use the locale prop inside the component
+   return (
+    // JSX content
+  );
+};
+export default ExecutiveOverview;
+
 
 export default function ExecutiveOverview({ locale }: ExecutiveOverviewProps) {
   const translations = {
