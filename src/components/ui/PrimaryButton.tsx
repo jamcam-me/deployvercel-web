@@ -1,12 +1,25 @@
-import { motion } from 'framer-motion';
-import { cn } from '@/lib/utils';
+'use client';
 
-export function PrimaryButton({ className='', children, ...props }) {
+import { ReactNode, ButtonHTMLAttributes } from 'react';
+import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
+
+interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string;
+  children: ReactNode;
+}
+
+export function PrimaryButton({ 
+  className = '', 
+  children, 
+  ...props 
+}: PrimaryButtonProps) {
   return (
     <motion.button
       whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.98 }}
       className={cn(
-        'px-8 py-3 rounded-full bg-gradient-to-r from-green to-gold text-white font-medium shadow-lg focus-visible:outline-none focus-visible:ring-2 ring-green transition-transform',
+        'px-6 py-3 bg-[#dab86e] text-[#0a1f44] font-medium rounded-lg shadow-md hover:bg-[#caa950] transition-colors',
         className
       )}
       {...props}
@@ -15,3 +28,5 @@ export function PrimaryButton({ className='', children, ...props }) {
     </motion.button>
   );
 }
+
+export default PrimaryButton;
