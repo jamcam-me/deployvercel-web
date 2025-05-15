@@ -3,6 +3,7 @@
 import React from 'react';
 import { services } from '@/data/services';
 import ServiceCard from './ServiceCard';
+import Link from 'next/link'; // Add this import
 
 // Define the props interface to accept the locale
 interface ServicesListProps {
@@ -30,8 +31,6 @@ const ServicesList: React.FC<ServicesListProps> = ({ locale }) => {
   // Enhanced service data with metrics and questions
   const enhancedServices = services.map(service => {
     // This adds our enhanced fields while preserving the original data
-    // You'll need to add actual metrics and questions to your services data
-    // This is just a temporary solution for the quick win
     return {
       ...service,
       metric: getServiceMetric(service.id, locale),
@@ -40,10 +39,9 @@ const ServicesList: React.FC<ServicesListProps> = ({ locale }) => {
     };
   });
 
-  // Group services by category
+  // Group services by category (if category exists in your data)
   const aiServices = enhancedServices.filter(s => s.category === 'ai');
   const advisoryServices = enhancedServices.filter(s => s.category === 'advisory');
-  // Add other categories as needed
 
   return (
     <section className="py-16">
@@ -57,69 +55,21 @@ const ServicesList: React.FC<ServicesListProps> = ({ locale }) => {
           {translations.title}
         </h2>
         
-        {/* AI Governance & Integration Category */}
-        {aiServices.length > 0 && (
-          <div className="service-category">
-            <h3 className="font-futura font-bold uppercase text-cyber-navy mb-4">
-              {translations.aiGovernance}
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {aiServices.map((service) => (
-                <ServiceCard 
-                  key={service.id}
-                  title={service.title}
-                  description={service.description}
-                  metric={service.metric}
-                  question={service.question}
-                  icon={renderIcon(service.icon)}
-                  link={service.link}
-                  locale={locale}
-                />
-              ))}
-            </div>
-          </div>
-        )}
-        
-        {/* Executive Advisory Category */}
-        {advisoryServices.length > 0 && (
-          <div className="service-category mt-16">
-            <h3 className="font-futura font-bold uppercase text-cyber-navy mb-4">
-              {translations.executive}
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {advisoryServices.map((service) => (
-                <ServiceCard 
-                  key={service.id}
-                  title={service.title}
-                  description={service.description}
-                  metric={service.metric}
-                  question={service.question}
-                  icon={renderIcon(service.icon)}
-                  link={service.link}
-                  locale={locale}
-                />
-              ))}
-            </div>
-          </div>
-        )}
-        
-        {/* Add fallback if categories aren't set up yet */}
-        {(!aiServices.length && !advisoryServices.length) && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {enhancedServices.map((service) => (
-              <ServiceCard 
-                key={service.id}
-                title={service.title}
-                description={service.description}
-                metric={service.metric}
-                question={service.question}
-                icon={renderIcon(service.icon)}
-                link={service.link}
-                locale={locale}
-              />
-            ))}
-          </div>
-        )}
+        {/* For now, just render all services since we're not sure about categories */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {enhancedServices.map((service) => (
+            <ServiceCard 
+              key={service.id}
+              title={service.title}
+              description={service.description}
+              metric={service.metric}
+              question={service.question}
+              icon={renderIcon(service.icon)}
+              link={service.link}
+              locale={locale}
+            />
+          ))}
+        </div>
         
         {/* Cultural reference and strategic question */}
         <div className="max-w-3xl mx-auto mt-16 text-center">
@@ -131,9 +81,9 @@ const ServicesList: React.FC<ServicesListProps> = ({ locale }) => {
             {translations.strategicQ}
           </p>
           
-          <Link href={`/${locale}/contact`} className="primary-button">
+          <a href={`/${locale}/contact`} className="primary-button">
             {locale === 'en' ? 'Schedule a Strategy Session' : 'Strategiegespräch vereinbaren'}
-          </Link>
+          </a>
         </div>
       </div>
     </section>
@@ -161,71 +111,41 @@ function renderIcon(iconName: string) {
 
 // Helper function to get service metrics
 function getServiceMetric(serviceId: string, locale: string): string {
+  // Simplified version with fewer entries for now
   const metrics = {
     'secure-ai': {
       en: '60% faster AI deployment with enterprise-grade security',
       de: '60% schnellere KI-Bereitstellung mit Sicherheit auf Unternehmensebene'
     },
-    'ai-governance': {
-      en: '40% reduced compliance complexity through unified governance',
-      de: '40% reduzierte Compliance-Komplexität durch einheitliche Governance'
-    },
-    'ml-security': {
-      en: '75% reduction in ML pipeline vulnerabilities',
-      de: '75% Reduktion von Schwachstellen in ML-Pipelines'
-    },
     'executive-advisory': {
       en: '30% improved board confidence in security posture',
       de: '30% verbessertes Vorstandsvertrauen in die Sicherheitslage'
-    },
-    'ma-due-diligence': {
-      en: '$3.2M average risk reduction in acquisition targets',
-      de: 'Durchschnittliche Risikominderung von 3,2 Mio. $ bei Akquisitionszielen'
-    },
-    'security-strategy': {
-      en: '50% improved alignment between security and business goals',
-      de: '50% verbesserte Ausrichtung zwischen Sicherheits- und Geschäftszielen'
-    },
-    // Add metrics for other services
+    }
+    // Add more as needed
   };
   
   // Return the metric if it exists, otherwise return a default metric
-  return metrics[serviceId]?.[locale] || 
+  return metrics[serviceId]?.[locale === 'en' ? 'en' : 'de'] || 
     (locale === 'en' ? 'Strategic business impact through security excellence' : 'Strategische Geschäftsauswirkung durch Sicherheitsexzellenz');
 }
 
 // Helper function to get service questions
 function getServiceQuestion(serviceId: string, locale: string): string {
+  // Simplified version with fewer entries for now
   const questions = {
     'secure-ai': {
       en: 'Is your security team equipped to evaluate AI model risk?',
       de: 'Ist Ihr Sicherheitsteam ausgerüstet, um KI-Modellrisiken zu bewerten?'
     },
-    'ai-governance': {
-      en: 'How is your organization balancing AI innovation with risk management?',
-      de: 'Wie balanciert Ihre Organisation KI-Innovation mit Risikomanagement?'
-    },
-    'ml-security': {
-      en: 'What security controls protect your ML models and training data?',
-      de: 'Welche Sicherheitskontrollen schützen Ihre ML-Modelle und Trainingsdaten?'
-    },
     'executive-advisory': {
       en: 'Does your board have the insights needed to govern AI and security risks effectively?',
       de: 'Verfügt Ihr Vorstand über die nötigen Erkenntnisse, um KI- und Sicherheitsrisiken effektiv zu steuern?'
-    },
-    'ma-due-diligence': {
-      en: 'How confident are you in your target\'s security posture and AI governance?',
-      de: 'Wie zuversichtlich sind Sie bezüglich der Sicherheitslage und KI-Governance Ihres Zielunternehmens?'
-    },
-    'security-strategy': {
-      en: 'Is your security strategy a cost center or a business enabler?',
-      de: 'Ist Ihre Sicherheitsstrategie ein Kostenfaktor oder ein Geschäftsförderer?'
-    },
-    // Add questions for other services
+    }
+    // Add more as needed
   };
   
   // Return the question if it exists, otherwise return a default question
-  return questions[serviceId]?.[locale] || 
+  return questions[serviceId]?.[locale === 'en' ? 'en' : 'de'] || 
     (locale === 'en' ? 'How could our expertise enhance your security posture?' : 'Wie könnte unsere Expertise Ihre Sicherheitslage verbessern?');
 }
 
