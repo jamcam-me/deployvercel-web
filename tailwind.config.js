@@ -3,10 +3,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        futura: ['var(--font-futura)', 'sans-serif'],
-        cinzel: ['var(--font-cinzel)', 'serif'],
+        cinzel: ['Cinzel', 'serif'],
+        futura: ['Futura Std', 'Futura BK', 'sans-serif']
       },
       colors: {
+        // Primary Brand Color variables
+        'cyber-navy': 'var(--cyber-navy)',
+        'evergreen-intel': 'var(--evergreen-intel)',
+        'executive-gold': 'var(--executive-gold)',
         // Primary Brand Colors
         'cyber-navy': '#0a1f44',
         'evergreen-intel': '#1f302d',

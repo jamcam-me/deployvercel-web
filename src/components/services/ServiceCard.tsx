@@ -2,37 +2,63 @@
 
 import React, { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 interface ServiceCardProps {
   title: string;
   description: string;
+  metric?: string; // New metric field
+  question?: string; // New strategic question field
   icon?: ReactNode;
   className?: string;
+  link?: string; // Optional link
+  locale?: "en" | "de"; // Optional locale
 }
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({ 
   title, 
   description, 
+  metric,
+  question,
   icon, 
-  className = '' 
+  className = '',
+  link,
+  locale = 'en'
 }) => {
+  // Translations
+  const learnMore = locale === 'en' ? 'Learn More' : 'Mehr erfahren';
+  
   return (
     <div className={cn(
-      'bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex flex-col h-full',
+      'service-card',
       className
     )}>
       <div className="flex items-center mb-4">
         {icon && (
-          <div className="bg-cyber-navy text-white p-3 rounded-full mr-4">
+          <div className="bg-cyber-navy text-executive-gold p-3 rounded-full mr-4">
             {icon}
           </div>
         )}
-        <h3 className="text-xl font-bold text-cyber-navy">{title}</h3>
+        <h4 className="text-executive-gold font-bold uppercase">{title}</h4>
       </div>
-      <p className="text-gray-700 flex-grow">{description}</p>
-      <button className="mt-4 text-forest-green font-medium hover:text-gold transition">
-        Learn More →
-      </button>
+      
+      {/* New metric field - shown if provided */}
+      {metric && <p className="service-metric mb-3">{metric}</p>}
+      
+      <p className="service-description text-cyber-graphite flex-grow">{description}</p>
+      
+      {/* New strategic question - shown if provided */}
+      {question && <p className="service-question mt-4">{question}</p>}
+      
+      {link ? (
+        <Link href={link} className="service-link mt-4 inline-block">
+          {learnMore} →
+        </Link>
+      ) : (
+        <button className="service-link mt-4 inline-block">
+          {learnMore} →
+        </button>
+      )}
     </div>
   );
 };

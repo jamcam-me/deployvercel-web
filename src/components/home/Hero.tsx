@@ -19,23 +19,45 @@ const Hero: React.FC<HeroProps> = ({ locale }) => {
         className="object-cover"
         priority
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1f44]/80 to-transparent z-10" />
-      <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4">
-        <h1 className="font-['Cinzel'] text-white text-4xl md:text-6xl font-bold tracking-tight uppercase">
-          {locale === 'en' 
-            ? 'Strategic Cybersecurity & AI Advisory'
-            : 'Strategische Beratung für Cybersicherheit & KI'}
-        </h1>
-        <p className="text-white text-lg max-w-3xl mt-4 font-light">
-          {locale === 'en'
-            ? 'Empowering organizations with strategic guidance in cybersecurity and AI integration to enable secure digital transformation.'
-            : 'Wir befähigen Organisationen durch strategische Beratung in Cybersicherheit und KI-Integration, um eine sichere digitale Transformation zu ermöglichen.'}
-        </p>
-        <Link href="/services">
-          <button className="mt-6 bg-[#dab86e] text-black px-6 py-3 font-medium rounded-lg shadow-md hover:bg-[#caa950] transition">
-            {locale === 'en' ? 'Explore Our Services' : 'Entdecken Sie unsere Dienstleistungen'}
-          </button>
-        </Link>
+      <div className="absolute inset-0 bg-gradient-to-b from-cyber-navy/90 to-evergreen-intel/70 z-10" />
+      <div className="absolute inset-0 z-20 flex flex-col justify-center items-start text-left px-4 sm:px-8 md:px-16 lg:px-24">
+        <div className="max-w-3xl">
+          {/* Updated with metric-first approach */}
+          <p className="hero-metric mb-4">
+            {locale === 'en' 
+              ? '70% faster threat response via ML behavioral analytics'
+              : '70% schnellere Bedrohungsabwehr durch ML-Verhaltensanalyse'}
+          </p>
+          
+          <h1 className="hero-title mb-6">
+            {locale === 'en' 
+              ? 'ACCELERATE SECURITY TRANSFORMATION'
+              : 'BESCHLEUNIGEN SIE DIE SICHERHEITSTRANSFORMATION'}
+          </h1>
+          
+          <p className="hero-tagline">
+            {locale === 'en'
+              ? 'Bridging AI Innovation with Enterprise Security'
+              : 'Brücke zwischen KI-Innovation und Unternehmenssicherheit'}
+          </p>
+          
+          {/* Strategic question added */}
+          <p className="hero-question mt-4">
+            {locale === 'en'
+              ? 'Is your security strategy accelerating digital transformation or hindering it?'
+              : 'Beschleunigt Ihre Sicherheitsstrategie die digitale Transformation oder behindert sie sie?'}
+          </p>
+          
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Link href={`/${locale}/services`} className="primary-button">
+              {locale === 'en' ? 'Explore Strategic Services' : 'Strategische Dienste entdecken'}
+            </Link>
+            
+            <Link href={`/${locale}/contact`} className="secondary-button">
+              {locale === 'en' ? 'Schedule Consultation' : 'Beratungstermin vereinbaren'}
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
