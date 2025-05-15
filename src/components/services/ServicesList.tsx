@@ -3,11 +3,21 @@
 import React from 'react';
 import { services } from '@/data/services';
 import ServiceCard from './ServiceCard';
-import Link from 'next/link'; // Add this import
+import Link from 'next/link';
 
 // Define the props interface to accept the locale
 interface ServicesListProps {
   locale: "en" | "de";
+}
+
+// Define TypeScript interfaces for our helper function objects
+interface LocalizedContent {
+  en: string;
+  de: string;
+}
+
+interface MetricsMap {
+  [key: string]: LocalizedContent;
 }
 
 const ServicesList: React.FC<ServicesListProps> = ({ locale }) => {
@@ -33,15 +43,11 @@ const ServicesList: React.FC<ServicesListProps> = ({ locale }) => {
     // This adds our enhanced fields while preserving the original data
     return {
       ...service,
-      metric: getServiceMetric(service.id, locale),
-      question: getServiceQuestion(service.id, locale),
+      metric: getServiceMetric(service.id, locale === 'en' ? 'en' : 'de'),
+      question: getServiceQuestion(service.id, locale === 'en' ? 'en' : 'de'),
       link: `/services/${service.id}` // Assuming this is your link structure
     };
   });
-
-  // Group services by category (if category exists in your data)
-  const aiServices = enhancedServices.filter(s => s.category === 'ai');
-  const advisoryServices = enhancedServices.filter(s => s.category === 'advisory');
 
   return (
     <section className="py-16">
@@ -55,7 +61,7 @@ const ServicesList: React.FC<ServicesListProps> = ({ locale }) => {
           {translations.title}
         </h2>
         
-        {/* For now, just render all services since we're not sure about categories */}
+        {/* For now, just render all services */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {enhancedServices.map((service) => (
             <ServiceCard 
@@ -110,9 +116,9 @@ function renderIcon(iconName: string) {
 }
 
 // Helper function to get service metrics
-function getServiceMetric(serviceId: string, locale: string): string {
+function getServiceMetric(serviceId: string, localeKey: 'en' | 'de'): string {
   // Simplified version with fewer entries for now
-  const metrics = {
+  const metrics: MetricsMap = {
     'secure-ai': {
       en: '60% faster AI deployment with enterprise-grade security',
       de: '60% schnellere KI-Bereitstellung mit Sicherheit auf Unternehmensebene'
@@ -125,14 +131,18 @@ function getServiceMetric(serviceId: string, locale: string): string {
   };
   
   // Return the metric if it exists, otherwise return a default metric
-  return metrics[serviceId]?.[locale === 'en' ? 'en' : 'de'] || 
-    (locale === 'en' ? 'Strategic business impact through security excellence' : 'Strategische Geschäftsauswirkung durch Sicherheitsexzellenz');
+  const defaultMetrics = {
+    en: 'Strategic business impact through security excellence', 
+    de: 'Strategische Geschäftsauswirkung durch Sicherheitsexzellenz'
+  };
+  
+  return metrics[serviceId]?.[localeKey] || defaultMetrics[localeKey];
 }
 
 // Helper function to get service questions
-function getServiceQuestion(serviceId: string, locale: string): string {
+function getServiceQuestion(serviceId: string, localeKey: 'en' | 'de'): string {
   // Simplified version with fewer entries for now
-  const questions = {
+  const questions: MetricsMap = {
     'secure-ai': {
       en: 'Is your security team equipped to evaluate AI model risk?',
       de: 'Ist Ihr Sicherheitsteam ausgerüstet, um KI-Modellrisiken zu bewerten?'
@@ -145,8 +155,12 @@ function getServiceQuestion(serviceId: string, locale: string): string {
   };
   
   // Return the question if it exists, otherwise return a default question
-  return questions[serviceId]?.[locale === 'en' ? 'en' : 'de'] || 
-    (locale === 'en' ? 'How could our expertise enhance your security posture?' : 'Wie könnte unsere Expertise Ihre Sicherheitslage verbessern?');
+  const defaultQuestions = {
+    en: 'How could our expertise enhance your security posture?',
+    de: 'Wie könnte unsere Expertise Ihre Sicherheitslage verbessern?'
+  };
+  
+  return questions[serviceId]?.[localeKey] || defaultQuestions[localeKey];
 }
 
 export default ServicesList;
