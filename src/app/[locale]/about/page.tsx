@@ -1,4 +1,5 @@
-// pages/about.tsx
+// src/app/[locale]/about/page.tsx
+/* eslint-disable react/no-unescaped-entities */
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -17,9 +18,7 @@ export default function About() {
         {/* Page Hero */}
         <section className="text-center mb-16">
           <h1 className="text-5xl font-bold mb-4">About Big Rock Intelligence</h1>
-          <p className="text-xl text-steelGray">
-            The Foundation of Strategic Security
-          </p>
+          <p className="text-xl text-steelGray">The Foundation of Strategic Security</p>
           <div className="mt-8">
             <Image
               src="/images/hero_rock_silhouette.png"
@@ -43,10 +42,10 @@ export default function About() {
         <section className="mb-16">
           <h2 className="text-3xl font-semibold mb-2">The Big Rock Difference</h2>
           <p className="mb-4">
-            In today’s cybersecurity landscape, most approach security like their New Year's resolution—they know exactly what they should do, have all the right tools, but somehow still aren’t doing it right. Global cybercrime costs are projected to reach <strong>$10.5 trillion</strong> by 2025.
+            In today’s cybersecurity landscape, most approach security like their New Year&apos;s resolution—they know exactly what they should do, have all the right tools, but somehow still aren’t doing it right. Global cybercrime costs are projected to reach <strong>$10.5 trillion</strong> by 2025.
           </p>
           <p>
-            The gap isn't in understanding threats. It’s in translating security from a technical concern into a strategic advantage.
+            The gap isn&apos;t in understanding threats. It&apos;s in translating security from a technical concern into a strategic advantage.
           </p>
         </section>
 
@@ -74,8 +73,8 @@ export default function About() {
                   <td className="p-3">Roadmaps that secure funding and accelerate digital initiatives</td>
                 </tr>
                 <tr className="odd:bg-stoneGray even:bg-white">
-                  <td className="p-3 font-semibold">M&A Security Diligence</td>
-                  <td className="p-3">55% of executives cite cybersecurity as critical in M&A</td>
+                  <td className="p-3 font-semibold">M&amp;A Security Diligence</td>
+                  <td className="p-3">55% of executives cite cybersecurity as critical in M&amp;A</td>
                   <td className="p-3">Value protection (remember Yahoo’s $350M valuation drop?)</td>
                 </tr>
               </tbody>
@@ -91,9 +90,8 @@ export default function About() {
               <Image
                 src="/images/james-cameron.jpg"
                 alt="James Cameron"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-full"
+                fill
+                className="rounded-full object-cover"
               />
             </div>
             <div>
@@ -103,7 +101,7 @@ export default function About() {
                 UC Berkeley-trained AI strategist with executive cybersecurity credentials. Microsoft/AWS/Avanade alumni with battle-tested experience across European and global markets.
               </p>
               <p className="mt-2">
-                <strong>My approach:</strong> “You don't bet blind in poker. Why would you do it with your AI security stack?”
+                <strong>My approach:</strong> “You don&apos;t bet blind in poker. Why would you do it with your AI security stack?”
               </p>
             </div>
           </div>
@@ -113,10 +111,18 @@ export default function About() {
         <section className="mb-16">
           <h2 className="text-3xl font-semibold mb-4">Our Expertise Areas</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li><strong>Cybersecurity Strategy &amp; Leadership</strong> &mdash; Translating technical complexity into executive clarity</li>
-            <li><strong>AI Governance &amp; Integration</strong> &mdash; Bridging innovation with enterprise-grade protection</li>
-            <li><strong>M&amp;A and Venture Security Diligence</strong> &mdash; Protecting value through every phase of the deal lifecycle</li>
-            <li><strong>Go-to-Market Security Enablement</strong> &mdash; Transforming security from blocker to accelerator</li>
+            <li>
+              <strong>Cybersecurity Strategy &amp; Leadership</strong> &mdash; Translating technical complexity into executive clarity
+            </li>
+            <li>
+              <strong>AI Governance &amp; Integration</strong> &mdash; Bridging innovation with enterprise-grade protection
+            </li>
+            <li>
+              <strong>M&amp;A and Venture Security Diligence</strong> &mdash; Protecting value through every phase of the deal lifecycle
+            </li>
+            <li>
+              <strong>Go-to-Market Security Enablement</strong> &mdash; Transforming security from blocker to accelerator
+            </li>
           </ul>
         </section>
 
@@ -143,11 +149,24 @@ export default function About() {
         <section className="mb-16 text-center">
           <h2 className="text-3xl font-semibold mb-4">Connect with BRI</h2>
           <p className="mb-2">
-            Ready to transform security from necessary expense to strategic advantage? Let's connect.
+            Ready to transform security from necessary expense to strategic advantage? Let&apos;s connect.
           </p>
-          <p>Email: <a href="mailto:strategy@bigrockintelli.com" className="text-briGold">strategy@bigrockintelli.com</a></p>
+          <p>
+            Email:{' '}
+            <a href="mailto:strategy@bigrockintelli.com" className="text-briGold">
+              strategy@bigrockintelli.com
+            </a>
+          </p>
           <p className="mt-2">
-            LinkedIn: <a href="https://linkedin.com/company/bigrockintelli" target="_blank" className="underline">Big Rock Intelligence</a>
+            LinkedIn:{' '}
+            <a
+              href="https://linkedin.com/company/bigrockintelli"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              Big Rock Intelligence
+            </a>
           </p>
         </section>
       </main>
