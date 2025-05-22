@@ -24,7 +24,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <img 
-              src="/images/logo_white.png"
+              src="/images/logo.png"
               alt="Big Rock Intelligence" 
               className="h-48 mb-4"
             />
@@ -65,7 +65,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/about#contact-section`} className="text-green-600 hover:text-green-700 transition">
+                <Link href={`/${locale}/contact`} className="text-green-600 hover:text-green-700 transition">
                   {locale === 'en' ? 'Contact' : 'Kontakt'}
                 </Link>
               </li>
@@ -88,7 +88,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/about#contact-section`} className="text-green-600 hover:text-green-700 transition">
+                <Link href={`/${locale}/contact`} className="text-green-600 hover:text-green-700 transition">
                   {translations.contact}
                 </Link>
               </li>

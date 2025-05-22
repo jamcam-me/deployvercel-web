@@ -18,7 +18,7 @@ export function PrimaryButton({
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
       className={cn(
-        'px-6 py-3 bg-green-600 text-white font-medium rounded-md transition-colors hover:bg-green-700',
+        'px-6 py-3 bg-green-600 text-white font-medium font-cinzel rounded-md transition-colors hover:bg-green-700',
         className
       )}
       {...props}

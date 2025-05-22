@@ -41,7 +41,7 @@ export default function About({ params }: AboutPageProps) {
           <p className="text-xl text-steelGray">The Foundation of Strategic Security</p>
           <div className="mt-8">
             <Image
-              src="/images/hero_rock_silhouette.png"
+              src="/images/202002~1.JPG"
               alt="Glacial Rock Silhouette"
               width={800}
               height={400}

@@ -1,7 +1,18 @@
 @font-face {
   font-family: 'Cinzel';
+  src: url('/fonts/cinzel/Cinzel-Regular.woff2') format('woff2'),
+       url('/fonts/cinzel/Cinzel-Regular.woff') format('woff'),
+       url('/fonts/cinzel/cinzel-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cinzel';
   src: url('/fonts/cinzel/Cinzel-Medium.woff2') format('woff2'),
-       url('/fonts/cinzel/Cinzel-Medium.woff') format('woff');
+       url('/fonts/cinzel/Cinzel-Medium.woff') format('woff'),
+       url('/fonts/cinzel/cinzel-medium.ttf') format('truetype');
   font-weight: 500;
   font-display: swap;
   font-style: normal;
@@ -9,15 +20,25 @@
 
 @font-face {
   font-family: 'Cinzel';
-  src: url('/fonts/cinzel/Cinzel-Regular.woff2') format('woff2'),
-       url('/fonts/cinzel/Cinzel-Regular.woff') format('woff');
+  src: url('/fonts/cinzel/Cinzel-Medium.woff2') format('woff2'),
+       url('/fonts/cinzel/Cinzel-Medium.woff') format('woff'),
+       url('/fonts/cinzel/cinzel.ttf') format('truetype');
+  font-weight: 700; /* Assuming this is the bold version */
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura Std';
+  src: url('/fonts/futura/FuturaStd-Book.woff2') format('woff2'),
+       url('/fonts/futura/FuturaStd-Book.woff') format('woff');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Futura';
+  font-family: 'Futura Std';
   src: url('/fonts/futura/FuturaStd-Medium.woff2') format('woff2'),
        url('/fonts/futura/FuturaStd-Medium.woff') format('woff');
   font-weight: 500;
@@ -26,7 +47,7 @@
 }
 
 @font-face {
-  font-family: 'Futura';
+  font-family: 'Futura Std';
   src: url('/fonts/futura/FuturaStd-Bold.woff2') format('woff2'),
        url('/fonts/futura/FuturaStd-Bold.woff') format('woff');
   font-weight: 700;
@@ -155,11 +176,11 @@
   
   /* Button Components */
   .primary-button {
-    @apply bg-executive-gold text-cyber-navy font-medium px-6 py-3 rounded transition-all hover:bg-gold-15 active:bg-gold-30 uppercase tracking-wide;
+    @apply bg-executive-gold text-cyber-navy font-cinzel font-medium px-6 py-3 rounded transition-all hover:bg-gold-15 active:bg-gold-30 uppercase tracking-wide;
   }
   
   .secondary-button {
-    @apply bg-transparent border border-executive-gold text-executive-gold font-medium px-6 py-3 rounded transition-colors hover:bg-executive-gold hover:bg-opacity-10 uppercase tracking-wide;
+    @apply bg-transparent border border-executive-gold text-executive-gold font-cinzel font-medium px-6 py-3 rounded transition-colors hover:bg-executive-gold hover:bg-opacity-10 uppercase tracking-wide;
   }
   
   .navy-button {
