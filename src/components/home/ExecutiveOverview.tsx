@@ -74,7 +74,7 @@ const ExecutiveOverview: React.FC<ExecutiveOverviewProps> = ({ locale }) => {
         <div className="grid md:grid-cols-2 gap-12 items-center mt-16">
           <div>
             {/* Use regular img tag for SVG files instead of Next.js Image component */}
-            <img
+            <Image
               src="/images/ai_cyber_illustration.png"
               alt="AI and Cybersecurity Illustration"
               width={500}

@@ -1,3 +1,4 @@
+import '../globals.css';
 import React from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -13,13 +14,17 @@ export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const { locale } = params;
   
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header locale={locale} />
-      <main className="flex-grow">
-        {children}
-      </main>
-      <Footer locale={locale} />
-    </div>
+    <html lang={locale}>
+      <body>
+        <div className="flex flex-col min-h-screen">
+          <Header locale={locale} />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer locale={locale} />
+        </div>
+      </body>
+    </html>
   );
 }
 
