@@ -40,32 +40,32 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
           </div>
           
           <div>
-            <h3 className="text-green-600 font-bold mb-4">
+            <h3 className="text-executive-gold font-bold mb-4">
               {locale === 'en' ? 'Quick Links' : 'Schnellzugriff'}
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link href={`/${locale}`} className="text-green-600 hover:text-green-700 transition">
+                <Link href={`/${locale}`} className="text-light-stone hover:text-executive-gold transition">
                   {locale === 'en' ? 'Home' : 'Startseite'}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/services`} className="text-green-600 hover:text-green-700 transition">
+                <Link href={`/${locale}/services`} className="text-light-stone hover:text-executive-gold transition">
                   {locale === 'en' ? 'Services' : 'Dienstleistungen'}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/about`} className="text-green-600 hover:text-green-700 transition">
+                <Link href={`/${locale}/about`} className="text-light-stone hover:text-executive-gold transition">
                   {locale === 'en' ? 'About Us' : 'Über Uns'}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/resources`} className="text-green-600 hover:text-green-700 transition">
+                <Link href={`/${locale}/resources`} className="text-light-stone hover:text-executive-gold transition">
                   {translations.resources}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/contact`} className="text-green-600 hover:text-green-700 transition">
+                <Link href={`/${locale}/contact`} className="text-light-stone hover:text-executive-gold transition">
                   {locale === 'en' ? 'Contact' : 'Kontakt'}
                 </Link>
               </li>
@@ -73,22 +73,22 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
           </div>
           
           <div>
-            <h3 className="text-green-600 font-bold mb-4">
+            <h3 className="text-executive-gold font-bold mb-4">
               {locale === 'en' ? 'Legal' : 'Rechtliches'}
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link href={`/${locale}/privacy`} className="text-green-600 hover:text-green-700 transition">
+                <Link href={`/${locale}/privacy`} className="text-light-stone hover:text-executive-gold transition">
                   {translations.privacyPolicy}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/terms`} className="text-green-600 hover:text-green-700 transition">
+                <Link href={`/${locale}/terms`} className="text-light-stone hover:text-executive-gold transition">
                   {translations.terms}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/contact`} className="text-green-600 hover:text-green-700 transition">
+                <Link href={`/${locale}/contact`} className="text-light-stone hover:text-executive-gold transition">
                   {translations.contact}
                 </Link>
               </li>
