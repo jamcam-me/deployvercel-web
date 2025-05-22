@@ -14,17 +14,13 @@ export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const { locale } = params;
   
   return (
-    <html lang={locale}>
-      <body>
-        <div className="flex flex-col min-h-screen">
-          <Header locale={locale} />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer locale={locale} />
-        </div>
-      </body>
-    </html>
+    <div className="flex flex-col min-h-screen">
+      <Header locale={locale} />
+      <main className="flex-grow">
+        {children}
+      </main>
+      <Footer locale={locale} />
+    </div>
   );
 }
 
