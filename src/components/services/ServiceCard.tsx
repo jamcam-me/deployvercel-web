@@ -35,8 +35,9 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
     )}>
       <div className="flex items-center mb-4">
         {icon && (
-          <div className="bg-cyber-navy text-executive-gold p-3 rounded-full mr-4">
-            {icon}
+          <div className="bg-cyber-navy text-executive-gold p-3 rounded-full mr-4 flex items-center justify-center w-12 h-12">
+            {/* The icon itself should ideally have w-full h-full object-contain */}
+            {React.isValidElement(icon) ? React.cloneElement(icon as React.ReactElement, { className: 'w-full h-full object-contain' }) : icon}
           </div>
         )}
         <h4 className="text-executive-gold font-bold uppercase">{title}</h4>
