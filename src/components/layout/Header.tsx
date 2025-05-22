@@ -31,16 +31,16 @@ export const Header: React.FC<HeaderProps> = ({ locale }) => {
         <div className="flex items-center space-x-8">
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href={`/${locale}`} className="text-light-stone hover:text-executive-gold transition font-cinzel">
+            <Link href={`/${locale}`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
               {translations.home}
             </Link>
-            <Link href={`/${locale}/services`} className="text-light-stone hover:text-executive-gold transition font-cinzel">
+            <Link href={`/${locale}/services`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
               {translations.services}
             </Link>
-            <Link href={`/${locale}/resources`} className="text-light-stone hover:text-executive-gold transition font-cinzel">
+            <Link href={`/${locale}/resources`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
               {translations.resources}
             </Link>
-            <Link href={`/${locale}/about`} className="text-light-stone hover:text-executive-gold transition font-cinzel">
+            <Link href={`/${locale}/about`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
               {translations.about}
             </Link>
             <LanguageSwitcher locale={locale} />
@@ -72,28 +72,28 @@ export const Header: React.FC<HeaderProps> = ({ locale }) => {
             <nav className="flex flex-col p-4">
               <Link 
                 href={`/${locale}`} 
-                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel" // text-white for dark background
+                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel text-lg" // text-white for dark background
                 onClick={() => setIsMenuOpen(false)}
               >
                 {translations.home}
               </Link>
               <Link 
                 href={`/${locale}/services`}
-                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel" // text-white for dark background
+                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel text-lg" // text-white for dark background
                 onClick={() => setIsMenuOpen(false)}
               >
                 {translations.services}
               </Link>
               <Link
                 href={`/${locale}/resources`}
-                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel" // text-white for dark background
+                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel text-lg" // text-white for dark background
                 onClick={() => setIsMenuOpen(false)}
               >
                 {translations.resources}
               </Link>
               <Link
                 href={`/${locale}/about`}
-                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel" // text-white for dark background
+                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel text-lg" // text-white for dark background
                 onClick={() => setIsMenuOpen(false)}
               >
                 {translations.about}

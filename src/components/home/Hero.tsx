@@ -23,30 +23,29 @@ const Hero: React.FC<HeroProps> = ({ locale }) => {
       <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4 sm:px-8 md:px-16 lg:px-24">
         <div className="max-w-3xl">
           {/* Updated with metric-first approach */}
-          <p className="hero-metric mb-4">
-            {locale === 'en' 
-              ? '70% faster threat response via ML behavioral analytics'
-              : '70% schnellere Bedrohungsabwehr durch ML-Verhaltensanalyse'}
-          </p>
-          
-          <h1 className="hero-title mb-6">
-            {locale === 'en' 
+          <h1 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-4xl md:text-5xl lg:text-6xl mb-6">
+            {locale === 'en'
               ? 'ACCELERATE SECURITY TRANSFORMATION'
               : 'BESCHLEUNIGEN SIE DIE SICHERHEITSTRANSFORMATION'}
           </h1>
           
-          <p className="hero-tagline">
+          <h2 className="font-futura text-light-stone text-lg md:text-xl mb-6">
             {locale === 'en'
               ? 'Bridging AI Innovation with Enterprise Security'
               : 'Brücke zwischen KI-Innovation und Unternehmenssicherheit'}
-          </p>
+          </h2>
           
-          {/* Strategic question added */}
-          <p className="hero-question mt-4">
+          <h3 className="font-futura italic text-soft-steel mb-8 text-xl">
             {locale === 'en'
               ? 'Is your security strategy accelerating digital transformation or hindering it?'
               : 'Beschleunigt Ihre Sicherheitsstrategie die digitale Transformation oder behindert sie sie?'}
-          </p>
+          </h3>
+          
+          <h4 className="font-futura font-semibold text-executive-gold text-base md:text-lg mb-4">
+            {locale === 'en'
+              ? '70% faster threat response via ML behavioral analytics'
+              : '70% schnellere Bedrohungsabwehr durch ML-Verhaltensanalyse'}
+          </h4>
           
           <div className="mt-8 flex flex-wrap gap-4">
             <Link href={`/${locale}/services`} className="primary-button">
