@@ -40,3 +40,37 @@ The project follows a standard Next.js App Router structure with internationaliz
 - `/src/components` - Reusable components
 - `/src/lib` - Utility functions and configurations
 - `/public` - Static assets and localization files
+
+## Site Structure
+Overview of all pages and key components used on each.
+
+## Home
+- Header
+- Hero
+- ExecutiveOverview
+- Footer
+
+## Services
+- Header
+- Hero
+- ServicesList
+- ServiceCard
+- Footer
+
+## Resources
+- Header
+- Footer
+
+## About Us
+- Header
+- Hero
+- AboutContentOverview
+- Footer
+
+## Contact
+- Header
+- Footer
+
+## Frankfurt Hub
+- Header
+- Footer

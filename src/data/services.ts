@@ -34,7 +34,7 @@ export const services: Service[] = [
     id: "ai-integration",
     title: "AI Integration",
     description: "Seamless integration of AI technologies with enterprise security frameworks.",
-    icon: "brain"
+    icon: "link" // Changed from 'brain' to 'link' for uniqueness
   },
   {
     id: "compliance",
@@ -46,7 +46,7 @@ export const services: Service[] = [
     id: "strategic-advisory",
     title: "Strategic Advisory",
     description: "Executive-level guidance on digital transformation journeys.",
-    icon: "strategy"
+    icon: "chart-bar" // Changed from 'strategy' to 'chart-bar'
   }
 ];
 

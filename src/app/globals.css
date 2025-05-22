@@ -113,7 +113,7 @@
   }
   
   h4, h5, h6 {
-    @apply font-futura font-bold uppercase tracking-wide;
+    @apply font-futura font-bold uppercase tracking-wide; /* Differentiating from H1-H3 and hero styles */
   }
   
   p, a, li, button {
@@ -133,7 +133,7 @@
   
   /* Executive Content Structure Classes */
   .metric-highlight {
-    @apply text-executive-gold font-futura font-semibold text-xl mb-3;
+    @apply text-cyber-navy font-futura font-semibold text-xl mb-3;
   }
   
   .strategic-question {

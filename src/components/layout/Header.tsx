@@ -20,7 +20,7 @@ export const Header: React.FC<HeaderProps> = ({ locale }) => {
   };
   
   return (
-    <header className="bg-cyber-navy shadow-sm py-4">
+    <header className="bg-gradient-to-t from-transparent via-cyber-navy/70 to-cyber-navy shadow-sm py-4 absolute top-0 left-0 right-0 z-[999]">
       <div className="container-custom flex justify-between items-center pl-4">
         {/* Company Name (Left) */}
         <Link href={`/${locale}`}>
@@ -37,7 +37,7 @@ export const Header: React.FC<HeaderProps> = ({ locale }) => {
             <Link href={`/${locale}/services`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
               {translations.services}
             </Link>
-            <Link href={`/${locale}/resources`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
+            <Link href="https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/" target="_blank" rel="noopener noreferrer" className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
               {translations.resources}
             </Link>
             <Link href={`/${locale}/about`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
@@ -85,7 +85,9 @@ export const Header: React.FC<HeaderProps> = ({ locale }) => {
                 {translations.services}
               </Link>
               <Link
-                href={`/${locale}/resources`}
+                href="https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel text-lg" // text-white for dark background
                 onClick={() => setIsMenuOpen(false)}
               >
