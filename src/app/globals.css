@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --cyber-navy: #0a1f44;
+    --evergreen-intel: #1f302d;
+    --executive-gold: #dab86e;
+    
+    /* Secondary Colors */
+    --cyber-graphite: #2b2b2d;
+    --soft-steel: #a4aba4;
+    --light-stone: #d9ded9;
+    --warm-rock: #574536;
+    --desaturated-green: #5d9182;
+    
+    /* Navy Variations */
+    --navy-90: #05101f;
+    --navy-70: #071732;
+    --navy-base: #0a1f44;
+    --navy-30: #3a4c6c;
+    --navy-60: #6b7a94;
+    
+    /* Green Variations */
+    --green-90: #101a18;
+    --green-70: #162220;
+    --green-base: #1f302d;
+    --green-30: #4c5957;
+    --green-60: #798381;
+    
+    /* Gold Variations */
+    --gold-30: #ae933c;
+    --gold-15: #c4a555;
+    --gold-base: #dab86e;
+    --gold-15t: #e1c689;
+    --gold-30t: #e9d4a4;
+  }
+  
+  /* Typography Hierarchy */
+  h1, h2, h3 {
+    @apply font-cinzel font-bold uppercase tracking-wider;
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl lg:text-3xl;
+  }
+  
+  h4, h5, h6 {
+    @apply font-futura font-bold uppercase tracking-wide;
+  }
+  
+  p, a, li, button {
+    @apply font-futura;
+  }
+}
+
+@layer components {
+  /* Typography Components */
+  .hero-title {
+    @apply font-cinzel uppercase font-bold text-executive-gold tracking-wider;
+  }
+  
+  .section-title {
+    @apply font-cinzel uppercase font-bold text-cyber-navy tracking-wider;
+  }
+  
+  /* Executive Content Structure Classes */
+  .metric-highlight {
+    @apply text-executive-gold font-futura font-semibold text-xl mb-3;
+  }
+  
+  .strategic-question {
+    @apply text-soft-steel italic my-4;
+  }
+  
+  .content-value-prop {
+    @apply text-lg font-medium mb-4;
+  }
+  
+  /* Tone Pyramid Elements */
+  .executive-clarity {
+    @apply font-semibold text-lg leading-tight;
+  }
+  
+  .cultural-reference {
+    @apply italic text-desaturated-green my-2;
+  }
+  
+  /* Service Structure Components */
+  .service-card {
+    @apply bg-white p-6 rounded-sm border-l-4 border-executive-gold shadow-md transition-all hover:shadow-lg;
+  }
+  
+  .service-metric {
+    @apply text-evergreen-intel font-semibold mb-3;
+  }
+  
+  .service-description {
+    @apply mb-4;
+  }
+  
+  .service-question {
+    @apply italic text-cyber-graphite mb-4;
+  }
+  
+  .service-link {
+    @apply text-executive-gold font-semibold hover:underline;
+  }
+  
+  /* Button Components */
+  .primary-button {
+    @apply bg-executive-gold text-cyber-navy font-medium px-6 py-3 rounded transition-all hover:bg-gold-15 active:bg-gold-30 uppercase tracking-wide;
+  }
+  
+  .secondary-button {
+    @apply bg-transparent border border-executive-gold text-executive-gold font-medium px-6 py-3 rounded transition-colors hover:bg-executive-gold hover:bg-opacity-10 uppercase tracking-wide;
+  }
+  
+  .navy-button {
+    @apply bg-cyber-navy text-executive-gold font-medium px-6 py-3 rounded transition-colors hover:bg-navy-70 uppercase tracking-wide;
+  }
+  
+  /* Text Color Combinations */
+  .primary-text {
+    @apply bg-cyber-navy text-executive-gold;
+  }
+  
+  .secondary-text {
+    @apply bg-evergreen-intel text-light-stone;
+  }
+  
+  .inverted-text {
+    @apply bg-light-stone text-cyber-navy;
+  }
+  
+  .accent-text {
+    @apply bg-desaturated-green text-cyber-navy;
+  }
+  
+  .warm-text {
+    @apply bg-warm-rock text-executive-gold;
+  }
+  
+  .graphite-text {
+    @apply bg-cyber-graphite text-desaturated-green;
+  }
+  
+  /* Logo Styling */
+  .bri-logo {
+    @apply font-cinzel text-executive-gold font-bold text-xl md:text-2xl;
+  }
+  
+  /* Navigation Styling */
+  .nav-link {
+    @apply font-futura font-medium uppercase tracking-wide text-light-stone hover:text-executive-gold transition-colors;
+  }
+  
+  /* Hero Section Components */
+  .hero-container {
+    @apply bg-gradient-to-br from-cyber-navy to-evergreen-intel py-16 md:py-24;
+  }
+  
+  .hero-metric {
+    @apply font-futura font-semibold text-executive-gold text-xl md:text-2xl mb-4;
+  }
+  
+  .hero-tagline {
+    @apply font-futura text-light-stone text-lg md:text-xl mb-6;
+  }
+  
+  .hero-question {
+    @apply font-futura italic text-soft-steel mb-8;
+  }
+  
+  /* Service Categories */
+  .service-category {
+    @apply mb-12;
+  }
+  
+  .services-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8;
+  }
+}
