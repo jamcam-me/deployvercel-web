@@ -176,11 +176,11 @@
   
   /* Button Components */
   .primary-button {
-    @apply bg-executive-gold text-cyber-navy font-cinzel font-medium px-6 py-3 rounded transition-all hover:bg-gold-15 active:bg-gold-30 uppercase tracking-wide;
+    @apply bg-executive-gold text-cyber-navy font-cinzel font-medium px-12 py-6 text-lg rounded transition-all hover:bg-gold-15 active:bg-gold-30 uppercase tracking-wide; /* Further increased padding and font size for bigger buttons */
   }
   
   .secondary-button {
-    @apply bg-transparent border border-executive-gold text-executive-gold font-cinzel font-medium px-6 py-3 rounded transition-colors hover:bg-executive-gold hover:bg-opacity-10 uppercase tracking-wide;
+    @apply bg-transparent border border-executive-gold text-executive-gold font-cinzel font-medium px-12 py-6 text-lg rounded transition-colors hover:bg-executive-gold hover:bg-opacity-10 uppercase tracking-wide; /* Further increased padding and font size for bigger buttons */
   }
   
   .navy-button {

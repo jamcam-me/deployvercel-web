@@ -9,10 +9,26 @@ interface ExecutiveOverviewProps {
 }
 
 const ExecutiveOverview: React.FC<ExecutiveOverviewProps> = ({ locale }) => {
-  const translations = {
+  interface Translations {
+    title: string;
+    metric: string;
+    mission_title: string;
+    mission: string;
+    description: string;
+    cultural_ref: string;
+    strategic_q: string;
+    expertise: string;
+    tailored: string;
+    recognized: string;
+    security_question: string; // Added new property
+    contact: string;
+    accelerate_security: string; // Add new property for "ACCELERATE SECURITY TRANSFORMATION"
+  }
+
+  const translations: Translations = { // Explicitly typed
     title: locale === 'en' ? 'INDUSTRY INSIGHT' : 'BRANCHENEINBLICK',
-    metric: locale === 'en' 
-      ? '85% of executives cite AI security governance as their top digital transformation concern' 
+    metric: locale === 'en'
+      ? '85% of executives cite AI security governance as their top digital transformation concern'
       : '85% der Führungskräfte nennen KI-Sicherheits-Governance als ihre größte Sorge bei der digitalen Transformation',
     mission_title: locale === 'en' ? 'OUR MISSION' : 'UNSERE MISSION',
     mission: locale === 'en'
@@ -35,7 +51,14 @@ const ExecutiveOverview: React.FC<ExecutiveOverviewProps> = ({ locale }) => {
       : 'SEGMENTSPEZIFISCHE LÖSUNGEN',
     recognized: locale === 'en'
       ? 'RECOGNIZED AUTHORITY'
-      : 'ANERKANNTE AUTORITÄT'
+      : 'ANERKANNTE AUTORITÄT',
+    security_question: locale === 'en'
+      ? 'Is your security strategy accelerating digital transformation or hindering it?'
+      : 'Beschleunigt Ihre Sicherheitsstrategie die digitale Transformation oder behindert sie sie?',
+    accelerate_security: locale === 'en'
+      ? 'ACCELERATE SECURITY TRANSFORMATION'
+      : 'BESCHLEUNIGEN SIE DIE SICHERHEITSTRANSFORMATION',
+    contact: locale === 'en' ? 'Contact' : 'Kontakt' // Still needed for footer and about page
   };
 
   return (
@@ -56,6 +79,14 @@ const ExecutiveOverview: React.FC<ExecutiveOverviewProps> = ({ locale }) => {
             {translations.mission}
           </p>
           
+          <p className="mb-6 italic text-soft-steel text-xl"> {/* Added italic, text-soft-steel and text-xl for styling */}
+            {translations.security_question}
+          </p>
+          
+          <h2 className="font-cinzel uppercase font-bold text-soft-steel tracking-wider text-3xl md:text-4xl lg:text-5xl mb-8 mt-12"> {/* Moved from Hero section */}
+            {translations.accelerate_security}
+          </h2>
+
           <p className="mb-6">
             {translations.description}
           </p>
