@@ -16,7 +16,7 @@ const Hero: React.FC<HeroProps> = ({ locale }) => {
         src="/images/hero_frankfurt.jpg"
         alt="Frankfurt skyline"
         fill
-        className="object-contain"
+        className="object-cover"
         priority
       />
       <div className="absolute inset-0 bg-gradient-to-b from-cyber-navy/90 to-evergreen-intel/70 z-10" />

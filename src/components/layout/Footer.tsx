@@ -14,7 +14,8 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
       : `© ${currentYear} Big Rock Intelligence. Alle Rechte vorbehalten.`,
     privacyPolicy: locale === 'en' ? 'Privacy Policy' : 'Datenschutzrichtlinie',
     terms: locale === 'en' ? 'Terms of Service' : 'Nutzungsbedingungen',
-    contact: locale === 'en' ? 'Contact Us' : 'Kontaktieren Sie uns'
+    contact: locale === 'en' ? 'Contact Us' : 'Kontaktieren Sie uns',
+    resources: locale === 'en' ? 'Resources' : 'Ressourcen'
   };
   
   return (
@@ -23,9 +24,9 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <img 
-              src="/images/logo-white.png" 
+              src="/images/logo_white.png"
               alt="Big Rock Intelligence" 
-              className="h-12 mb-4" 
+              className="h-48 mb-4"
             />
             <p className="text-light-stone mb-4">
               {locale === 'en' 
@@ -59,7 +60,12 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/contact`} className="text-light-stone hover:text-executive-gold transition">
+                <Link href={`/${locale}/resources`} className="text-light-stone hover:text-executive-gold transition">
+                  {translations.resources}
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/about#contact-section`} className="text-light-stone hover:text-executive-gold transition">
                   {locale === 'en' ? 'Contact' : 'Kontakt'}
                 </Link>
               </li>
@@ -82,7 +88,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/contact`} className="text-light-stone hover:text-executive-gold transition">
+                <Link href={`/${locale}/about#contact-section`} className="text-light-stone hover:text-executive-gold transition">
                   {translations.contact}
                 </Link>
               </li>

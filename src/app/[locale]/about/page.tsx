@@ -1,19 +1,39 @@
 // src/app/[locale]/about/page.tsx
 /* eslint-disable react/no-unescaped-entities */
-import Head from 'next/head'
-import Image from 'next/image'
+import { Metadata } from 'next';
+import { Locale } from '@/lib/i18n';
+import Image from 'next/image';
 
-export default function About() {
+interface AboutPageProps {
+  params: {
+    locale: Locale;
+  };
+}
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'Learn how Big Rock Intelligence anchors your security and AI strategy with strategic guidance and executive-level insight.',
+};
+
+export default function About({ params }: AboutPageProps) {
+  const { locale } = params;
+
+  const translations = {
+    contactTitle: locale === 'en' ? 'Contact Us' : 'Kontakt',
+    contactDescription: locale === 'en'
+      ? 'Get in touch with our team to discuss how we can help your organization.'
+      : 'Nehmen Sie Kontakt mit unserem Team auf, um zu besprechen, wie wir Ihrer Organisation helfen können.',
+    name: 'James Cameron',
+    role: locale === 'en' ? 'Founder & Executive Advisor' : 'Gründer & Executive Advisor',
+    email: 'james@bigrock-intelligence.com',
+    phone: '+49 175 584 4546',
+    linkedinPersonal: 'linkedin.com/in/jamcam-cyberleader',
+    emailGeneral: 'info@bigrock-intelligence.com',
+    linkedinCompany: 'linkedin.com/company/bigrockintelli'
+  };
+
   return (
     <>
-      <Head>
-        <title>About · Big Rock Intelligence</title>
-        <meta
-          name="description"
-          content="Learn how Big Rock Intelligence anchors your security and AI strategy with strategic guidance and executive-level insight."
-        />
-      </Head>
-
       <main className="prose prose-invert mx-auto px-6 py-12 max-w-4xl">
         {/* Page Hero */}
         <section className="text-center mb-16">
@@ -42,10 +62,10 @@ export default function About() {
         <section className="mb-16">
           <h2 className="text-3xl font-semibold mb-2">The Big Rock Difference</h2>
           <p className="mb-4">
-            In today’s cybersecurity landscape, most approach security like their New Year&apos;s resolution—they know exactly what they should do, have all the right tools, but somehow still aren’t doing it right. Global cybercrime costs are projected to reach <strong>$10.5 trillion</strong> by 2025.
+            In today’s cybersecurity landscape, most approach security like their New Year's resolution—they know exactly what they should do, have all the right tools, but somehow still aren’t doing it right. Global cybercrime costs are projected to reach <strong>$10.5 trillion</strong> by 2025.
           </p>
           <p>
-            The gap isn&apos;t in understanding threats. It&apos;s in translating security from a technical concern into a strategic advantage.
+            The gap isn't in understanding threats. It's in translating security from a technical concern into a strategic advantage.
           </p>
         </section>
 
@@ -73,8 +93,8 @@ export default function About() {
                   <td className="p-3">Roadmaps that secure funding and accelerate digital initiatives</td>
                 </tr>
                 <tr className="odd:bg-stoneGray even:bg-white">
-                  <td className="p-3 font-semibold">M&amp;A Security Diligence</td>
-                  <td className="p-3">55% of executives cite cybersecurity as critical in M&amp;A</td>
+                  <td className="p-3 font-semibold">M&A Security Diligence</td>
+                  <td className="p-3">55% of executives cite cybersecurity as critical in M&A</td>
                   <td className="p-3">Value protection (remember Yahoo’s $350M valuation drop?)</td>
                 </tr>
               </tbody>
@@ -96,12 +116,12 @@ export default function About() {
             </div>
             <div>
               <h3 className="text-2xl font-bold">James Cameron</h3>
-              <p className="italic mb-2">Founder &amp; Strategic Advisor</p>
+              <p className="italic mb-2">Founder & Strategic Advisor</p>
               <p>
                 UC Berkeley-trained AI strategist with executive cybersecurity credentials. Microsoft/AWS/Avanade alumni with battle-tested experience across European and global markets.
               </p>
               <p className="mt-2">
-                <strong>My approach:</strong> “You don&apos;t bet blind in poker. Why would you do it with your AI security stack?”
+                <strong>My approach:</strong> “You don't bet blind in poker. Why would you do it with your AI security stack?”
               </p>
             </div>
           </div>
@@ -112,13 +132,13 @@ export default function About() {
           <h2 className="text-3xl font-semibold mb-4">Our Expertise Areas</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>
-              <strong>Cybersecurity Strategy &amp; Leadership</strong> &mdash; Translating technical complexity into executive clarity
+              <strong>Cybersecurity Strategy & Leadership</strong> &mdash; Translating technical complexity into executive clarity
             </li>
             <li>
-              <strong>AI Governance &amp; Integration</strong> &mdash; Bridging innovation with enterprise-grade protection
+              <strong>AI Governance & Integration</strong> &mdash; Bridging innovation with enterprise-grade protection
             </li>
             <li>
-              <strong>M&amp;A and Venture Security Diligence</strong> &mdash; Protecting value through every phase of the deal lifecycle
+              <strong>M&A and Venture Security Diligence</strong> &mdash; Protecting value through every phase of the deal lifecycle
             </li>
             <li>
               <strong>Go-to-Market Security Enablement</strong> &mdash; Transforming security from blocker to accelerator
@@ -145,25 +165,63 @@ export default function About() {
           </blockquote>
         </section>
 
-        {/* Connect CTA */}
-        <section className="mb-16 text-center">
-          <h2 className="text-3xl font-semibold mb-4">Connect with BRI</h2>
-          <p className="mb-2">
-            Ready to transform security from necessary expense to strategic advantage? Let&apos;s connect.
-          </p>
-          <p>
-            Email:{' '}
-            <a href="mailto:strategy@bigrockintelli.com" className="text-briGold">
-              strategy@bigrockintelli.com
+        {/* Connect CTA (Personal & General Contact) */}
+        <section id="contact-section" className="mb-16 text-center">
+          <h2 className="section-title text-center mb-8">{translations.contactTitle}</h2>
+          <p className="text-lg text-center mb-12">{translations.contactDescription}</p>
+
+          <div className="bg-white shadow-lg rounded-lg p-8 mb-8">
+            <div className="flex flex-col items-center text-center">
+              <h3 className="text-2xl font-bold mb-2">{translations.name}</h3>
+              <p className="text-lg text-gray-600 mb-6">{translations.role}</p>
+
+              <div className="space-y-4 w-full max-w-md mx-auto">
+                {/* Email */}
+                <div className="flex items-center justify-center space-x-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-cyber-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <a href={`mailto:${translations.email}`} className="text-lg hover:text-forest-green transition-colors">
+                    {translations.email}
+                  </a>
+                </div>
+
+                {/* Phone */}
+                <div className="flex items-center justify-center space-x-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-cyber-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <a href={`tel:${translations.phone.replace(/\s/g, '')}`} className="text-lg hover:text-forest-green transition-colors">
+                    {translations.phone}
+                  </a>
+                </div>
+
+                {/* LinkedIn */}
+                <div className="flex items-center justify-center space-x-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-cyber-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 019-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                  </svg>
+                  <a href={`https://${translations.linkedinPersonal}`} target="_blank" rel="noopener noreferrer" className="text-lg hover:text-forest-green transition-colors">
+                    {translations.linkedinPersonal}
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-4">
+            For general inquiries:
+            <a href={`mailto:${translations.emailGeneral}`} className="text-briGold ml-1">
+              {translations.emailGeneral}
             </a>
           </p>
           <p className="mt-2">
-            LinkedIn:{' '}
+            Company LinkedIn:
             <a
-              href="https://linkedin.com/company/bigrockintelli"
+              href={`https://${translations.linkedinCompany}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline"
+              className="underline ml-1"
             >
               Big Rock Intelligence
             </a>
@@ -171,5 +229,5 @@ export default function About() {
         </section>
       </main>
     </>
-  )
+  );
 }

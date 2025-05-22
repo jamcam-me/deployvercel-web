@@ -36,7 +36,6 @@ export default function RootLayout({
       </head>
       <body className="font-futura bg-white text-cyber-navy">
         {children}
-        <Footer locale={defaultLocale} />
       </body>
     </html>
   );
