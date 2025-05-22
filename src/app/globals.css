@@ -1,3 +1,39 @@
+@font-face {
+  font-family: 'Cinzel';
+  src: url('/fonts/cinzel/Cinzel-Medium.woff2') format('woff2'),
+       url('/fonts/cinzel/Cinzel-Medium.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cinzel';
+  src: url('/fonts/cinzel/Cinzel-Regular.woff2') format('woff2'),
+       url('/fonts/cinzel/Cinzel-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('/fonts/futura/FuturaStd-Medium.woff2') format('woff2'),
+       url('/fonts/futura/FuturaStd-Medium.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futura';
+  src: url('/fonts/futura/FuturaStd-Bold.woff2') format('woff2'),
+       url('/fonts/futura/FuturaStd-Bold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
