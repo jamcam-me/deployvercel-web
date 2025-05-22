@@ -21,7 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ locale }) => {
   
   return (
     <header className="bg-cyber-navy shadow-sm py-4">
-      <div className="container-custom flex justify-between items-center">
+      <div className="container-custom flex justify-between items-center pl-4">
         {/* Company Name (Left) */}
         <Link href={`/${locale}`}>
           <span className="text-5xl font-bold text-executive-gold font-cinzel">Big Rock Intelligence</span>
@@ -31,16 +31,16 @@ export const Header: React.FC<HeaderProps> = ({ locale }) => {
         <div className="flex items-center space-x-8">
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href={`/${locale}`} className="text-white hover:text-executive-gold transition">
+            <Link href={`/${locale}`} className="text-green-600 hover:text-green-700 transition">
               {translations.home}
             </Link>
-            <Link href={`/${locale}/services`} className="text-white hover:text-executive-gold transition">
+            <Link href={`/${locale}/services`} className="text-green-600 hover:text-green-700 transition">
               {translations.services}
             </Link>
-            <Link href={`/${locale}/resources`} className="text-white hover:text-executive-gold transition">
+            <Link href={`/${locale}/resources`} className="text-green-600 hover:text-green-700 transition">
               {translations.resources}
             </Link>
-            <Link href={`/${locale}/about`} className="text-white hover:text-executive-gold transition">
+            <Link href={`/${locale}/about`} className="text-green-600 hover:text-green-700 transition">
               {translations.about}
             </Link>
             <LanguageSwitcher locale={locale} />
@@ -57,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({ locale }) => {
           
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-white" // text-white for dark background
+            className="md:hidden text-green-600" // text-white for dark background
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -72,28 +72,28 @@ export const Header: React.FC<HeaderProps> = ({ locale }) => {
             <nav className="flex flex-col p-4">
               <Link 
                 href={`/${locale}`} 
-                className="py-2 text-white hover:text-executive-gold transition" // text-white for dark background
+                className="py-2 text-green-600 hover:text-green-700 transition" // text-white for dark background
                 onClick={() => setIsMenuOpen(false)}
               >
                 {translations.home}
               </Link>
               <Link 
                 href={`/${locale}/services`}
-                className="py-2 text-white hover:text-executive-gold transition" // text-white for dark background
+                className="py-2 text-green-600 hover:text-green-700 transition" // text-white for dark background
                 onClick={() => setIsMenuOpen(false)}
               >
                 {translations.services}
               </Link>
               <Link
                 href={`/${locale}/resources`}
-                className="py-2 text-white hover:text-executive-gold transition" // text-white for dark background
+                className="py-2 text-green-600 hover:text-green-700 transition" // text-white for dark background
                 onClick={() => setIsMenuOpen(false)}
               >
                 {translations.resources}
               </Link>
               <Link
                 href={`/${locale}/about`}
-                className="py-2 text-white hover:text-executive-gold transition" // text-white for dark background
+                className="py-2 text-green-600 hover:text-green-700 transition" // text-white for dark background
                 onClick={() => setIsMenuOpen(false)}
               >
                 {translations.about}

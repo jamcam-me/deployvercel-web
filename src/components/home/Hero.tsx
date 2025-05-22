@@ -20,7 +20,7 @@ const Hero: React.FC<HeroProps> = ({ locale }) => {
         priority
       />
       <div className="absolute inset-0 bg-gradient-to-b from-cyber-navy/90 to-evergreen-intel/70 z-10" />
-      <div className="absolute inset-0 z-20 flex flex-col justify-center items-start text-left px-4 sm:px-8 md:px-16 lg:px-24">
+      <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4 sm:px-8 md:px-16 lg:px-24">
         <div className="max-w-3xl">
           {/* Updated with metric-first approach */}
           <p className="hero-metric mb-4">
