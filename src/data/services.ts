@@ -1,4 +1,5 @@
 // File: src/data/services.ts
+// Services are ordered with Advisory Services first, followed by General Services
 
 export interface Service {
   id: string;

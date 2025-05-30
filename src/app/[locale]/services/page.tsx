@@ -1,4 +1,5 @@
 'use client'; // This is a client component
+// Services page with Advisory Services displayed first, followed by General Services
 
 import { useState } from 'react';
 import Image from 'next/image';
