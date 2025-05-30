@@ -8,7 +8,9 @@
     "home": "Startseite",
     "services": "Dienstleistungen",
     "contact": "Kontakt",
-    "frankfurtHub": "Frankfurt Hub"
+    "frankfurtHub": "Frankfurt Hub",
+    "about": "Über uns",
+    "resources": "Ressourcen"
   },
   "home": {
     "hero": {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { getTranslations, getMessages } from 'next-intl/server'; // Import getTranslations and getMessages
+import { getTranslations, getMessages, setRequestLocale } from 'next-intl/server'; // Import getTranslations, getMessages and setRequestLocale
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Providers } from './providers'; // Corrected import path
@@ -13,8 +13,9 @@ interface LocaleLayoutProps {
 
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const { locale } = params;
+  setRequestLocale(locale);
   const t = await getTranslations('nav'); // Fetch translations for 'nav' section
-  const messages = await getMessages({ locale }); // Corrected usage of getMessages
+  const messages = await getMessages(); // Load all messages for current locale
 
   return (
     <div className="flex flex-col min-h-screen">
