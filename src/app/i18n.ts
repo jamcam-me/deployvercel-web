@@ -1,7 +1,5 @@
-import type { IntlConfig } from 'next-intl';
 
-const i18n: IntlConfig = {
-  locales: ['en', 'de'],
+const i18n = {
   defaultLocale: 'en',
   localeDetection: true
 };
