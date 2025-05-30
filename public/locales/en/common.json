@@ -128,5 +128,40 @@
       "copyright": "© 2025 Big Rock Intelligence. All rights reserved.",
       "language": "Language"
     }
+  },
+  "busCard": {
+    "title": "James Cameron - Big Rock Intelligence",
+    "welcome": "📱 Thanks for scanning! You've connected with Big Rock Intelligence.",
+    "name": "James Cameron",
+    "jobTitle": "Founder | AI Security & Data Strategist",
+    "company": "Big Rock Intelligence",
+    "tagline": "Bridging AI Innovation with Enterprise Security",
+    "credentials": {
+      "title": "UC Berkeley Executive AI Strategy",
+      "subtitle": "Microsoft | Amazon Web Services | Avanade Alumni"
+    },
+    "contact": {
+      "email": {
+        "label": "Email",
+        "value": "james@bigrock-intel.ai"
+      },
+      "website": {
+        "label": "Website",
+        "value": "bigrock-intelligence.com"
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "value": "Connect & Follow"
+      },
+      "meeting": {
+        "label": "Schedule Meeting",
+        "value": "Book Strategic Consultation"
+      },
+      "phone": {
+        "label": "Phone",
+        "value": "+49(0)1511 3105 15242"
+      }
+    },
+    "footer": "Secure digital transformation through strategic AI integration"
   }
 }

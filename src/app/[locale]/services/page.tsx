@@ -49,17 +49,8 @@ export default function ServicesPage({ params }: ServicesPageProps) {
       </div>
 
       <div className="container-custom section">
-        {/* General Services Section */}
-        <h2 className="section-title text-center mb-8">
-          {t('general.title')}
-        </h2>
-        <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
-          {t('general.description')}
-        </p>
-        <ServicesList locale={locale} servicesToRender={generalServices} />
-
         {/* Advisory Services Section */}
-        <h2 className="section-title text-center mt-16 mb-8">
+        <h2 className="section-title text-center mb-8">
           {t('advisory.title')}
         </h2>
         <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
@@ -105,6 +96,15 @@ export default function ServicesPage({ params }: ServicesPageProps) {
           {activeTab === 'vc_pe' && <ServicesList locale={locale} servicesToRender={vcPeAdvisory} />}
           {activeTab === 'board' && <ServicesList locale={locale} servicesToRender={boardAdvisory} />}
         </div>
+
+        {/* General Services Section */}
+        <h2 className="section-title text-center mt-16 mb-8">
+          {t('general.title')}
+        </h2>
+        <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
+          {t('general.description')}
+        </p>
+        <ServicesList locale={locale} servicesToRender={generalServices} />
       </div>
     </>
   );

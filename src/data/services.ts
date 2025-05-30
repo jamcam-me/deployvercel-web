@@ -14,50 +14,6 @@ export interface Service {
 }
 
 export const services: Service[] = [
-  {
-    id: "cybersecurity",
-    title: "Cybersecurity Leadership",
-    description: "Strategic cybersecurity guidance for executives and boards.",
-    icon: "shield",
-    category: "general",
-    categoryType: "general"
-  },
-  {
-    id: 'secure-ai',
-    title: 'SECURE AI ADOPTION',
-    description: 'Transform AI adoption from security blocker to business enabler with our framework-driven approach.',
-    icon: 'brain',
-    category: 'general',
-    categoryType: "general",
-    metric: '60% faster AI deployment with enterprise-grade security',
-    metricDe: '60% schnellere KI-Bereitstellung mit Sicherheit auf Unternehmensebene',
-    question: 'Is your security team equipped to evaluate AI model risk?',
-    questionDe: 'Ist Ihr Sicherheitsteam ausgerüstet, um KI-Modellrisiken zu bewerten?'
-  },
-  {
-    id: "ai-integration",
-    title: "AI Integration",
-    description: "Seamless integration of AI technologies with enterprise security frameworks.",
-    icon: "link", // Changed from 'brain' to 'link' for uniqueness
-    category: "general",
-    categoryType: "general"
-  },
-  {
-    id: "compliance",
-    title: "Regulatory Compliance",
-    description: "Navigate complex regulatory environments with confidence.",
-    icon: "check-square",
-    category: "general",
-    categoryType: "general"
-  },
-  {
-    id: "strategic-advisory",
-    title: "Strategic Advisory",
-    description: "Executive-level guidance on digital transformation journeys.",
-    icon: "chart-bar", // Changed from 'strategy' to 'chart-bar'
-    category: "general",
-    categoryType: "general"
-  },
   // Enterprise Leader Advisory Services
   {
     id: "executive-communication-framework",
@@ -171,6 +127,51 @@ export const services: Service[] = [
     categoryType: "board",
     metric: "80% improvement in AI governance clarity",
     question: "What governance mechanisms has your board established specifically for AI oversight? How do you ensure appropriate balance between AI innovation and responsible deployment?"
+  },
+  // General Services
+  {
+    id: "cybersecurity",
+    title: "Cybersecurity Leadership",
+    description: "Strategic cybersecurity guidance for executives and boards.",
+    icon: "shield",
+    category: "general",
+    categoryType: "general"
+  },
+  {
+    id: 'secure-ai',
+    title: 'SECURE AI ADOPTION',
+    description: 'Transform AI adoption from security blocker to business enabler with our framework-driven approach.',
+    icon: 'brain',
+    category: 'general',
+    categoryType: "general",
+    metric: '60% faster AI deployment with enterprise-grade security',
+    metricDe: '60% schnellere KI-Bereitstellung mit Sicherheit auf Unternehmensebene',
+    question: 'Is your security team equipped to evaluate AI model risk?',
+    questionDe: 'Ist Ihr Sicherheitsteam ausgerüstet, um KI-Modellrisiken zu bewerten?'
+  },
+  {
+    id: "ai-integration",
+    title: "AI Integration",
+    description: "Seamless integration of AI technologies with enterprise security frameworks.",
+    icon: "link", // Changed from 'brain' to 'link' for uniqueness
+    category: "general",
+    categoryType: "general"
+  },
+  {
+    id: "compliance",
+    title: "Regulatory Compliance",
+    description: "Navigate complex regulatory environments with confidence.",
+    icon: "check-square",
+    category: "general",
+    categoryType: "general"
+  },
+  {
+    id: "strategic-advisory",
+    title: "Strategic Advisory",
+    description: "Executive-level guidance on digital transformation journeys.",
+    icon: "chart-bar", // Changed from 'strategy' to 'chart-bar'
+    category: "general",
+    categoryType: "general"
   }
 ];
 

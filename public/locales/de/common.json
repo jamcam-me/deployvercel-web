@@ -70,5 +70,40 @@
   "footer": {
     "copyright": "© 2025 Big Rock Intelligence. Alle Rechte vorbehalten.",
     "language": "Sprache"
+  },
+  "busCard": {
+    "title": "James Cameron - Big Rock Intelligence",
+    "welcome": "📱 Danke fürs Scannen! Sie haben sich mit Big Rock Intelligence verbunden.",
+    "name": "James Cameron",
+    "jobTitle": "Gründer | KI-Sicherheits- & Datenstratege",
+    "company": "Big Rock Intelligence",
+    "tagline": "Verbindung von KI-Innovation mit Unternehmenssicherheit",
+    "credentials": {
+      "title": "UC Berkeley Executive KI-Strategie",
+      "subtitle": "Microsoft | Amazon Web Services | Avanade Alumni"
+    },
+    "contact": {
+      "email": {
+        "label": "E-Mail",
+        "value": "james@bigrock-intel.ai"
+      },
+      "website": {
+        "label": "Webseite",
+        "value": "bigrock-intelligence.com"
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "value": "Verbinden & Folgen"
+      },
+      "meeting": {
+        "label": "Termin vereinbaren",
+        "value": "Strategische Beratung buchen"
+      },
+      "phone": {
+        "label": "Telefon",
+        "value": "+49(0)1511 3105 15242"
+      }
+    },
+    "footer": "Sichere digitale Transformation durch strategische KI-Integration"
   }
 }
