@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
 interface HeaderProps {
@@ -41,17 +42,12 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
       <div className="container-custom flex justify-between items-center pl-4">
         <Link href={`/${locale}`} className="flex items-center">
           <img
-            src="/images/logo_white.png"
-            alt="Big Rock Intelligence"
+            src="/images/BRI-logo-sbs.png?v=3"
+            alt="BRI"
             className={`w-auto transition-all duration-300 ${
               isScrolled ? 'h-16' : 'h-32' // Adjust logo size based on scroll
             }`}
           />
-          <span className={`font-cinzel uppercase font-bold text-executive-gold tracking-wider transition-all duration-300 ${
-            isScrolled ? 'text-xl ml-4' : 'text-3xl ml-6' // Adjust text size and margin based on scroll
-          }`}>
-            BigRock Intelligence
-          </span>
         </Link>
 
         {/* Right Section (Navigation + Mobile Button) */}

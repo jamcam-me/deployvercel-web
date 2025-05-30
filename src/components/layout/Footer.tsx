@@ -9,9 +9,9 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
   const currentYear = new Date().getFullYear();
   
   const translations = {
-    copyright: locale === 'en' 
-      ? `© ${currentYear} Big Rock Intelligence. All rights reserved.` 
-      : `© ${currentYear} Big Rock Intelligence. Alle Rechte vorbehalten.`,
+    copyright: locale === 'en'
+      ? `© ${currentYear} BRI. All rights reserved.`
+      : `© ${currentYear} BRI. Alle Rechte vorbehalten.`,
     privacyPolicy: locale === 'en' ? 'Privacy Policy' : 'Datenschutzrichtlinie',
     terms: locale === 'en' ? 'Terms of Service' : 'Nutzungsbedingungen',
     contact: locale === 'en' ? 'Contact Us' : 'Kontaktieren Sie uns',
@@ -23,9 +23,9 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <img 
-              src="/images/logo.png"
-              alt="Big Rock Intelligence" 
+            <img
+              src="/images/logo_white.png"
+              alt="BRI"
               className="h-48 mb-4"
             />
             <p className="text-light-stone mb-4">
