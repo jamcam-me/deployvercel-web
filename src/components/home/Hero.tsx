@@ -1,4 +1,4 @@
-'use client';
+30'use client';
 
 import React from 'react';
 import Image from 'next/image';
@@ -28,13 +28,13 @@ const Hero: React.FC<HeroProps> = ({ locale }) => {
               ? (
                   <>
                     Bridging AI Innovation
-                    <span className="text-warm-rock"> with Enterprise Security</span>
+                    <span className="green-30"> with Enterprise Security</span>
                   </>
                 )
               : (
                   <>
                     Brücke zwischen KI-Innovation<br />
-                    <span className="text-warm-rock">mit Unternehmenssicherheit</span><br />
+                    <span className="green-30">mit Unternehmenssicherheit</span><br />
                   </>
                 )}
           </h1>
