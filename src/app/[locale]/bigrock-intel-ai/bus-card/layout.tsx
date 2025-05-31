@@ -1,4 +1,5 @@
 import React from 'react';
+import { Suspense } from 'react';
 import { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import '../../../../app/globals.css';
@@ -32,7 +33,9 @@ export default async function BusCardLayout({ children, params }: BusCardLayoutP
   return (
     <html lang={locale}>
       <body className="antialiased">
-        {children}
+        <Suspense fallback={<div>Loading...</div>}>
+          {children}
+        </Suspense>
         
         {/* Vercel Analytics Script Placeholder */}
         <script

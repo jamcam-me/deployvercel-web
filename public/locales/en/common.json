@@ -129,6 +129,27 @@
       "language": "Language"
     }
   },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with our team to discuss how we can help your organization.",
+    "name": "James Cameron",
+    "role": "Founder & Executive Advisor",
+    "email": "james@jamcam.me",
+    "phone": "+49 175 584 4546",
+    "linkedin": "linkedin.com/in/jamcam-cyberleader"
+  },
+  "frankfurtHub": {
+    "title": "Frankfurt Hub",
+    "description": "Our European headquarters in Frankfurt, Germany.",
+    "europeanReach": "European Reach",
+    "reachDescription": "From our Frankfurt hub, we serve clients across Europe with a focus on Germany, Austria, Switzerland, and the UK.",
+    "expertise": "Local Expertise, Global Perspective",
+    "expertiseDescription": "Our team combines deep local knowledge with global cybersecurity and AI expertise."
+  },
+  "footer": {
+    "copyright": "© 2025 Big Rock Intelligence. All rights reserved.",
+    "language": "Language"
+  },
   "busCard": {
     "title": "James Cameron - Big Rock Intelligence",
     "welcome": "📱 Thanks for scanning! You've connected with Big Rock Intelligence.",

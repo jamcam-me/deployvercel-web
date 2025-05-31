@@ -7,6 +7,7 @@ import { useSearchParams } from 'next/navigation';
 export default function BusCardContent() {
   const t = useTranslations('busCard');
   const searchParams = useSearchParams();
+  console.log('[BusCardContent] Loaded client component; searchParams:', Array.from(searchParams.entries()));
   const [isFromQR, setIsFromQR] = useState(false);
   
   // Track page view and QR code scan
