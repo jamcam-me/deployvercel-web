@@ -42,8 +42,8 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
       <div className="container-custom flex justify-between items-center pl-4">
         <Link href={`/${locale}`} className="flex items-center">
           <img
-            src="/images/BRI-logo-sbs.png?v=3"
-            alt="BRI"
+            src="/images/BRI-LOGO-NAMERIGHT.svg"
+            alt="Big Rock Intelligence Logo"
             className={`w-auto transition-all duration-300 ${
               isScrolled ? 'h-16' : 'h-32' // Adjust logo size based on scroll
             }`}
