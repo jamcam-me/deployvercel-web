@@ -49,7 +49,7 @@ export async function generateStaticParams() {
 
 export default async function ServiceDetailPage({ params }: ServiceDetailPageProps) {
   const { locale, serviceId } = params;
-  const t = await getTranslations({ locale, namespace: 'common' }); // Use getTranslations with await
+  const t = await getTranslations('services'); // Access the 'services' namespace directly
 
   const serviceData = services.find(s => s.id === serviceId);
 
