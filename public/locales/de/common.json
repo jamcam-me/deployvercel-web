@@ -48,6 +48,18 @@
     "audits": {
       "title": "Plattform-Sicherheitsaudits",
       "description": "Umfassende Sicherheitsaudits, Tech-Stack-Reviews und Funktionstests, mit speziellem Fokus auf Fintech- und Crowdinvesting-Plattformen."
+    },
+    "general": {
+      "title": "General Services",
+      "description": "Comprehensive cybersecurity and AI advisory services tailored to your organization's needs."
+    },
+    "advisory": {
+      "title": "Advisory Services",
+      "description": "Strategic guidance for specific leadership roles.",
+      "enterpriseLeaders": "Enterprise Leaders",
+      "smbOwners": "SMB Owners",
+      "vcPeFirms": "VC & Private Equity Firms",
+      "boardMembers": "Board Members"
     }
   },
   "contact": {

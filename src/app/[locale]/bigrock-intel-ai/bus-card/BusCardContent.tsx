@@ -1,11 +1,10 @@
 'use client';
 
-import { Suspense } from 'react';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 
-export default function BusinessCardPage() {
+export default function BusCardContent() {
   const t = useTranslations('busCard');
   const searchParams = useSearchParams();
   const [isFromQR, setIsFromQR] = useState(false);
@@ -29,9 +28,9 @@ export default function BusinessCardPage() {
       // Optional: Google Analytics 4 tracking
       if (typeof window.gtag !== 'undefined') {
         window.gtag('event', 'qr_scan', {
-          source: 'business_card',
-          medium: 'offline',
-          campaign: 'networking'
+          'source': 'business_card',
+          'medium': 'offline',
+          'campaign': 'networking'
         });
       }
     }
@@ -65,8 +64,7 @@ export default function BusinessCardPage() {
   };
   
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1f44] to-[#1f302d] text-[#d9ded9] py-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1f44] to-[#1f302d] text-[#d9ded9] py-8">
         <div className="bg-white/5 backdrop-blur-lg border border-[#dab86e]/30 rounded-3xl p-8 md:p-12 max-w-md w-[90%] text-center shadow-2xl">
           {isFromQR && (
             <div className="bg-[#dab86e]/10 rounded-lg p-4 mb-8 text-sm text-[#dab86e]">
@@ -105,7 +103,7 @@ export default function BusinessCardPage() {
                onClick={() => trackAction('email_click')}>
               <div className="text-2xl mb-2">📧</div>
               <div className="text-sm text-[#a4aba4] mb-1">{t('contact.email.label')}</div>
-              <div className="font-semibold text-[#d9eded9]">{t('contact.email.value')}</div>
+              <div className="font-semibold text-[#d9ded9]">{t('contact.email.value')}</div>
             </a>
             
             <a href="https://www.bigrock-intelligence.com?ref=contact"
@@ -115,7 +113,7 @@ export default function BusinessCardPage() {
                onClick={() => trackAction('website_click')}>
               <div className="text-2xl mb-2">🌐</div>
               <div className="text-sm text-[#a4aba4] mb-1">{t('contact.website.label')}</div>
-              <div className="font-semibold text-[#d9eded9]">{t('contact.website.value')}</div>
+              <div className="font-semibold text-[#d9ded9]">{t('contact.website.value')}</div>
             </a>
             
             <a href="https://linkedin.com/in/jamcam-cyberleader"
@@ -125,7 +123,7 @@ export default function BusinessCardPage() {
                onClick={() => trackAction('linkedin_click')}>
               <div className="text-2xl mb-2">💼</div>
               <div className="text-sm text-[#a4aba4] mb-1">{t('contact.linkedin.label')}</div>
-              <div className="font-semibold text-[#d9eded9]">{t('contact.linkedin.value')}</div>
+              <div className="font-semibold text-[#d9ded9]">{t('contact.linkedin.value')}</div>
             </a>
             
             <a href="https://outlook.office.com/book/JamesCameronTimeslots@OldBoyzClub.onmicrosoft.com/"
@@ -144,7 +142,7 @@ export default function BusinessCardPage() {
                onClick={() => trackAction('phone_click')}>
               <div className="text-2xl mb-2">📱</div>
               <div className="text-sm text-[#a4aba4] mb-1">{t('contact.phone.label')}</div>
-              <div className="font-semibold text-[#d9eded9]">{t('contact.phone.value')}</div>
+              <div className="font-semibold text-[#d9ded9]">{t('contact.phone.value')}</div>
             </a>
           </div>
           
@@ -153,7 +151,6 @@ export default function BusinessCardPage() {
           </div>
         </div>
       </div>
-    </Suspense>
   );
 }
 
