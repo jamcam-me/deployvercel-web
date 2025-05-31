@@ -7,7 +7,8 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
   },
-  output: 'export',
+  // Remove static export to allow dynamic features
+  // output: 'export',
 };
  
 module.exports = withNextIntl(nextConfig);
