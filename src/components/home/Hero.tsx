@@ -27,16 +27,14 @@ const Hero: React.FC<HeroProps> = ({ locale }) => {
             {locale === 'en'
               ? (
                   <>
-                    Bridging AI Innovation<br />
-                    <span className="text-green-60">with</span><br />
-                    <span className="text-executive-gold">Enterprise Security</span><br />
+                    Bridging AI Innovation
+                    <span className="text-warm-rock"> with Enterprise Security</span>
                   </>
                 )
               : (
                   <>
                     Brücke zwischen KI-Innovation<br />
-                    <span className="text-green-60">mit</span><br />
-                    <span className="text-executive-gold">Unternehmenssicherheit</span><br />
+                    <span className="text-warm-rock">mit Unternehmenssicherheit</span><br />
                   </>
                 )}
           </h1>
