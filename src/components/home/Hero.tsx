@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({ locale }) => {
             {locale === 'en'
               ? (
                   <>
-                    Bridging AI Innovation
+                    Bridging AI Innovation<br />
                     <span className="green-30"> with Enterprise Security</span>
                   </>
                 )
