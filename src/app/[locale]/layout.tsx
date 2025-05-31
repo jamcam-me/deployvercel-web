@@ -13,9 +13,12 @@ interface LocaleLayoutProps {
 
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const { locale } = params;
+  // Set the locale for the request to enable static rendering
   setRequestLocale(locale);
-  const t = await getTranslations('nav'); // Fetch translations for 'nav' section
-  const messages = await getMessages(); // Load all messages for current locale
+  // Fetch translations for 'nav' section
+  const t = await getTranslations('nav');
+  // Load all messages for current locale
+  const messages = await getMessages();
 
   return (
     <div className="flex flex-col min-h-screen">

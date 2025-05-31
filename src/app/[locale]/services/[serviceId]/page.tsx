@@ -7,7 +7,7 @@ import { services } from '@/data/services';
 import { Locale } from '@/lib/i18n';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { getTranslations } from 'next-intl/server'; // Use server-side translations
+import { getTranslations, setRequestLocale } from 'next-intl/server'; // Import setRequestLocale
 
 interface ServiceDetailPageProps {
   params: {
@@ -49,6 +49,8 @@ export async function generateStaticParams() {
 
 export default async function ServiceDetailPage({ params }: ServiceDetailPageProps) {
   const { locale, serviceId } = params;
+  // Set the locale for the request to enable static rendering
+  setRequestLocale(locale);
   const t = await getTranslations('services'); // Access the 'services' namespace directly
 
   const serviceData = services.find(s => s.id === serviceId);

@@ -9,8 +9,8 @@ export default getRequestConfig(async ({ locale }) => {
   return {
     timeZone: 'Europe/Berlin',
     messages,
-    // Don't pass locale back to avoid headers usage during static generation
-    // locale: locale
+    // Return locale to ensure proper static generation
+    locale: locale
   };
 });
 
