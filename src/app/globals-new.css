@@ -1,0 +1,83 @@
+@layer base {
+  :root {
+    /* Primary Brand Colors - Big Rock Intelligence */
+    --cyber-navy: #0a1f44;
+    --evergreen-intel: #1f302d;
+    --executive-gold: #dab86e;
+    
+    /* Secondary Brand Colors */
+    --cyber-graphite: #2b2b2d;
+    --soft-steel: #a4aba4;
+    --light-stone: #d9ded9;
+    --warm-rock: #574536;
+    --desaturated-green: #5d9182;
+    
+    /* Enhanced Brand Color Palette */
+    /* Cyber Navy Variations */
+    --navy-90: #05101f;
+    --navy-80: #061529;
+    --navy-70: #071732;
+    --navy-base: #0a1f44;
+    --navy-60: #2a3f64;
+    --navy-50: #4a5f84;
+    --navy-40: #6a7fa4;
+    --navy-30: #8a9fc4;
+    --navy-20: #aabfe4;
+    --navy-10: #cadff4;
+    
+    /* Evergreen Intelligence Variations */
+    --green-90: #0f1b19;
+    --green-80: #162220;
+    --green-70: #1a2825;
+    --green-base: #1f302d;
+    --green-60: #3f504d;
+    --green-50: #5f706d;
+    --green-40: #7f908d;
+    --green-30: #9fb0ad;
+    --green-20: #bfd0cd;
+    --green-10: #dff0ed;
+    
+    /* Executive Gold Variations */
+    --gold-90: #6b5832;
+    --gold-80: #8a7041;
+    --gold-70: #a98850;
+    --gold-60: #c1a05f;
+    --gold-base: #dab86e;
+    --gold-40: #e1c585;
+    --gold-30: #e8d29c;
+    --gold-20: #efdeb3;
+    --gold-10: #f7ebca;
+    --gold-05: #fbf5e1;
+    
+    /* Cyber Graphite Variations */
+    --graphite-90: #1a1a1c;
+    --graphite-80: #202022;
+    --graphite-70: #252527;
+    --graphite-base: #2b2b2d;
+    --graphite-60: #4b4b4d;
+    --graphite-50: #6b6b6d;
+    --graphite-40: #8b8b8d;
+    --graphite-30: #ababab;
+    --graphite-20: #cbcbcd;
+    --graphite-10: #ebebed;
+    
+    /* Desaturated Green Variations */
+    --des-green-90: #2e4641;
+    --des-green-80: #405650;
+    --des-green-70: #52665f;
+    --des-green-base: #5d9182;
+    --des-green-60: #6da191;
+    --des-green-50: #7db1a0;
+    --des-green-40: #8dc1af;
+    --des-green-30: #9dd1be;
+    --des-green-20: #ade1cd;
+    --des-green-10: #bdf1dc;
+    
+    /* Legacy Aliases - Preserving existing functionality */
+    --navy-60: #6b7a94; /* Keep original navy-60 for backward compatibility */
+    --green-30: #4c5957; /* Keep original green-30 for backward compatibility */
+    --green-60: #798381; /* Keep original green-60 for backward compatibility */
+    --gold-30: #ae933c; /* Keep original gold-30 for backward compatibility */
+    --gold-15: #c4a555; /* Keep original gold-15 for backward compatibility */
+    --gold-15t: #e1c689; /* Keep original gold-15t for backward compatibility */
+    --gold-30t: #e9d4a4; /* Keep original gold-30t for backward compatibility */
