@@ -28,13 +28,13 @@ const Hero: React.FC<HeroProps> = ({ locale }) => {
               ? (
                   <>
                     Bridging AI Innovation
-                    <span className="text-green-400"> with Enterprise Security</span>
+                    <span className="text-green-700"> with Enterprise Security</span>
                   </>
                 )
               : (
                   <>
                     Brücke zwischen KI-Innovation<br />
-                    <span className="text-green-400">mit Unternehmenssicherheit</span><br />
+                    <span className="text-green-500">mit Unternehmenssicherheit</span><br />
                   </>
                 )}
           </h1>
