@@ -20,10 +20,10 @@
 
 @font-face {
   font-family: 'Cinzel';
-  src: url('/fonts/cinzel/Cinzel-Medium.woff2') format('woff2'),
-       url('/fonts/cinzel/Cinzel-Medium.woff') format('woff'),
-       url('/fonts/cinzel/cinzel.ttf') format('truetype');
-  font-weight: 700; /* Assuming this is the bold version */
+  src: url('/fonts/cinzel/Cinzel-Bold.woff2') format('woff2'),
+       url('/fonts/cinzel/Cinzel-Bold.woff') format('woff'),
+       url('/fonts/cinzel/cinzel-bold.ttf') format('truetype');
+  font-weight: 700;
   font-display: swap;
   font-style: normal;
 }
@@ -61,190 +61,1685 @@
 
 @layer base {
   :root {
-    /* Primary Colors */
-    --cyber-navy: #0a1f44;
-    --evergreen-intel: #1f302d;
-    --executive-gold: #dab86e;
+    /* === PRIMARY BRAND COLOR FAMILIES === */
     
-    /* Secondary Colors */
+    /* Cyber Navy Blue Family */
+    --navy-900: #020b15;  /* Navy 900 - Deepest navy for premium backgrounds */
+    --navy-800: #051429;  /* Navy 800 - Deep navy for headers */
+    --navy-700: #0a1f44;  /* Navy 700 - Primary brand navy */
+    --navy-600: #0f2a5a;  /* Navy 600 - Medium navy for sections */
+    --navy-500: #1a3970;  /* Navy 500 - Lighter navy for cards */
+    --navy-400: #4a6391;  /* Navy 400 - Light navy for accents */
+    
+    /* Executive BRI Gold Family */
+    --gold-900: #8b7640;  /* Gold 900 - Deep gold for premium text */
+    --gold-800: #b8985a;  /* Gold 800 - Rich gold for highlights */
+    --gold-700: #dab86e;  /* Gold 700 - Primary brand gold */
+    --gold-600: #e3c587;  /* Gold 600 - Medium gold for backgrounds */
+    --gold-500: #ecd2a0;  /* Gold 500 - Light gold for subtle accents */
+    --gold-400: #f5dfb9;  /* Gold 400 - Lightest gold for backgrounds */
+    
+    /* Evergreen Intelligence Family */
+    --green-900: #0d1512; /* Green 900 - Deepest green for headers */
+    --green-800: #162420; /* Green 800 - Deep green for sections */
+    --green-700: #1f302d; /* Green 700 - Primary brand green */
+    --green-600: #2d453f; /* Green 600 - Medium green for cards */
+    --green-500: #3b5a52; /* Green 500 - Lighter green for accents */
+    --green-400: #5d9182; /* Green 400 - Light green for interactive elements */
+    
+    /* === LEGACY ALIASES FOR BACKWARD COMPATIBILITY === */
+    --cyber-navy: var(--navy-700);           /* Primary navy */
+    --evergreen-intel: var(--green-700);     /* Primary green */
+    --executive-gold: var(--gold-700);       /* Primary gold */
+    --desaturated-green: var(--green-400);   /* Interactive green */
+    
+    /* === SECONDARY BRAND COLORS === */
     --cyber-graphite: #2b2b2d;
     --soft-steel: #a4aba4;
     --light-stone: #d9ded9;
     --warm-rock: #574536;
-    --desaturated-green: #5d9182;
     
-    /* Navy Variations */
-    --navy-90: #05101f;
-    --navy-70: #071732;
-    --navy-base: #0a1f44;
-    --navy-30: #3a4c6c;
-    --navy-60: #6b7a94;
+    /* === BRI BRAND GRADIENT COMBINATIONS === */
+    --gradient-primary: linear-gradient(135deg, var(--navy-700) 0%, var(--green-700) 100%);
+    --gradient-executive: linear-gradient(135deg, var(--navy-800) 0%, var(--navy-600) 100%);
+    --gradient-accent: linear-gradient(45deg, var(--gold-700), var(--green-400));
+    --gradient-subtle: linear-gradient(135deg, rgba(218, 184, 110, 0.1) 0%, transparent 50%);
+    --gradient-premium: linear-gradient(135deg, var(--navy-900) 0%, var(--green-900) 100%);
+    --gradient-gold-subtle: linear-gradient(135deg, var(--gold-600) 0%, var(--gold-400) 100%);
     
-    /* Green Variations */
-    --green-90: #101a18;
-    --green-70: #162220;
-    --green-base: #1f302d;
-    --green-30: #4c5957;
-    --green-60: #798381;
+    /* === ACCESSIBILITY-COMPLIANT COMBINATIONS === */
+    --text-on-navy-900: var(--gold-400);    /* WCAG AA compliant */
+    --text-on-navy-800: var(--gold-500);    /* WCAG AA compliant */
+    --text-on-navy-700: var(--gold-600);    /* WCAG AA compliant */
+    --text-on-green-900: var(--light-stone); /* WCAG AA compliant */
+    --text-on-green-700: var(--light-stone); /* WCAG AA compliant */
+    --text-on-gold-700: var(--navy-800);    /* WCAG AA compliant */
     
-    /* Gold Variations */
-    --gold-30: #ae933c;
-    --gold-15: #c4a555;
-    --gold-base: #dab86e;
-    --gold-15t: #e1c689;
-    --gold-30t: #e9d4a4;
+    /* === SEMANTIC COLOR MAPPING === */
+    --color-primary: var(--navy-700);
+    --color-secondary: var(--green-700);
+    --color-accent: var(--gold-700);
+    --color-success: var(--green-400);
+    --color-warning: var(--gold-600);
+    --color-info: var(--navy-500);
+    --color-surface: var(--light-stone);
+    --color-background: var(--navy-900);
+    
+    /* === CIRCUIT ANIMATION VARIABLES === */
+    --circuit-color: rgba(218, 184, 110, 0.3);
+    --circuit-glow: rgba(218, 184, 110, 0.6);
   }
   
-  /* Typography Hierarchy */
+  /* === TYPOGRAPHY HIERARCHY (Enhanced for Brand Compliance) === */
   h1, h2, h3 {
     @apply font-cinzel font-bold uppercase tracking-wider;
+    letter-spacing: 0.15em; /* Enhanced tracking for brand compliance */
   }
   
   h1 {
     @apply text-3xl md:text-4xl lg:text-5xl;
+    line-height: 1.1; /* Tighter line-height for executive presence */
   }
   
   h2 {
     @apply text-2xl md:text-3xl lg:text-4xl;
+    line-height: 1.2;
   }
   
   h3 {
     @apply text-xl md:text-2xl lg:text-3xl;
+    line-height: 1.3;
   }
   
   h4, h5, h6 {
-    @apply font-futura font-bold uppercase tracking-wide; /* Differentiating from H1-H3 and hero styles */
+    @apply font-futura font-bold uppercase tracking-wide;
+    letter-spacing: 0.1em;
   }
   
   p, a, li, button {
     @apply font-futura;
+    line-height: 1.6; /* Improved readability */
+  }
+  
+  /* === BODY DEFAULTS FOR BRAND CONSISTENCY === */
+  body {
+    @apply font-futura;
+    color: var(--light-stone);
+    background-color: var(--navy-900); /* Using deepest navy for premium feel */
   }
 }
-
+ 
 @layer components {
-  /* Typography Components */
+  /* === ENHANCED TYPOGRAPHY COMPONENTS === */
   .hero-title {
-    @apply font-cinzel uppercase font-bold text-executive-gold tracking-wider;
+    @apply font-cinzel uppercase font-bold tracking-wider;
+    color: var(--gold-700);
+    letter-spacing: 0.2em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
   
   .section-title {
-    @apply font-cinzel uppercase font-bold text-cyber-navy tracking-wider;
+    @apply font-cinzel uppercase font-bold tracking-wider;
+    color: var(--navy-700);
+    letter-spacing: 0.15em;
   }
   
-  /* Executive Content Structure Classes */
+  .brand-title {
+    @apply font-cinzel uppercase font-bold tracking-wider;
+    color: var(--gold-700);
+    letter-spacing: 0.25em;
+    font-size: clamp(1.5rem, 4vw, 3rem);
+  }
+  
+  /* === PREMIUM TITLE VARIATIONS === */
+  .premium-title {
+    @apply font-cinzel uppercase font-bold tracking-wider;
+    color: var(--gold-800);
+    letter-spacing: 0.3em;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  }
+  
+  .executive-title {
+    @apply font-cinzel uppercase font-bold tracking-wider;
+    color: var(--text-on-navy-900);
+    letter-spacing: 0.25em;
+    background: var(--navy-900);
+    padding: 1rem 2rem;
+    border-left: 4px solid var(--gold-700);
+  }
+  
+  /* === EXECUTIVE CONTENT STRUCTURE CLASSES (Enhanced) === */
   .metric-highlight {
-    @apply text-cyber-navy font-futura font-semibold text-xl mb-3;
+    color: var(--gold-700);
+    @apply font-futura font-bold text-2xl mb-4;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
   
   .strategic-question {
-    @apply text-soft-steel italic my-4;
+    color: var(--green-400);
+    @apply italic my-6 text-lg;
+    font-style: italic;
+    border-left: 3px solid var(--gold-700);
+    padding-left: 1rem;
   }
   
   .content-value-prop {
     @apply text-lg font-medium mb-4;
+    color: var(--light-stone);
   }
   
-  /* Tone Pyramid Elements */
+  .executive-insight {
+    color: var(--gold-700);
+    @apply font-semibold text-xl mb-4;
+    position: relative;
+  }
+  
+  .executive-insight::before {
+    content: "→";
+    color: var(--green-400);
+    margin-right: 0.5rem;
+    font-weight: bold;
+  }
+  
+  /* === PREMIUM CONTENT VARIATIONS === */
+  .premium-metric {
+    color: var(--gold-800);
+    @apply font-futura font-bold text-3xl mb-4;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .executive-statement {
+    background: var(--navy-800);
+    color: var(--text-on-navy-800);
+    @apply p-6 rounded-lg border-l-4;
+    border-left-color: var(--gold-700);
+  }
+  
+  .insight-card {
+    background: linear-gradient(135deg, var(--navy-700), var(--navy-600));
+    color: var(--text-on-navy-700);
+    @apply p-6 rounded-lg shadow-lg;
+    border: 1px solid var(--gold-700);
+  }
+  
+  /* === TONE PYRAMID ELEMENTS (Brand Voice Implementation) === */
   .executive-clarity {
     @apply font-semibold text-lg leading-tight;
+    color: var(--light-stone);
   }
   
   .cultural-reference {
-    @apply italic text-desaturated-green my-2;
+    color: var(--green-400);
+    @apply italic my-3;
+    position: relative;
   }
   
-  /* Service Structure Components */
+  .subtle-humor {
+    color: var(--soft-steel);
+    @apply italic;
+    opacity: 0.9;
+  }
+  
+  .confidence-statement {
+    @apply font-medium;
+    color: var(--gold-700);
+  }
+  
+  /* === ADVANCED TONE VARIATIONS === */
+  .approachability-text {
+    color: var(--light-stone);
+    @apply text-lg;
+    line-height: 1.7;
+  }
+  
+  .premium-confidence {
+    background: var(--navy-800);
+    color: var(--gold-600);
+    @apply p-4 rounded-lg font-semibold;
+    border-left: 3px solid var(--gold-700);
+  }
+  
+  /* === ENHANCED SERVICE STRUCTURE COMPONENTS === */
   .service-card {
-    @apply bg-white p-6 rounded-sm border-l-4 border-executive-gold shadow-md transition-all hover:shadow-lg;
+    @apply bg-white p-6 rounded-lg shadow-lg transition-all hover:shadow-xl hover:transform hover:scale-105;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+    border-left: 4px solid var(--gold-700);
+  }
+  
+  .service-card:hover {
+    border-left-color: var(--green-400);
+    box-shadow: 0 10px 30px rgba(10, 31, 68, 0.2);
   }
   
   .service-metric {
-    @apply text-evergreen-intel font-semibold mb-3;
+    color: var(--green-700);
+    @apply font-bold mb-3 text-xl;
   }
   
   .service-description {
     @apply mb-4;
+    color: var(--cyber-graphite);
   }
   
   .service-question {
-    @apply italic text-cyber-graphite mb-4;
+    @apply italic mb-4;
+    color: var(--cyber-graphite);
+    border-left: 2px solid var(--gold-700);
+    padding-left: 1rem;
   }
   
   .service-link {
-    @apply text-executive-gold font-semibold hover:underline;
+    color: var(--gold-700);
+    @apply font-semibold transition-colors;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
   }
   
-  /* Button Components */
+  .service-link:hover {
+    color: var(--green-400);
+    border-bottom-color: var(--green-400);
+  }
+  
+  /* === PREMIUM SERVICE VARIATIONS === */
+  .premium-service-card {
+    background: var(--gradient-executive);
+    color: var(--text-on-navy-800);
+    @apply p-8 rounded-lg shadow-xl;
+    border: 1px solid var(--gold-700);
+  }
+  
+  .executive-service-card {
+    background: var(--navy-900);
+    color: var(--text-on-navy-900);
+    @apply p-6 rounded-lg;
+    border-left: 4px solid var(--gold-800);
+  }
+  
+  /* === ENHANCED BUTTON COMPONENTS === */
   .primary-button {
-    @apply bg-executive-gold text-cyber-navy font-cinzel font-medium px-12 py-6 text-lg rounded transition-all hover:bg-gold-15 active:bg-gold-30 uppercase tracking-wide; /* Further increased padding and font size for bigger buttons */
+    background: var(--gold-700);
+    color: var(--navy-800);
+    @apply font-cinzel font-bold px-12 py-6 text-lg rounded-lg transition-all uppercase tracking-wide;
+    letter-spacing: 0.1em;
+    box-shadow: 0 4px 12px rgba(218, 184, 110, 0.3);
+    transform: translateY(0);
+    border: 2px solid var(--gold-700);
+  }
+  
+  .primary-button:hover {
+    background: var(--gold-600);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(218, 184, 110, 0.4);
+  }
+  
+  .primary-button:active {
+    background: var(--gold-800);
   }
   
   .secondary-button {
-    @apply bg-transparent border border-executive-gold text-executive-gold font-cinzel font-medium px-12 py-6 text-lg rounded transition-colors hover:bg-executive-gold hover:bg-opacity-10 uppercase tracking-wide; /* Further increased padding and font size for bigger buttons */
+    @apply bg-transparent font-cinzel font-medium px-12 py-6 text-lg rounded-lg transition-all uppercase tracking-wide;
+    border: 2px solid var(--gold-700);
+    color: var(--gold-700);
+    letter-spacing: 0.1em;
+  }
+  
+  .secondary-button:hover {
+    background: var(--gold-700);
+    color: var(--navy-800);
   }
   
   .navy-button {
-    @apply bg-cyber-navy text-executive-gold font-medium px-6 py-3 rounded transition-colors hover:bg-navy-70 uppercase tracking-wide;
+    background: var(--navy-700);
+    color: var(--gold-600);
+    @apply font-medium px-8 py-4 rounded-lg transition-all uppercase tracking-wide;
+    border: 1px solid var(--gold-700);
   }
   
-  /* Text Color Combinations */
+  .navy-button:hover {
+    background: var(--navy-600);
+    box-shadow: 0 4px 12px rgba(10, 31, 68, 0.3);
+  }
+  
+  /* === PREMIUM BUTTON VARIATIONS === */
+  .executive-button {
+    background: var(--gradient-accent);
+    color: var(--navy-900);
+    @apply font-cinzel font-bold px-16 py-8 text-xl rounded-lg transition-all uppercase tracking-wide;
+    letter-spacing: 0.15em;
+    box-shadow: 0 6px 20px rgba(218, 184, 110, 0.4);
+  }
+  
+  .executive-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(218, 184, 110, 0.5);
+  }
+  
+  .premium-outline-button {
+    background: transparent;
+    border: 2px solid var(--gold-800);
+    color: var(--gold-800);
+    @apply font-cinzel font-medium px-10 py-5 text-lg rounded-lg transition-all uppercase tracking-wide;
+  }
+  
+  .premium-outline-button:hover {
+    background: var(--gold-800);
+    color: var(--navy-900);
+  }
+  
+  /* === BRI BRAND COLOR COMBINATIONS === */
   .primary-text {
-    @apply bg-cyber-navy text-executive-gold;
+    background: var(--navy-700);
+    color: var(--gold-700);
   }
   
   .secondary-text {
-    @apply bg-evergreen-intel text-light-stone;
+    background: var(--green-700);
+    color: var(--light-stone);
   }
   
   .inverted-text {
-    @apply bg-light-stone text-cyber-navy;
+    background: var(--light-stone);
+    color: var(--navy-700);
   }
   
   .accent-text {
-    @apply bg-desaturated-green text-cyber-navy;
+    background: var(--green-400);
+    color: var(--navy-700);
   }
   
   .warm-text {
-    @apply bg-warm-rock text-executive-gold;
+    background: var(--warm-rock);
+    color: var(--gold-700);
   }
   
   .graphite-text {
-    @apply bg-cyber-graphite text-desaturated-green;
+    background: var(--cyber-graphite);
+    color: var(--green-400);
   }
   
-  /* Logo Styling */
-  .bri-logo {
-    @apply font-cinzel text-executive-gold font-bold text-xl md:text-2xl;
+  /* === PREMIUM COLOR COMBINATIONS === */
+  .executive-text {
+    background: var(--navy-900);
+    color: var(--text-on-navy-900);
   }
   
-  /* Navigation Styling */
-  .nav-link {
-    @apply font-futura font-medium uppercase tracking-wide text-light-stone hover:text-executive-gold transition-colors;
+  .premium-text {
+    background: var(--navy-800);
+    color: var(--text-on-navy-800);
   }
   
-  /* Hero Section Components */
-  .hero-container {
-    @apply bg-gradient-to-br from-cyber-navy to-evergreen-intel py-16 md:py-24;
+  .gold-accent-text {
+    background: var(--gold-700);
+    color: var(--text-on-gold-700);
   }
   
-  .hero-metric {
-    @apply font-futura font-semibold text-executive-gold text-xl md:text-2xl mb-4;
+  .success-text {
+    background: var(--green-400);
+    color: var(--navy-800);
   }
   
-  .hero-tagline {
-    @apply font-futura text-light-stone text-lg md:text-xl mb-6;
+  .warning-text {
+    background: var(--gold-600);
+    color: var(--navy-800);
   }
   
-  .hero-question {
-    @apply font-futura italic text-soft-steel mb-8;
+  /* === BRAND GRADIENT BACKGROUNDS === */
+  .gradient-primary {
+    background: var(--gradient-primary);
   }
   
-  /* Service Categories */
-  .service-category {
-    @apply mb-12;
+  .gradient-executive {
+    background: var(--gradient-executive);
   }
   
-  .services-grid {
-    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8;
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  
+  .gradient-premium {
+    background: var(--gradient-premium);
+  }
+  
+  .gradient-gold-subtle {
+    background: var(--gradient-gold-subtle);
+  }
+  
+  /* === TEXT GRADIENT UTILITIES === */
+  .text-gradient-primary {
+    background-image: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .text-gradient-executive {
+    background-image: var(--gradient-executive);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .text-gradient-accent {
+    background-image: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  /* === UTILITY CLASSES FOR BRAND LAYOUTS === */
+  .container-custom {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl; /* Extended max-width for larger screens */
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  .card-shadow {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* === INTERACTIVE ELEMENTS === */
+  .link-hover-gold {
+    @apply text-light-stone transition-colors duration-300;
+  }
+  
+  .link-hover-gold:hover {
+    color: var(--executive-gold);
+  }
+  
+  .link-hover-green {
+    @apply text-light-stone transition-colors duration-300;
+  }
+  
+  .link-hover-green:hover {
+    color: var(--desaturated-green);
+  }
+  
+  /* === ANIMATIONS === */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes pulseGold {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(218, 184, 110, 0.7); }
+    50% { box-shadow: 0 0 0 10px rgba(218, 184, 110, 0); }
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  .animate-slideInUp {
+    animation: slideInUp 0.8s ease-out forwards;
+  }
+  
+  .animate-pulseGold {
+    animation: pulseGold 2s infinite ease-in-out;
+  }
+  
+  /* === CIRCUIT BOARD ANIMATION (Complex Background Element) === */
+  .circuit-board-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0; /* Ensures it's behind content */
+    background: 
+      radial-gradient(circle at top left, var(--navy-900) 0%, transparent 70%),
+      radial-gradient(circle at bottom right, var(--green-900) 0%, transparent 70%);
+  }
+  
+  .circuit-line {
+    position: absolute;
+    background: var(--circuit-color);
+    box-shadow: 0 0 8px var(--circuit-glow);
+    animation: circuitMove 10s linear infinite;
+  }
+  
+  /* Example lines - would be dynamically generated or more detailed */
+  .circuit-line:nth-child(1) {
+    top: 10%;
+    left: 0%;
+    width: 100px;
+    height: 2px;
+    transform: rotate(45deg);
+    animation-delay: 0s;
+  }
+  
+  .circuit-line:nth-child(2) {
+    top: 50%;
+    left: 20%;
+    width: 150px;
+    height: 3px;
+    transform: rotate(-30deg);
+    animation-delay: 2s;
+  }
+  
+  .circuit-line:nth-child(3) {
+    top: 80%;
+    left: 70%;
+    width: 80px;
+    height: 1px;
+    transform: rotate(60deg);
+    animation-delay: 4s;
+  }
+  
+  @keyframes circuitMove {
+    0% { transform: translate(0, 0); opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { transform: translate(100px, 100px); opacity: 0; } /* Example movement */
+  }
+  
+  /* === GLOBAL CUSTOM STYLES (If absolutely necessary, prefer Tailwind) === */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  /* === RESPONSIVE UTILITIES === */
+  .hidden-mobile {
+    @apply hidden md:block;
+  }
+  
+  .visible-mobile {
+    @apply block md:hidden;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .w-fit-content {
+    width: fit-content;
+  }
+  
+  /* === BUTTON STYLES (Updated to Tailwind CSS best practices) === */
+  .btn {
+    @apply py-2 px-4 rounded transition duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-executive-gold text-cyber-navy hover:bg-gold-600;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border border-executive-gold text-executive-gold hover:bg-executive-gold hover:text-cyber-navy;
+  }
+  
+  .btn-icon {
+    @apply flex items-center justify-center p-2 rounded-full;
+  }
+  
+  /* === CARD STYLES (Updated to Tailwind CSS best practices) === */
+  .card {
+    @apply bg-light-stone text-cyber-navy rounded-lg shadow-md p-6;
+  }
+  
+  .card-hover-effect {
+    @apply transition-transform duration-300 ease-in-out hover:scale-105;
+  }
+  
+  /* === INPUT FIELD STYLES === */
+  .input-field {
+    @apply w-full p-3 border border-soft-steel rounded-md bg-evergreen-intel text-light-stone placeholder-soft-steel focus:outline-none focus:border-executive-gold;
+  }
+  
+  .input-field:focus {
+    box-shadow: 0 0 0 3px rgba(218, 184, 110, 0.3);
+  }
+  
+  /* === LINK STYLES === */
+  .styled-link {
+    @apply text-executive-gold hover:text-gold-600 transition-colors duration-300;
+  }
+  
+  /* === NAVIGATION MENU STYLES === */
+  .navbar-link {
+    @apply text-light-stone hover:text-executive-gold transition-colors duration-300;
+  }
+  
+  /* === FOOTER STYLES === */
+  .footer-text {
+    @apply text-soft-steel text-sm;
+  }
+  
+  /* === CUSTOM CONTAINER FOR MAXIMUM WIDTH === */
+  .max-width-container {
+    @apply mx-auto px-4 w-full;
+    max-width: 1440px; /* Adjust as per design */
+  }
+  
+  /* === UTILITY CLASSES FOR BRAND LAYOUTS === */
+  .section-spacing-y {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  .section-spacing-x {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* General padding and margin adjustments */
+  .pb-1\/2 {
+    padding-bottom: 0.125rem; /* 2px */
+  }
+  
+  .pt-1\/2 {
+    padding-top: 0.125rem; /* 2px */
+  }
+  
+  .my-1\/2 {
+    margin-top: 0.125rem; /* 2px */
+    margin-bottom: 0.125rem; /* 2px */
+  }
+  
+  /* Custom height utilities for specific design needs */
+  .h-1\/3-screen {
+    height: 33.333333vh;
+  }
+  
+  .h-2\/3-screen {
+    height: 66.666667vh;
+  }
+  
+  /* Custom width utilities */
+  .w-1\/4-screen {
+    width: 25vw;
+  }
+  
+  .w-1\/2-screen {
+    width: 50vw;
+  }
+  
+  /* Custom line-height for specific typography adjustments */
+  .leading-1\.1 {
+    line-height: 1.1;
+  }
+  
+  .leading-1\.2 {
+    line-height: 1.2;
+  }
+  
+  /* Custom text sizes beyond default Tailwind */
+  .text-xxs {
+    font-size: 0.625rem; /* 10px */
+    line-height: 0.875rem; /* 14px */
+  }
+  
+  .text-3-5xl {
+    font-size: 3.5rem; /* 56px */
+    line-height: 1;
+  }
+  
+  .text-4-5xl {
+    font-size: 4.5rem; /* 72px */
+    line-height: 1;
+  }
+  
+  /* Custom margin utilities to fine-tune spacing */
+  .mx-auto-mobile {
+    @apply mx-auto;
+  }
+  
+  @screen md {
+    .mx-auto-mobile {
+      margin-left: unset;
+      margin-right: unset;
+    }
+  }
+  
+  /* Custom background gradients for specific sections */
+  .hero-gradient-overlay {
+    background: linear-gradient(180deg, rgba(10, 31, 68, 0.7) 0%, rgba(31, 48, 45, 0.5) 100%);
+  }
+  
+  /* Custom shadows for depth and emphasis */
+  .shadow-brand-md {
+    box-shadow: 0 4px 15px rgba(218, 184, 110, 0.2);
+  }
+  
+  .shadow-brand-lg {
+    box-shadow: 0 8px 30px rgba(218, 184, 110, 0.3);
+  }
+  
+  /* Custom z-index for layering elements */
+  .z-60 {
+    z-index: 60;
+  }
+  
+  .z-70 {
+    z-index: 70;
+  }
+  
+  /* Animation utilities */
+  .animate-slow-pulse {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .5; }
+  }
+  
+  /* Flexbox utilities for complex layouts */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  
+  .flex-col-center {
+    @apply flex flex-col items-center justify-center;
+  }
+  
+  /* Grid utilities for specific responsive grids */
+  .grid-cols-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  /* Transform utilities for subtle interactive effects */
+  .transform-translate-z-0 {
+    transform: translateZ(0);
+  }
+  
+  /* Accessibility utilities */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  /* Custom element styles */
+  .modal-overlay {
+    @apply fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50;
+  }
+  
+  .modal-content {
+    @apply bg-white p-8 rounded-lg shadow-xl max-w-lg w-full;
+  }
+  
+  /* Form elements */
+  .form-group {
+    @apply mb-4;
+  }
+  
+  .form-label {
+    @apply block text-sm font-bold mb-2;
+    color: var(--cyber-navy);
+  }
+  
+  .form-input, .form-textarea {
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-cyber-navy leading-tight focus:outline-none focus:shadow-outline;
+  }
+  
+  .form-textarea {
+    @apply h-32;
+  }
+  
+  /* Table styles */
+  .table-auto {
+    @apply w-full text-left table-auto;
+  }
+  
+  .table-header {
+    @apply px-4 py-2;
+    background-color: var(--navy-700);
+    color: var(--light-stone);
+  }
+  
+  .table-row {
+    @apply border-b;
+    border-color: var(--soft-steel);
+  }
+  
+  .table-data {
+    @apply px-4 py-2;
+    background-color: var(--navy-800);
+    color: var(--light-stone);
+  }
+  
+  /* Card Section styles */
+  .card-section {
+    @apply bg-navy-800 rounded-lg shadow-xl p-8 transition-transform duration-300 ease-in-out hover:scale-105;
+    border: 1px solid var(--gold-700);
+  }
+  
+  .card-section-title {
+    @apply font-cinzel text-executive-gold text-2xl font-bold mb-4;
+  }
+  
+  .card-section-content {
+    @apply text-light-stone;
+  }
+  
+  /* Specific styles for About page */
+  .about-hero {
+    @apply relative h-[60vh] flex items-center justify-center text-center;
+    background: linear-gradient(135deg, var(--navy-900) 0%, var(--green-900) 100%);
+  }
+  
+  .about-content-section {
+    @apply py-16 md:py-24 lg:py-32 bg-navy-900;
+  }
+  
+  .about-heading {
+    @apply font-cinzel text-executive-gold text-4xl md:text-5xl lg:text-6xl font-bold mb-8;
+  }
+  
+  .about-paragraph {
+    @apply text-light-stone text-lg leading-relaxed mb-6;
+  }
+  
+  .about-feature-card {
+    @apply bg-navy-800 rounded-lg shadow-lg p-6 text-center;
+    border: 1px solid var(--gold-600);
+  }
+  
+  .about-feature-icon {
+    @apply text-executive-gold text-5xl mb-4;
+  }
+  
+  .about-feature-title {
+    @apply font-cinzel text-executive-gold text-xl font-bold mb-2;
+  }
+  
+  .about-feature-description {
+    @apply text-soft-steel;
+  }
+  
+  /* Contact page specific styles */
+  .contact-section {
+    @apply py-16 md:py-24 lg:py-32 bg-navy-90;
+  }
+  
+  .contact-heading {
+    @apply font-cinzel text-executive-gold text-4xl md:text-5xl lg:text-6xl font-bold mb-8;
+  }
+  
+  .contact-subheading {
+    @apply text-light-stone text-xl leading-relaxed mb-10;
+  }
+  
+  .contact-form {
+    @apply bg-navy-800 p-8 rounded-lg shadow-xl;
+    border: 1px solid var(--gold-700);
+  }
+  
+  .contact-info-card {
+    @apply bg-navy-800 p-6 rounded-lg shadow-md text-center;
+    border: 1px solid var(--green-700);
+  }
+
+  .contact-info-icon {
+    @apply text-executive-gold text-4xl mb-3;
+  }
+  
+  .contact-info-title {
+    @apply font-cinzel text-executive-gold text-lg font-bold mb-1;
+  }
+  
+  .contact-info-text {
+    @apply text-light-stone text-base;
+  }
+  
+  /* Services page specific styles */
+  .services-hero {
+    @apply relative h-[50vh] flex items-center justify-center text-center;
+    background: linear-gradient(135deg, var(--navy-800) 0%, var(--green-800) 100%);
+  }
+  
+  .services-heading {
+    @apply font-cinzel text-executive-gold text-4xl md:text-5xl lg:text-6xl font-bold mb-4;
+  }
+  
+  .services-description {
+    @apply text-light-stone text-lg leading-relaxed mb-8;
+  }
+  
+  .service-categories {
+    @apply bg-navy-900 py-16 md:py-24 lg:py-32;
+  }
+  
+  .service-category-title {
+    @apply font-cinzel text-executive-gold text-3xl font-bold mb-8;
+  }
+  
+  .service-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+  }
+  
+  /* Resources page specific styles */
+  .resources-hero {
+    @apply relative h-[40vh] flex items-center justify-center text-center;
+    background: linear-gradient(135deg, var(--navy-700) 0%, var(--gold-700) 100%);
+  }
+  
+  .resources-heading {
+    @apply font-cinzel text-navy-900 text-4xl md:text-5xl lg:text-6xl font-bold mb-4;
+  }
+  
+  .resource-card {
+    @apply bg-white p-6 rounded-lg shadow-lg;
+    border-left: 4px solid var(--green-700);
+  }
+  
+  .resource-title {
+    @apply font-cinzel text-executive-gold text-xl font-bold mb-2;
+  }
+  
+  .resource-description {
+    @apply text-cyber-navy;
+  }
+  
+  /* Frankfurt Hub page specific styles */
+  .frankfurt-hero {
+    @apply relative h-[70vh] flex items-center justify-center text-center;
+    background: url('/images/Frankfurt Skyline at Dusk.png') no-repeat center center;
+    background-size: cover;
+  }
+  
+  .frankfurt-overlay {
+    @apply absolute inset-0 bg-gradient-to-b from-navy-900/80 to-navy-700/60;
+  }
+  
+  .frankfurt-content {
+    @apply relative z-10 text-light-stone;
+  }
+  
+  .frankfurt-heading {
+    @apply font-cinzel text-executive-gold text-5xl md:text-6xl lg:text-7xl font-bold mb-4;
+  }
+  
+  .frankfurt-subheading {
+    @apply text-2xl md:text-3xl lg:text-4xl leading-tight mb-8;
+  }
+  
+  .frankfurt-section {
+    @apply py-16 md:py-24 lg:py-32;
+    background: var(--navy-900);
+  }
+  
+  .frankfurt-section-heading {
+    @apply font-cinzel text-executive-gold text-4xl font-bold mb-8;
+  }
+  
+  .frankfurt-text {
+    @apply text-light-stone text-lg leading-relaxed mb-6;
+  }
+  
+  .frankfurt-highlight {
+    @apply text-executive-gold font-semibold;
+  }
+  
+  .frankfurt-icon {
+    @apply text-executive-gold text-6xl mb-4;
+  }
+  
+  .frankfurt-feature-card {
+    @apply bg-navy-800 p-6 rounded-lg shadow-lg text-center;
+    border: 1px solid var(--green-700);
+  }
+  
+  .frankfurt-feature-title {
+    @apply font-cinzel text-executive-gold text-xl font-bold mb-2;
+  }
+  
+  .frankfurt-feature-description {
+    @apply text-soft-steel;
+  }
+  
+  /* Base styles for the BusCard component */
+  .bus-card-container {
+    @apply flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 to-black p-4;
+  }
+  
+  .bus-card {
+    @apply relative w-full max-w-md bg-stone-900 text-gold-500 rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 ease-in-out;
+    border: 2px solid theme('colors.gold.700');
+    background-image: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M11 0L0 11V100h89L100 89V0H11zm77.92 88l-9.92 9.92V12.08L88.92 2l9.92 9.92v76.08zm-76.08 0H12.08L2 88.92V12.08L12.08 2H88.92V88z" fill="%238B7640" fill-opacity="0.1" fill-rule="evenodd"/%3E%3C/svg%3E');
+    background-size: 20px 20px;
+    background-position: -5px -5px; /* Offset to center the pattern */
+  }
+  
+  .bus-card-header {
+    @apply relative p-8 pb-16 text-center;
+    background: linear-gradient(180deg, theme('colors.navy.900') 0%, theme('colors.navy.700') 100%);
+  }
+  
+  .bus-card-logo-container {
+    @apply mb-4 transform -translate-y-1/2;
+  }
+  
+  .bus-card-logo {
+    @apply mx-auto h-24 w-auto drop-shadow-lg;
+  }
+  
+  .bus-card-title {
+    @apply font-cinzel text-4xl font-bold text-gold-700 drop-shadow-md leading-tight;
+  }
+  
+  .bus-card-subtitle {
+    @apply font-futura text-xl text-light-stone-400 mt-2 tracking-wide;
+  }
+  
+  .bus-card-content {
+    @apply p-8 pt-0 -mt-8 relative z-10;
+  }
+  
+  .bus-card-section {
+    @apply mb-6;
+  }
+  
+  .bus-card-section-title {
+    @apply font-cinzel text-2xl font-bold text-gold-600 mb-3 border-b border-gold-800 pb-2 flex items-center;
+  }
+  
+  .bus-card-section-link {
+    @apply flex items-center text-light-stone hover:text-gold-500 transition duration-300 mb-2;
+  }
+  
+  .bus-card-icon {
+    @apply text-gold-700 mr-3 text-xl;
+  }
+  
+  .bus-card-link-text {
+    @apply font-futura text-lg;
+  }
+  
+  .bus-card-tagline {
+    @apply font-cinzel italic text-gold-500 text-center mt-8 text-lg;
+  }
+  
+  .qr-code-section {
+    @apply text-center bg-gray-800 p-6 rounded-b-3xl;
+    border-top: 1px solid theme('colors.gold.800');
+  }
+  
+  .qr-code-image {
+    @apply mx-auto w-32 h-32 mb-4 p-2 bg-white rounded-lg shadow-lg;
+  }
+  
+  .qr-code-text {
+    @apply text-light-stone text-sm;
+  }
+  
+  /* Specific icon sizes for the QR code */
+  .qr-icon-lg {
+    @apply text-3xl;
+  }
+  
+  /* Additional utility classes */
+  .drop-shadow-lg {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  }
+  
+  .drop-shadow-xl {
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));
+  }
+  
+  .text-shadow-md {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Custom light-stone-400 color */
+  .text-light-stone-400 {
+    color: #c0c4bf; /* A slightly darker shade of light-stone for better contrast */
+  }
+  
+  /* Responsive adjustments for BusCard */
+  @media (min-width: 640px) {
+    .bus-card {
+      @apply w-11/12;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .bus-card {
+      @apply w-3/4;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .bus-card {
+      @apply w-2/3;
+    }
+  }
+  
+  /* Animations */
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-20%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .animate-slideInFromTop {
+    animation: slideInFromTop 0.6s ease-out forwards;
+  }
+  
+  .animate-fadeInScale {
+    animation: fadeInScale 0.5s ease-out forwards;
+  }
+  
+  /* Specific styles for the QR code component */
+  .qr-code-container {
+    @apply flex flex-col items-center justify-center p-6 bg-navy-800 rounded-b-lg shadow-inner;
+  }
+  
+  .qr-code-wrapper {
+    @apply p-4 bg-white rounded-lg shadow-lg mb-4;
+  }
+  
+  .qr-code-instructions {
+    @apply text-center text-light-stone text-sm;
+  }
+  
+  /* Added for the services page to style the generated markdown */
+  .markdown-content h1 {
+    @apply text-executive-gold text-3xl font-bold mb-4;
+  }
+  
+  .markdown-content h2 {
+    @apply text-gold-600 text-2xl font-semibold mb-3;
+  }
+  
+  .markdown-content p {
+    @apply text-light-stone text-lg leading-relaxed mb-4;
+  }
+  
+  .markdown-content ul {
+    @apply list-disc list-inside text-light-stone mb-4;
+  }
+  
+  .markdown-content li {
+    @apply mb-2;
+  }
+  
+  .markdown-content strong {
+    @apply text-executive-gold;
+  }
+  
+  .markdown-content em {
+    @apply italic text-green-400;
+  }
+  
+  .markdown-content a {
+    @apply text-gold-700 hover:text-green-400 underline;
+  }
+  
+  .markdown-content blockquote {
+    @apply border-l-4 border-gold-700 pl-4 italic text-light-stone-400 my-4;
+  }
+  
+  .markdown-content code {
+    @apply bg-navy-600 text-green-400 p-1 rounded;
+  }
+  
+  .markdown-content pre {
+    @apply bg-navy-600 p-4 rounded-lg my-4 overflow-x-auto;
+  }
+  
+  .markdown-content pre code {
+    @apply block bg-transparent text-green-400;
+  }
+  
+  /* Table styles for markdown-content */
+  .markdown-content table {
+    @apply w-full border-collapse my-6;
+  }
+  
+  .markdown-content th, .markdown-content td {
+    @apply border border-gold-700 px-4 py-2 text-left;
+  }
+  
+  .markdown-content th {
+    @apply bg-navy-700 text-gold-700 font-bold;
+  }
+  
+  .markdown-content tr:nth-child(even) {
+    @apply bg-navy-800;
+  }
+  
+  .markdown-content tr:nth-child(odd) {
+    @apply bg-navy-900;
+  }
+  
+  .markdown-content img {
+    @apply max-w-full h-auto rounded-lg shadow-lg my-6;
+  }
+  
+  /* Styles for the language switcher in the footer */
+  .footer-language-switcher .language-switcher-button {
+    @apply text-soft-steel hover:text-executive-gold transition-colors duration-300 px-3 py-1 rounded;
+  }
+  
+  .footer-language-switcher .language-switcher-button.active {
+    @apply bg-executive-gold text-cyber-navy;
+  }
+  
+  /* Specific class for Executive Overview section in Home page */
+  .executive-overview-section {
+    background: linear-gradient(135deg, var(--navy-900) 0%, var(--evergreen-intel) 100%);
+    @apply py-20 px-4 text-light-stone;
+  }
+  
+  /* Specific class for Executive Overview Section Titles */
+  .executive-overview-title {
+    @apply font-cinzel text-executive-gold text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Specific class for Executive Overview Cards */
+  .executive-overview-card {
+    @apply bg-navy-800 p-8 rounded-lg shadow-xl text-center transition-transform duration-300 ease-in-out hover:scale-105;
+    border: 1px solid var(--gold-700);
+  }
+  
+  .executive-overview-icon {
+    @apply text-executive-gold text-6xl mb-6;
+  }
+  
+  .executive-overview-card-title {
+    @apply font-cinzel text-executive-gold text-2xl font-bold mb-4;
+  }
+  
+  .executive-overview-card-description {
+    @apply text-light-stone text-lg leading-relaxed;
+  }
+  
+  /* Specific styles for the Hero component on the home page */
+  .hero-home-container {
+    @apply relative h-[80vh] w-full flex items-center justify-center text-center;
+  }
+  
+  .hero-home-background {
+    @apply absolute inset-0 object-cover object-center w-full h-full;
+  }
+  
+  .hero-home-overlay {
+    @apply absolute inset-0 bg-gradient-to-b from-cyber-navy/70 to-evergreen-intel/50 z-10;
+  }
+  
+  .hero-home-content {
+    @apply absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4 sm:px-8 md:px-16 lg:px-24 pt-24;
+  }
+  
+  .hero-home-title {
+    @apply font-cinzel uppercase text-executive-gold tracking-wider text-3xl md:text-4xl lg:text-5xl pb-8;
+    line-height: 1.1;
+  }
+  
+  .hero-home-button-group {
+    @apply mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full;
+  }
+  
+  /* Specific styles for ServiceCard */
+  .service-card-image {
+    @apply w-24 h-24 mb-4 mx-auto; /* Centered and sized for icons */
+  }
+  
+  .service-card-title {
+    @apply font-cinzel text-executive-gold text-2xl font-bold mb-3;
+  }
+  
+  .service-card-description {
+    @apply text-cyber-graphite mb-4;
+  }
+  
+  /* Specific styles for ServicesList */
+  .services-list-container {
+    @apply py-16 md:py-24 lg:py-32 bg-navy-900;
+  }
+  
+  .services-list-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+  }
+  
+  /* Specific styles for Container */
+  .container-custom {
+    @apply mx-auto px-4;
+    max-width: 1280px; /* Adjust as needed */
+  }
+  
+  /* Specific styles for PrimaryButton */
+  .primary-button-new {
+    @apply bg-executive-gold text-cyber-navy font-cinzel font-bold px-8 py-4 rounded-lg transition-all uppercase tracking-wide;
+    box-shadow: 0 4px 12px rgba(218, 184, 110, 0.3);
+    border: 2px solid var(--executive-gold);
+  }
+  
+  .primary-button-new:hover {
+    @apply bg-gold-600 transform -translate-y-1;
+    box-shadow: 0 6px 20px rgba(218, 184, 110, 0.4);
+  }
+  
+  .primary-button-new:active {
+    @apply bg-gold-800;
+  }
+  
+  /* Specific styles for SecondaryButton */
+  .secondary-button-new {
+    @apply bg-transparent font-cinzel font-medium px-8 py-4 rounded-lg transition-all uppercase tracking-wide;
+    border: 2px solid var(--executive-gold);
+    color: var(--executive-gold);
+  }
+  
+  .secondary-button-new:hover {
+    @apply bg-executive-gold text-cyber-navy;
+  }
+  
+  /* Specific styles for LanguageSwitcher */
+  .language-switcher-container {
+    @apply relative inline-block text-left;
+  }
+  
+  .language-switcher-button {
+    @apply inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500;
+  }
+  
+  .language-switcher-menu {
+    @apply origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none;
+  }
+  
+  .language-switcher-item {
+    @apply block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100;
+  }
+  
+  /* Specific styles for Footer */
+  .footer-container {
+    @apply bg-navy-900 text-light-stone py-12;
+  }
+  
+  .footer-logo {
+    @apply mx-auto mb-6;
+  }
+  
+  .footer-nav-link {
+    @apply text-light-stone hover:text-executive-gold transition-colors duration-300;
+  }
+  
+  .footer-social-icon {
+    @apply text-light-stone hover:text-executive-gold transition-colors duration-300 text-2xl;
+  }
+  
+  .footer-copyright {
+    @apply text-soft-steel text-sm mt-8;
+  }
+  /*
+  .footer-languages {
+    @apply flex space-x-4;
+  }
+  
+  .footer-language-item {
+    @apply text-soft-steel hover:text-executive-gold transition-colors duration-300;
+  }
+  */
+  
+  /* Custom styles for the ExecutiveEducationProgram page */
+  .education-program-hero {
+    @apply relative h-[60vh] flex items-center justify-center text-center;
+    background: linear-gradient(135deg, var(--navy-900) 0%, var(--evergreen-intel) 100%);
+  }
+  
+  .education-program-heading {
+    @apply font-cinzel text-executive-gold text-4xl md:text-5xl lg:text-6xl font-bold mb-4;
+  }
+  
+  .education-program-description {
+    @apply text-light-stone text-lg leading-relaxed mb-8;
+  }
+  
+  .program-section {
+    @apply py-16 md:py-24 lg:py-32 bg-navy-900;
+  }
+  
+  .program-section-heading {
+    @apply font-cinzel text-executive-gold text-4xl font-bold mb-8;
+  }
+  
+  .program-highlight-box {
+    @apply bg-navy-800 p-8 rounded-lg shadow-xl border border-gold-700;
+  }
+  
+  .program-highlight-title {
+    @apply font-cinzel text-executive-gold text-2xl font-bold mb-4;
+  }
+  
+  .program-highlight-text {
+    @apply text-light-stone text-lg leading-relaxed;
+  }
+  
+  .program-feature-list {
+    @apply list-disc list-inside text-light-stone text-lg leading-relaxed;
+  }
+  
+  .program-feature-item {
+    @apply mb-2;
+  }
+  
+  .program-cta-section {
+    @apply py-16 md:py-24 lg:py-32 text-center;
+    background: linear-gradient(135deg, var(--gold-700) 0%, var(--executive-gold) 100%);
+  }
+  
+  .program-cta-heading {
+    @apply font-cinzel text-navy-900 text-4xl md:text-5xl lg:text-6xl font-bold mb-8;
+  }
+  
+  /* Specific styles for the InvestmentReadySecurity page */
+  .investment-hero {
+    @apply relative h-[60vh] flex items-center justify-center text-center;
+    background: linear-gradient(135deg, var(--green-900) 0%, var(--navy-900) 100%);
+  }
+  
+  .investment-heading {
+    @apply font-cinzel text-executive-gold text-4xl md:text-5xl lg:text-6xl font-bold mb-4;
+  }
+  
+  .investment-description {
+    @apply text-light-stone text-lg leading-relaxed mb-8;
+  }
+  
+  .investment-section {
+    @apply py-16 md:py-24 lg:py-32 bg-navy-900;
+  }
+  
+  .investment-section-heading {
+    @apply font-cinzel text-executive-gold text-4xl font-bold mb-8;
+  }
+  
+  .investment-feature-card {
+    @apply bg-navy-800 p-8 rounded-lg shadow-xl border border-executive-gold;
+  }
+  
+  .investment-feature-title {
+    @apply font-cinzel text-executive-gold text-2xl font-bold mb-4;
+  }
+  
+  .investment-feature-text {
+    @apply text-light-stone text-lg leading-relaxed;
+  }
+  
+  .investment-cta-section {
+    @apply py-16 md:py-24 lg:py-32 text-center;
+    background: linear-gradient(135deg, var(--navy-700) 0%, var(--executive-gold) 100%);
+  }
+  
+  .investment-cta-heading {
+    @apply font-cinzel text-navy-900 text-4xl md:text-5xl lg:text-6xl font-bold mb-8;
+  }
+  
+  /* Specific styles for the StrategicAdvisory page */
+  .advisory-hero {
+    @apply relative h-[60vh] flex items-center justify-center text-center;
+    background: linear-gradient(135deg, var(--gold-900) 0%, var(--navy-900) 100%);
+  }
+  
+  .advisory-heading {
+    @apply font-cinzel text-executive-gold text-4xl md:text-5xl lg:text-6xl font-bold mb-4;
+  }
+  
+  .advisory-description {
+    @apply text-light-stone text-lg leading-relaxed mb-8;
+  }
+  
+  .advisory-section {
+    @apply py-16 md:py-24 lg:py-32 bg-navy-900;
+  }
+  
+  .advisory-section-heading {
+    @apply font-cinzel text-executive-gold text-4xl font-bold mb-8;
+  }
+  
+  .advisory-feature-card {
+    @apply bg-navy-800 p-8 rounded-lg shadow-xl border border-executive-gold;
+  }
+  
+  .advisory-feature-title {
+    @apply font-cinzel text-executive-gold text-2xl font-bold mb-4;
+  }
+  
+  .advisory-feature-text {
+    @apply text-light-stone text-lg leading-relaxed;
+  }
+  
+  .advisory-cta-section {
+    @apply py-16 md:py-24 lg:py-32 text-center;
+    background: linear-gradient(135deg, var(--green-700) 0%, var(--executive-gold) 100%);
+  }
+  
+  .advisory-cta-heading {
+    @apply font-cinzel text-navy-900 text-4xl md:text-5xl lg:text-6xl font-bold mb-8;
+  }
+  
+  /* Specific styles for the TechnicalValueCreation page */
+  .value-hero {
+    @apply relative h-[60vh] flex items-center justify-center text-center;
+    background: linear-gradient(135deg, var(--navy-900) 0%, var(--gold-900) 100%);
+  }
+  
+  .value-heading {
+    @apply font-cinzel text-executive-gold text-4xl md:text-5xl lg:text-6xl font-bold mb-4;
+  }
+  
+  .value-description {
+    @apply text-light-stone text-lg leading-relaxed mb-8;
+  }
+  
+  .value-section {
+    @apply py-16 md:py-24 lg:py-32 bg-navy-900;
+  }
+  
+  .value-section-heading {
+    @apply font-cinzel text-executive-gold text-4xl font-bold mb-8;
+  }
+  
+  .value-feature-card {
+    @apply bg-navy-800 p-8 rounded-lg shadow-xl border border-executive-gold;
+  }
+  
+  .value-feature-title {
+    @apply font-cinzel text-executive-gold text-2xl font-bold mb-4;
+  }
+  
+  .value-feature-text {
+    @apply text-light-stone text-lg leading-relaxed;
+  }
+  
+  .value-cta-section {
+    @apply py-16 md:py-24 lg:py-32 text-center;
+    background: linear-gradient(135deg, var(--navy-700) 0%, var(--green-700) 100%);
+  }
+  
+  .value-cta-heading {
+    @apply font-cinzel text-executive-gold text-4xl md:text-5xl lg:text-6xl font-bold mb-8;
+  }
+  
+  /* Specific styles for the Compliance page */
+  .compliance-hero {
+    @apply relative h-[60vh] flex items-center justify-center text-center;
+    background: linear-gradient(135deg, var(--green-900) 0%, var(--gold-900) 100%);
+  }
+  
+  .compliance-heading {
+    @apply font-cinzel text-executive-gold text-4xl md:text-5xl lg:text-6xl font-bold mb-4;
+  }
+  
+  .compliance-description {
+    @apply text-light-stone text-lg leading-relaxed mb-8;
+  }
+  
+  .compliance-section {
+    @apply py-16 md:py-24 lg:py-32 bg-navy-900;
+  }
+  
+  .compliance-section-heading {
+    @apply font-cinzel text-executive-gold text-4xl font-bold mb-8;
+  }
+  
+  .compliance-feature-card {
+    @apply bg-navy-800 p-8 rounded-lg shadow-xl border border-executive-gold;
+}
+  
+  .compliance-feature-title {
+    @apply font-cinzel text-executive-gold text-2xl font-bold mb-4;
+  }
+  
+  .compliance-feature-text {
+    @apply text-light-stone text-lg leading-relaxed;
+  }
+  
+  .compliance-cta-section {
+    @apply py-16 md:py-24 lg:py-32 text-center;
+    background: linear-gradient(135deg, var(--gold-700) 0%, var(--navy-700) 100%);
+  }
+  
+  .compliance-cta-heading {
+    @apply font-cinzel text-navy-900 text-4xl md:text-5xl lg:text-6xl font-bold mb-8;
   }
 }

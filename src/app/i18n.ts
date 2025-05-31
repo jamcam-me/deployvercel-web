@@ -1,8 +1,9 @@
 
 import { createSharedPathnamesNavigation } from 'next-intl/navigation';
-import { getRequestConfig } from 'next-intl/server';
+import { getRequestConfig, setRequestLocale } from 'next-intl/server';
 
 export default getRequestConfig(async ({ locale }) => {
+  setRequestLocale(locale);
   const messages = (await import(`../../public/locales/${locale}/common.json`)).default;
   console.log(`[i18n] Loaded messages for locale: ${locale}`, Object.keys(messages));
   return {

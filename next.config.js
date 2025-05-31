@@ -7,6 +7,7 @@ const nextConfig = {
   images: {
     domains: ['localhost'],
   },
+  output: 'export',
 };
  
 module.exports = withNextIntl(nextConfig);

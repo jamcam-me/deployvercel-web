@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({ locale }) => {
               ? (
                   <>
                     Bridging AI Innovation
-                    <span className="text-warm-rock"> with Enterprise Security</span>
+                    <span className="text-green-30"> with Enterprise Security</span>
                   </>
                 )
               : (
