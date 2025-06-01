@@ -88,10 +88,10 @@ export default function ContactPage({ params }: ContactPageProps) {
               </div>
             </div>
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-              <Link href={`/${locale}/services`} className="primary-button text-2xl px-8 py-4 w-full">
+              <Link href={`/${locale}/services`} className="primary-button">
                 {locale === 'en' ? 'Explore Strategic Services' : 'Strategische Dienste entdecken'}
               </Link>
-              <Link href={`/${locale}/about`} className="secondary-button text-2xl px-8 py-4 w-full">
+              <Link href={`/${locale}/about`} className="secondary-button">
                 {locale === 'en' ? 'Learn About Us' : 'Über uns erfahren'}
               </Link>
             </div>

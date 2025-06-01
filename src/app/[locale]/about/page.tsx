@@ -39,10 +39,10 @@ export default function About({ params }: AboutPageProps) {
           </h1>
           {/* Standardized buttons matching HomePage Hero */}
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-            <Link href={`/${locale}/services`} className="primary-button text-2xl px-8 py-4 w-full">
+            <Link href={`/${locale}/services`} className="primary-button">
               {locale === 'en' ? 'Explore Strategic Services' : 'Strategische Dienste entdecken'}
             </Link>
-            <Link href={`${process.env.NEXT_PUBLIC_RESOURCES_LINK || 'https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/'}`} target="_blank" rel="noopener noreferrer" className="secondary-button text-2xl px-8 py-4 w-full">
+            <Link href={`${process.env.NEXT_PUBLIC_RESOURCES_LINK || 'https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/'}`} target="_blank" rel="noopener noreferrer" className="secondary-button">
               {locale === 'en' ? 'View Resources' : 'Ressourcen anzeigen'}
             </Link>
           </div>

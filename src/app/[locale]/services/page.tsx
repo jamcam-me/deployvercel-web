@@ -50,10 +50,10 @@ export default function ServicesPage({ params }: ServicesPageProps) {
             {tServices('description')}
           </p>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-            <Link href={`/${locale}/about`} className="primary-button text-2xl px-8 py-4 w-full">
+            <Link href={`/${locale}/about`} className="primary-button">
               {locale === 'en' ? 'Learn About Us' : 'Über uns erfahren'}
             </Link>
-            <Link href={`/${locale}/contact`} className="secondary-button text-2xl px-8 py-4 w-full">
+            <Link href={`/${locale}/contact`} className="secondary-button">
               {locale === 'en' ? 'Schedule Consultation' : 'Beratungstermin vereinbaren'}
             </Link>
           </div>

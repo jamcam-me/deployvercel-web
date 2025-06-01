@@ -40,16 +40,16 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
   return (
     <header className={`fixed top-0 left-0 right-0 w-full z-[999] transition-all duration-300 ${
       isScrolled
-        ? `h-16 shadow-sm backdrop-blur-md ${
+        ? `h-12 shadow-sm backdrop-blur-md ${
             pathname === `/${locale}` || pathname === `/` // Home page
-              ? 'bg-gradient-to-b from-executive-gold/20 via-executive-gold/40 to-executive-gold/60'
+              ? 'bg-gradient-to-t from-executive-gold/60 via-executive-gold/40 to-executive-gold/20'
               : pathname.startsWith(`/${locale}/about`) // About page (check for /about or /about/subpath)
-              ? 'bg-gradient-to-b from-evergreen-intel/20 via-evergreen-intel/40 to-evergreen-intel/60'
-              : 'bg-gradient-to-b from-cyber-navy/20 via-cyber-navy/40 to-cyber-navy/60' // Default for other pages
+              ? 'bg-gradient-to-t from-evergreen-intel/60 via-evergreen-intel/40 to-evergreen-intel/20'
+              : 'bg-gradient-to-t from-cyber-navy/60 via-cyber-navy/40 to-cyber-navy/20' // Default for other pages
           }`
-        : 'h-20 bg-transparent backdrop-blur-sm' // Completely transparent initially
+        : 'h-16 bg-transparent backdrop-blur-sm' // Completely transparent initially
     }`}>
-      <div className="w-full max-w-7xl mx-auto flex items-center justify-between py-2"> {/* Removed px-4 and adjusted padding */}
+      <div className="w-full flex items-center justify-between py-2 px-4"> {/* Removed max-w-7xl mx-auto, added px-4 */}
         <Link href={`/${locale}`} className="flex items-center pl-0"> {/* Ensure logo is far left */}
           <Image
             src="/images/BRI-LOGO-NAMERIGHT.svg"
