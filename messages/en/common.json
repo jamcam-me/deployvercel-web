@@ -39,7 +39,7 @@
       "enterpriseLeaders": "Enterprise Leaders",
       "smbOwners": "SMB Owners",
       "vcPeFirms": "VC & Private Equity Firms",
-      "boardMembers": "Board Members",
+    "boardMembers": "Board Members",
       "executive-communication-framework": {
         "title": "Executive Communication Framework",
         "description": "Transform technical security metrics into strategic business insights that resonate with board members and C-suite executives.",
