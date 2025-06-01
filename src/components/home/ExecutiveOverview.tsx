@@ -65,8 +65,8 @@ const ExecutiveOverview: React.FC<ExecutiveOverviewProps> = ({ locale }) => {
     <section className="py-16 bg-light-stone">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          {/* Leading with metric */}
-          <p className="metric-highlight">
+          {/* Leading with metric - now using gold-800 color */}
+          <p className="font-cinzel text-gold-800 font-bold text-lg md:text-xl lg:text-2xl mb-6 text-center">
             {translations.metric}
           </p>
           
@@ -83,7 +83,7 @@ const ExecutiveOverview: React.FC<ExecutiveOverviewProps> = ({ locale }) => {
             {translations.security_question}
           </p>
           
-          <h2 className="font-cinzel uppercase font-bold text-soft-steel tracking-wider text-3xl md:text-4xl lg:text-5xl mb-8 mt-12"> {/* Moved from Hero section */}
+          <h2 className="font-cinzel uppercase font-bold text-evergreen-intel tracking-wider text-3xl md:text-4xl lg:text-5xl mb-8 mt-12"> {/* Changed to evergreen-intel color */}
             {translations.accelerate_security}
           </h2>
 

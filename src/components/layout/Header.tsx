@@ -40,14 +40,8 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
   return (
     <header className={`fixed top-0 left-0 right-0 w-full z-[999] transition-all duration-300 ${
       isScrolled
-        ? `h-12 shadow-sm backdrop-blur-md ${
-            pathname === `/${locale}` || pathname === `/` // Home page
-              ? 'bg-gradient-to-t from-executive-gold/60 via-executive-gold/40 to-executive-gold/20'
-              : pathname.startsWith(`/${locale}/about`) // About page (check for /about or /about/subpath)
-              ? 'bg-gradient-to-t from-evergreen-intel/60 via-evergreen-intel/40 to-evergreen-intel/20'
-              : 'bg-gradient-to-t from-cyber-navy/60 via-cyber-navy/40 to-cyber-navy/20' // Default for other pages
-          }`
-        : 'h-16 bg-transparent backdrop-blur-sm' // Completely transparent initially
+        ? `h-20 shadow-sm backdrop-blur-md bg-gradient-to-b from-cyber-navy/80 via-cyber-navy/60 to-cyber-navy/40`
+        : 'h-32 bg-transparent'
     }`}>
       <div className="w-full flex items-center justify-between py-2 px-4"> {/* Removed max-w-7xl mx-auto, added px-4 */}
         <Link href={`/${locale}`} className="flex items-center pl-0"> {/* Ensure logo is far left */}
@@ -55,10 +49,11 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
             src="/images/BRI-LOGO-NAMERIGHT.svg"
             alt="Big Rock Intelligence Logo"
             width={isScrolled ? 256 : 512}
-            height={isScrolled ? 64 : 128}
-            className={`w-auto transition-all duration-300 ${
-              isScrolled ? 'h-16' : 'h-32' // Adjust logo size based on scroll
+            height={isScrolled ? 64 : 96}
+            className={`w-auto transition-all duration-300 opacity-100 ${
+              isScrolled ? 'h-16' : 'h-24' // Adjust logo size based on scroll, ensure full opacity
             }`}
+            style={{ opacity: 1 }} // Force full opacity
           />
         </Link>
 

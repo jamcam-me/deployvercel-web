@@ -45,6 +45,8 @@ const config: Config = {
         'gold-base': '#dab86e',
         'gold-15t': '#e1c689',
         'gold-30t': '#e9d4a4',
+        'gold-800': '#8b7355',
+        'gold-900': '#6b5c47',
       },
       backgroundImage: {
         'primary-gradient': 'linear-gradient(to right, var(--cyber-navy), var(--evergreen-intel))',
