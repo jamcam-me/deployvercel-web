@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { usePathname } from 'next/navigation'; // Added import
 
 interface HeaderProps {
   locale: 'en' | 'de';
@@ -19,6 +20,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname(); // Added pathname constant
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,9 +39,17 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
   
   return (
     <header className={`fixed top-0 left-0 right-0 w-full z-[999] transition-all duration-300 ${
-      isScrolled ? 'h-24 bg-gradient-to-t from-transparent via-cyber-navy/70 to-cyber-navy shadow-sm' : 'h-64 bg-transparent' // Adjust initial and scrolled header height and background
+      isScrolled
+        ? `h-24 shadow-sm ${
+            pathname === `/${locale}` || pathname === `/` // Home page
+              ? 'bg-executive-gold'
+              : pathname.startsWith(`/${locale}/about`) // About page (check for /about or /about/subpath)
+              ? 'bg-evergreen-intel'
+              : 'bg-cyber-navy' // Default for other pages
+          }`
+        : 'h-64 bg-transparent' // Adjust initial and scrolled header height and background
     }`}>
-      <div className="container-custom flex items-center pl-0">
+      <div className="container-custom flex items-center px-4 py-2"> {/* Adjusted padding */}
         <Link href={`/${locale}`} className="flex items-center mr-auto">
           <Image
             src="/images/BRI-LOGO-NAMERIGHT.svg"

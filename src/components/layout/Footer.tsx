@@ -1,6 +1,9 @@
+'use client'; // Added to allow usePathname
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation'; // Added import
 
 interface FooterProps {
   locale: 'en' | 'de';
@@ -8,6 +11,14 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ locale }) => {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname(); // Get current path
+
+  const footerBgClass =
+    pathname === `/${locale}` || pathname === `/` // Home page
+      ? 'bg-executive-gold'
+      : pathname.startsWith(`/${locale}/about`) // About page
+      ? 'bg-evergreen-intel'
+      : 'bg-cyber-navy'; // Default for other pages
   
   const translations = {
     copyright: locale === 'en'
@@ -20,7 +31,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
   };
   
   return (
-    <footer className="bg-cyber-navy text-white py-12">
+    <footer className={`${footerBgClass} text-white py-12`}> {/* Dynamic background class */}
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
@@ -63,7 +74,7 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/resources`} className="text-light-stone hover:text-executive-gold transition">
+                <Link href={`${process.env.NEXT_PUBLIC_RESOURCES_LINK || 'https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/'}`} target="_blank" rel="noopener noreferrer" className="text-light-stone hover:text-executive-gold transition">
                   {translations.resources}
                 </Link>
               </li>
