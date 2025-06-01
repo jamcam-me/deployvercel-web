@@ -42,21 +42,25 @@ export default function ServicesPage({ params }: ServicesPageProps) {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-cyber-navy/70 to-evergreen-intel/50 z-10" />
+:start_line:45
+-------
         <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4 sm:px-8">
-          <h1 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-4xl md:text-5xl lg:text-6xl mb-6">
-            {tServices('title')}
-          </h1>
-          <p className="font-futura text-light-stone text-lg md:text-xl max-w-2xl mb-8">
-            {tServices('description')}
-          </p>
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-            <Link href={`/${locale}/about`} className="primary-button">
-              {locale === 'en' ? 'Learn About Us' : 'Über uns erfahren'}
-            </Link>
-            <Link href={`/${locale}/contact`} className="secondary-button">
-              {locale === 'en' ? 'Schedule Consultation' : 'Beratungstermin vereinbaren'}
-            </Link>
-          </div>
+          <div className="max-w-3xl mx-auto"> {/* Added wrapper div and mx-auto for centering */}
+            <h1 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-4xl md:text-5xl lg:text-6xl mb-6">
+              {tServices('title')}
+            </h1>
+            <p className="font-futura text-light-stone text-lg md:text-xl max-w-2xl mb-8">
+              {tServices('description')}
+            </p>
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+              <Link href={`/${locale}/about`} className="primary-button">
+                {locale === 'en' ? 'Learn About Us' : 'Über uns erfahren'}
+              </Link>
+              <Link href={`/${locale}/contact`} className="secondary-button">
+                {locale === 'en' ? 'Schedule Consultation' : 'Beratungstermin vereinbaren'}
+              </Link>
+            </div>
+          </div> {/* Closing tag for the new div */}
         </div>
       </div>
 
