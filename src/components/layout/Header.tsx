@@ -39,11 +39,13 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
     <header className={`fixed top-0 left-0 right-0 w-full z-[999] transition-all duration-300 ${
       isScrolled ? 'h-24 bg-gradient-to-t from-transparent via-cyber-navy/70 to-cyber-navy shadow-sm' : 'h-64 bg-transparent' // Adjust initial and scrolled header height and background
     }`}>
-      <div className="container-custom flex justify-between items-center pl-1">
-        <Link href={`/${locale}`} className="flex items-center">
-          <img
+      <div className="container-custom flex items-center pl-0">
+        <Link href={`/${locale}`} className="flex items-center mr-auto">
+          <Image
             src="/images/BRI-LOGO-NAMERIGHT.svg"
             alt="Big Rock Intelligence Logo"
+            width={isScrolled ? 256 : 512}
+            height={isScrolled ? 64 : 128}
             className={`w-auto transition-all duration-300 ${
               isScrolled ? 'h-16' : 'h-32' // Adjust logo size based on scroll
             }`}
@@ -51,7 +53,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
         </Link>
 
         {/* Right Section (Navigation + Mobile Button) */}
-        <div className="flex items-center space-x-8"> {/* Removed ml-auto */}
+        <div className="flex items-center space-x-8"> {/* Added ml-auto to push to right */}
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <Link href={`/${locale}`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">

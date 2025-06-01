@@ -1,31 +1,18 @@
-import { createSharedPathnamesNavigation } from 'next-intl/navigation';
+import { notFound } from 'next/navigation';
+import { getRequestConfig } from 'next-intl/server';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
 export const locales = ['en', 'de'] as const;
 export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = 'en';
 
-export const { Link, redirect, usePathname, useRouter } =
-  createSharedPathnamesNavigation({ locales });
+export default getRequestConfig(async ({ locale }) => {
+  if (!locales.includes(locale as any)) notFound();
 
-export const getDisplayName = (locale: Locale): string => {
-  switch (locale) {
-    case 'en':
-      return 'English';
-    case 'de':
-      return 'Deutsch';
-    default:
-      return locale;
-  }
-};
+  return {
+    messages: (await import(`../public/locales/${locale}/common.json`)).default
+  };
+});
 
-export const getFlag = (locale: Locale): string => {
-  switch (locale) {
-    case 'en':
-      return '🇬🇧';
-    case 'de':
-      return '🇩🇪';
-    default:
-      return '';
-  }
-};
+export { unstable_setRequestLocale as setRequestLocale };

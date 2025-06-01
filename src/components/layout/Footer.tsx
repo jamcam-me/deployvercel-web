@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface FooterProps {
   locale: 'en' | 'de';
@@ -23,9 +24,11 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <img
+            <Image
               src="/images/logo_white.png"
               alt="BRI"
+              width={192}
+              height={192}
               className="h-48 mb-4"
             />
             <p className="text-light-stone mb-4">

@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
 import { Locale } from '@/lib/i18n';
+import { setRequestLocale } from 'next-intl/server';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import Image from 'next/image'; // Import Image
-import { useTranslations } from 'next-intl'; // Import useTranslations
 
 interface ContactPageProps {
   params: {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage({ params }: ContactPageProps) {
   const { locale } = params;
-  const tCommon = useTranslations('common'); // Instantiate tCommon
+  setRequestLocale(locale);
   
   const translations = {
     title: locale === 'en' ? 'Contact Us' : 'Kontakt',
@@ -89,10 +89,10 @@ export default function ContactPage({ params }: ContactPageProps) {
             </div>
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-lg mx-auto">
               <Link href={`/${locale}/services`} className="primary-button text-2xl px-8 py-4 w-full">
-                {tCommon('services')}
+                Services
               </Link>
               <Link href={`/${locale}/about`} className="secondary-button text-2xl px-8 py-4 w-full">
-                {tCommon('about')}
+                About
               </Link>
             </div>
           </div>

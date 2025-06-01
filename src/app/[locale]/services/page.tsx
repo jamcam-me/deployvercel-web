@@ -8,6 +8,7 @@ import { Locale } from '@/lib/i18n';
 import { services } from '@/data/services'; // Import the services data
 import { useTranslations } from 'next-intl'; // Import for translations
 import Link from 'next/link';
+import { setRequestLocale } from 'next-intl/server';
 
 interface ServicesPageProps {
   params: {
@@ -17,8 +18,8 @@ interface ServicesPageProps {
 
 export default function ServicesPage({ params }: ServicesPageProps) {
   const { locale } = params;
+  setRequestLocale(locale); // Set the locale for the request
   const tServices = useTranslations('services'); // Access translations for the 'services' section
-  const tCommon = useTranslations('common'); // Access translations for 'common' section
 
   const [activeTab, setActiveTab] = useState<'enterprise' | 'smb' | 'vc_pe' | 'board'>('enterprise');
 
