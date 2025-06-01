@@ -7,6 +7,7 @@ import ServicesList from '@/components/services/ServicesList';
 import { Locale } from '@/lib/i18n';
 import { services } from '@/data/services'; // Import the services data
 import { useTranslations } from 'next-intl'; // Import for translations
+import Link from 'next/link';
 
 interface ServicesPageProps {
   params: {
@@ -16,7 +17,8 @@ interface ServicesPageProps {
 
 export default function ServicesPage({ params }: ServicesPageProps) {
   const { locale } = params;
-  const t = useTranslations('services'); // Access translations for the 'services' section
+  const tServices = useTranslations('services'); // Access translations for the 'services' section
+  const tCommon = useTranslations('common'); // Access translations for 'common' section
 
   const [activeTab, setActiveTab] = useState<'enterprise' | 'smb' | 'vc_pe' | 'board'>('enterprise');
 
@@ -41,21 +43,29 @@ export default function ServicesPage({ params }: ServicesPageProps) {
         <div className="absolute inset-0 bg-gradient-to-b from-cyber-navy/70 to-evergreen-intel/50 z-10" />
         <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4 sm:px-8">
           <h1 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-4xl md:text-5xl lg:text-6xl mb-6">
-            {t('title')}
+            {tServices('title')}
           </h1>
-          <p className="font-futura text-light-stone text-lg md:text-xl max-w-2xl">
-            {t('description')}
+          <p className="font-futura text-light-stone text-lg md:text-xl max-w-2xl mb-8">
+            {tServices('description')}
           </p>
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-lg">
+            <Link href={`/${locale}/about`} className="primary-button text-2xl px-8 py-4 w-full">
+              {tCommon('about')}
+            </Link>
+            <Link href={`/${locale}/contact`} className="secondary-button text-2xl px-8 py-4 w-full">
+              {tCommon('contact')}
+            </Link>
+          </div>
         </div>
       </div>
 
       <div className="container-custom section">
         {/* Advisory Services Section */}
         <h2 className="section-title text-center mb-8">
-          {t('advisory.title')}
+          {tServices('advisory.title')}
         </h2>
         <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
-          {t('advisory.description')}
+          {tServices('advisory.description')}
         </p>
 
         {/* Tabs for Advisory Services */}
@@ -65,28 +75,28 @@ export default function ServicesPage({ params }: ServicesPageProps) {
               ${activeTab === 'enterprise' ? 'bg-executive-gold text-cyber-navy' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
             onClick={() => setActiveTab('enterprise')}
           >
-            {t('advisory.enterpriseLeaders')}
+            {tServices('advisory.enterpriseLeaders')}
           </button>
           <button
             className={`px-6 py-3 mx-2 rounded-md font-bold transition-colors duration-200
               ${activeTab === 'smb' ? 'bg-executive-gold text-cyber-navy' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
             onClick={() => setActiveTab('smb')}
           >
-            {t('advisory.smbOwners')}
+            {tServices('advisory.smbOwners')}
           </button>
           <button
             className={`px-6 py-3 mx-2 rounded-md font-bold transition-colors duration-200
               ${activeTab === 'vc_pe' ? 'bg-executive-gold text-cyber-navy' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
             onClick={() => setActiveTab('vc_pe')}
           >
-            {t('advisory.vcPeFirms')}
+            {tServices('advisory.vcPeFirms')}
           </button>
           <button
             className={`px-6 py-3 mx-2 rounded-md font-bold transition-colors duration-200
               ${activeTab === 'board' ? 'bg-executive-gold text-cyber-navy' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
             onClick={() => setActiveTab('board')}
           >
-            {t('advisory.boardMembers')}
+            {tServices('advisory.boardMembers')}
           </button>
         </div>
 
@@ -100,10 +110,10 @@ export default function ServicesPage({ params }: ServicesPageProps) {
 
         {/* General Services Section */}
         <h2 className="section-title text-center mt-16 mb-8">
-          {t('general.title')}
+          {tServices('general.title')}
         </h2>
         <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
-          {t('general.description')}
+          {tServices('general.description')}
         </p>
         <ServicesList locale={locale} servicesToRender={generalServices} />
       </div>
