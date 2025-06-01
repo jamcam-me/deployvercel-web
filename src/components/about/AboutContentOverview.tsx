@@ -83,7 +83,7 @@ export default function AboutContentOverview({ locale }: AboutContentOverviewPro
           <div className="flex flex-col md:flex-row items-center md:space-x-8">
             <div className="w-32 h-32 mb-4 md:mb-0 relative">
               <Image
-                src="/images/james-cameron.jpg"
+                src="/images/james_cameron.png"
                 alt="James Cameron"
                 fill
                 className="rounded-full object-cover"

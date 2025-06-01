@@ -12,7 +12,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Vercel Actions
-        uses: nexterias/actions-vercel@v1.2.3
+        uses: amondnet/vercel-action@v6
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
