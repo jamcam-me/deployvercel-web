@@ -36,7 +36,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
   }, []);
   
   return (
-    <header className={`bg-gradient-to-t from-transparent via-cyber-navy/70 to-cyber-navy shadow-sm fixed top-0 left-0 right-0 w-full z-[999] transition-all duration-300 ${
+    <header className={`bg-transparent fixed top-0 left-0 right-0 w-full z-[999] transition-all duration-300 ${
       isScrolled ? 'h-24' : 'h-64' // Adjust initial and scrolled header height
     }`}>
       <div className="container-custom flex justify-between items-center pl-4">
