@@ -23,12 +23,12 @@ const Hero: React.FC<HeroProps> = ({ locale }) => {
       <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4 sm:px-8 md:px-16 lg:px-24 pt-24"> {/* Aligned text vertically centered and added top padding to clear header */}
         <div className="max-w-3xl">
           {/* Main Hero Text */}
-          <h1 className="font-futura uppercase text-executive-gold tracking-wider text-3xl md:text-4xl lg:text-5xl pb-8"> {/* Made text smaller, added padding-bottom */}
+          <h1 className="font-futura uppercase text-executive-gold tracking-wider text-2xl md:text-3xl lg:text-4xl pb-8"> {/* Adjusted text size for better fitting */}
             {locale === 'en'
               ? (
                   <>
-                    Bridging AI Innovation
-                    <span className="text-green-700"> with Enterprise Security</span>
+                    Bridging AI Innovation<br />
+                    <span className="text-green-700">with Enterprise Security</span>
                   </>
                 )
               : (
