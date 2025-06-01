@@ -1,10 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Metadata } from 'next';
-import Image from 'next/image';
 import { Locale } from '@/lib/i18n';
 import { setRequestLocale } from 'next-intl/server';
 import AboutContentOverview from '@/components/about/AboutContentOverview';
-import Link from 'next/link'; // Import Link
+import Link from 'next/link';
+import Hero from '@/components/home/Hero'; // Import the Hero component
 
 interface AboutPageProps {
   params: {
@@ -23,35 +23,26 @@ export default function About({ params }: AboutPageProps) {
 
   return (
     <>
-      {/* Page Hero - Moved outside main for full width */}
-      <div className="relative h-[70vh] w-full"> {/* Adjust height as needed */}
-        <Image
-          src="/images/202002~1.JPG"
-          alt="Big Rocks in Blue Sky"
-          fill
-          className="object-cover object-bottom" /* Image aligns to bottom */
-          priority
-        />
-        <div className="absolute inset-0 bg-cyber-navy/40 z-20" /> {/* Changed overlay opacity to 50% */}
-:start_line:36
--------
-        <div className="absolute inset-0 z-20 flex flex-col justify-end items-center text-center px-4 sm:px-8 pb-8 pt-16"> {/* Increased pt to move content down */}
-          <div className="max-w-3xl mx-auto"> {/* Added wrapper div and mx-auto for centering*/}
-            <h1 className="font-cinzel text-evergreen-intel z-30 text-4xl pb-8"> {/* Changed p to h1, lighter green text, removed max-w, added pb-8 */}
-              The Foundation of Strategic Security
-            </h1>
-            {/* Standardized buttons matching HomePage Hero */}
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-              <Link href={`/${locale}/services`} className="primary-button">
-                {locale === 'en' ? 'Explore Strategic Services' : 'Strategische Dienste entdecken'}
-              </Link>
-              <Link href={`${process.env.NEXT_PUBLIC_RESOURCES_LINK || 'https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/'}`} target="_blank" rel="noopener noreferrer" className="secondary-button">
-                {locale === 'en' ? 'View Resources' : 'Ressourcen anzeigen'}
-              </Link>
-            </div>
-          </div> {/* Closing tag for the new div */}
+      <Hero
+        locale={locale}
+        imageUrl="/images/202002~1.JPG"
+        altText="Big Rocks in Blue Sky"
+        overlayClass="bg-cyber-navy/40"
+        contentPosition="justify-center"
+        imagePosition="object-bottom"
+      >
+        <h1 className="font-futura text-green-500 z-30 text-4xl pb-8">
+          The Foundation of Strategic Security
+        </h1>
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
+          <Link href={`/${locale}/services`} className="primary-button">
+            {locale === 'en' ? 'Explore Strategic Services' : 'Strategische Dienste entdecken'}
+          </Link>
+          <Link href={`${process.env.NEXT_PUBLIC_RESOURCES_LINK || 'https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/'}`} target="_blank" rel="noopener noreferrer" className="secondary-button">
+            {locale === 'en' ? 'View Resources' : 'Ressourcen anzeigen'}
+          </Link>
         </div>
-      </div>
+      </Hero>
       <AboutContentOverview locale={locale} />
     </>
   );

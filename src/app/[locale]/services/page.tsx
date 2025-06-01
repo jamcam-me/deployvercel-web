@@ -2,12 +2,12 @@
 // Services page with Advisory Services displayed first, followed by General Services
 
 import { useState } from 'react';
-import Image from 'next/image';
 import ServicesList from '@/components/services/ServicesList';
 import { Locale } from '@/lib/i18n';
 import { services } from '@/data/services'; // Import the services data
 import { useTranslations } from 'next-intl'; // Import for translations
 import Link from 'next/link';
+import Hero from '@/components/home/Hero'; // Import the Hero component
 
 interface ServicesPageProps {
   params: {
@@ -33,38 +33,30 @@ export default function ServicesPage({ params }: ServicesPageProps) {
 
   return (
     <>
-      <div className="relative h-[60vh] w-full">
-        <Image
-          src="/images/Frankfurt Skyline at Dusk.png"
-          alt="Frankfurt Skyline at Dusk"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-cyber-navy/70 to-evergreen-intel/50 z-10" />
-:start_line:45
--------
-        <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4 sm:px-8">
-          <div className="max-w-3xl mx-auto"> {/* Added wrapper div and mx-auto for centering */}
-            <h1 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-4xl md:text-5xl lg:text-6xl mb-6">
-              {tServices('title')}
-            </h1>
-            <p className="font-futura text-light-stone text-lg md:text-xl max-w-2xl mb-8">
-              {tServices('description')}
-            </p>
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-              <Link href={`/${locale}/about`} className="primary-button">
-                {tAbout('about')}
-              </Link>
-              <Link href={`/${locale}/contact`} className="secondary-button">
-                {locale === 'en' ? 'Schedule Consultation' : 'Beratungstermin vereinbaren'}
-              </Link>
-            </div>
-          </div> {/* Closing tag for the new div */}
+      <Hero
+        locale={locale}
+        imageUrl="/images/Frankfurt Skyline at Dusk.png"
+        altText="Frankfurt Skyline at Dusk"
+        overlayClass="bg-gradient-to-b from-cyber-navy/70 to-evergreen-intel/50"
+        contentPosition="justify-center"
+      >
+        <h1 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-4xl md:text-5xl lg:text-6xl mb-6">
+          {tServices('title')}
+        </h1>
+        <p className="font-futura text-light-stone text-lg md:text-xl max-w-2xl mb-8">
+          {tServices('description')}
+        </p>
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
+          <Link href={`/${locale}/about`} className="primary-button">
+            {tAbout('about')}
+          </Link>
+          <Link href={`/${locale}/contact`} className="secondary-button">
+            {locale === 'en' ? 'Schedule Consultation' : 'Beratungstermin vereinbaren'}
+          </Link>
         </div>
-      </div>
+      </Hero>
 
-      <div className="container-custom section bg-white text-gray-800">
+      <div className="container-custom section bg-white text-gray-800 pt-16"> {/* Added pt-16 for consistent padding */}
         {/* Advisory Services Section */}
         <h2 className="section-title text-center mb-8">
           {tServices('advisory.title')}

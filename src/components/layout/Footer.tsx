@@ -14,9 +14,13 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
   const pathname = usePathname(); // Get current path
 
   const footerBgClass =
-    pathname === `/${locale}` || pathname === `/`
-      ? 'bg-light-stone' // Home page background
-      : 'bg-gradient-to-b from-light-stone/80 to-light-stone/20'; // Other pages background
+    pathname.startsWith(`/${locale}/services`) // If it's a services page
+      ? 'bg-white' // Use white background for footer
+      : pathname === `/${locale}` ||
+        pathname === `/` ||
+        pathname === `/${locale}/about` // Check for home and about pages
+          ? 'bg-light-stone'
+          : 'bg-gradient-to-b from-light-stone/80 to-light-stone/20'; // Default for other pages
   
   const translations = {
     copyright: locale === 'en'

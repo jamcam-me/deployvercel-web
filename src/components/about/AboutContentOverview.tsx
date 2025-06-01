@@ -23,7 +23,7 @@ export default function AboutContentOverview({ locale }: AboutContentOverviewPro
   };
 
   return (
-    <main className="bg-navy-900 text-light-stone py-12">
+    <main className="bg-light-stone py-12">
       <div className="mx-auto px-6 max-w-4xl">
         {/* Mission */}
         <section className="mb-16">

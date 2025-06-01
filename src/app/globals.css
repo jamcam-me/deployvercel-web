@@ -360,11 +360,18 @@
   .primary-button {
     background: var(--gold-700);
     color: var(--navy-800);
-    @apply font-cinzel font-bold px-12 py-6 text-lg rounded-lg transition-all uppercase tracking-wide;
+    @apply font-cinzel font-bold text-lg sm:text-xl rounded-lg transition-all uppercase tracking-wide flex items-center justify-center text-center;
     letter-spacing: 0.1em;
     box-shadow: 0 4px 12px rgba(218, 184, 110, 0.3);
     transform: translateY(0);
     border: 2px solid var(--gold-700);
+    min-width: 280px;
+    min-height: 72px;
+    padding: 16px 24px;
+    line-height: 1.2;
+    word-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
   }
   
   .primary-button:hover {
@@ -378,10 +385,17 @@
   }
   
   .secondary-button {
-    @apply bg-transparent font-cinzel font-medium px-12 py-6 text-lg rounded-lg transition-all uppercase tracking-wide;
+    @apply bg-transparent font-cinzel font-medium text-lg sm:text-xl rounded-lg transition-all uppercase tracking-wide flex items-center justify-center text-center;
     border: 2px solid var(--gold-700);
     color: var(--gold-700);
     letter-spacing: 0.1em;
+    min-width: 280px;
+    min-height: 72px;
+    padding: 16px 24px;
+    line-height: 1.2;
+    word-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
   }
   
   .secondary-button:hover {
