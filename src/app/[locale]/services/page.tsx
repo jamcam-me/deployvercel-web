@@ -50,10 +50,10 @@ export default function ServicesPage({ params }: ServicesPageProps) {
           </p>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-lg">
             <Link href={`/${locale}/about`} className="primary-button text-2xl px-8 py-4 w-full">
-              {tCommon('about')}
+              About
             </Link>
             <Link href={`/${locale}/contact`} className="secondary-button text-2xl px-8 py-4 w-full">
-              {tCommon('contact')}
+              Contact
             </Link>
           </div>
         </div>

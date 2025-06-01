@@ -3,6 +3,8 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { Locale } from '@/lib/i18n';
 import AboutContentOverview from '@/components/about/AboutContentOverview';
+import Link from 'next/link'; // Import Link
+import { useTranslations } from 'next-intl'; // Import useTranslations
 
 interface AboutPageProps {
   params: {
@@ -17,6 +19,7 @@ export const metadata: Metadata = {
 
 export default function About({ params }: AboutPageProps) {
   const { locale } = params;
+  const tCommon = useTranslations('common'); // Instantiate tCommon
 
   return (
     <>
@@ -34,6 +37,15 @@ export default function About({ params }: AboutPageProps) {
           <h1 className="font-cinzel text-green-30 z-30 text-4xl"> {/* Changed p to h1, lighter green text, removed max-w */}
             The Foundation of Strategic Security
           </h1>
+          {/* Added buttons as per user request */}
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-lg">
+            <Link href={`/${locale}/services`} className="primary-button text-2xl px-8 py-4 w-full">
+              {tCommon('services')}
+            </Link>
+            <Link href={`${process.env.NEXT_PUBLIC_RESOURCES_LINK || 'https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/'}`} target="_blank" rel="noopener noreferrer" className="secondary-button text-2xl px-8 py-4 w-full">
+              {tCommon('resources')}
+            </Link>
+          </div>
         </div>
       </div>
       <AboutContentOverview locale={locale} />
