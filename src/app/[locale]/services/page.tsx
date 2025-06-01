@@ -18,7 +18,7 @@ interface ServicesPageProps {
 export default function ServicesPage({ params }: ServicesPageProps) {
   const { locale } = params;
   const tServices = useTranslations('services'); // Access translations for the 'services' section
-  const tAbout = useTranslations('about'); // Access translations for the 'about' section
+  const tAbout = useTranslations('nav'); // Access translations for the 'nav' section
   const tContact = useTranslations('contact'); // Access translations for the 'contact' section
 
   const [activeTab, setActiveTab] = useState<'enterprise' | 'smb' | 'vc_pe' | 'board'>('enterprise');
@@ -54,7 +54,7 @@ export default function ServicesPage({ params }: ServicesPageProps) {
             </p>
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
               <Link href={`/${locale}/about`} className="primary-button">
-                {locale === 'en' ? 'Learn About Us' : 'Über uns erfahren'}
+                {tAbout('about')}
               </Link>
               <Link href={`/${locale}/contact`} className="secondary-button">
                 {locale === 'en' ? 'Schedule Consultation' : 'Beratungstermin vereinbaren'}
