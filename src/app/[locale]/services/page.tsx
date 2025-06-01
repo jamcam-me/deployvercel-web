@@ -8,7 +8,6 @@ import { Locale } from '@/lib/i18n';
 import { services } from '@/data/services'; // Import the services data
 import { useTranslations } from 'next-intl'; // Import for translations
 import Link from 'next/link';
-import { setRequestLocale } from 'next-intl/server';
 
 interface ServicesPageProps {
   params: {
@@ -18,8 +17,9 @@ interface ServicesPageProps {
 
 export default function ServicesPage({ params }: ServicesPageProps) {
   const { locale } = params;
-  setRequestLocale(locale); // Set the locale for the request
   const tServices = useTranslations('services'); // Access translations for the 'services' section
+  const tAbout = useTranslations('about'); // Access translations for the 'about' section
+  const tContact = useTranslations('contact'); // Access translations for the 'contact' section
 
   const [activeTab, setActiveTab] = useState<'enterprise' | 'smb' | 'vc_pe' | 'board'>('enterprise');
 
@@ -51,10 +51,10 @@ export default function ServicesPage({ params }: ServicesPageProps) {
           </p>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-lg">
             <Link href={`/${locale}/about`} className="primary-button text-2xl px-8 py-4 w-full">
-              About
+              {tAbout('title')}
             </Link>
             <Link href={`/${locale}/contact`} className="secondary-button text-2xl px-8 py-4 w-full">
-              Contact
+              {tContact('title')}
             </Link>
           </div>
         </div>
