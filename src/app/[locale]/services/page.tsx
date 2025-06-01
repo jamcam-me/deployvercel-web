@@ -64,7 +64,7 @@ export default function ServicesPage({ params }: ServicesPageProps) {
         </div>
       </div>
 
-      <div className="container-custom section">
+      <div className="container-custom section bg-white text-gray-800">
         {/* Advisory Services Section */}
         <h2 className="section-title text-center mb-8">
           {tServices('advisory.title')}
