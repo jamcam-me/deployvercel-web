@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "start:tunnel": "node mcp-servers/ngrok-tunnel.js"
+    "start:tunnel": "node mcp-servers/ngrok-tunnel.js",
+    "sync:environments": "node scripts/sync-environments.js",
+    "deploy:sync": "npm run sync:environments && npm run build"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.2",
