@@ -37,13 +37,13 @@ export default function About({ params }: AboutPageProps) {
           <h1 className="font-cinzel text-green-30 z-30 text-4xl"> {/* Changed p to h1, lighter green text, removed max-w */}
             The Foundation of Strategic Security
           </h1>
-          {/* Added buttons as per user request */}
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-lg">
+          {/* Standardized buttons matching HomePage Hero */}
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
             <Link href={`/${locale}/services`} className="primary-button text-2xl px-8 py-4 w-full">
-              Services
+              {locale === 'en' ? 'Explore Strategic Services' : 'Strategische Dienste entdecken'}
             </Link>
             <Link href={`${process.env.NEXT_PUBLIC_RESOURCES_LINK || 'https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/'}`} target="_blank" rel="noopener noreferrer" className="secondary-button text-2xl px-8 py-4 w-full">
-              Resources
+              {locale === 'en' ? 'View Resources' : 'Ressourcen anzeigen'}
             </Link>
           </div>
         </div>

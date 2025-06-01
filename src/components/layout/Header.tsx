@@ -40,17 +40,17 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
   return (
     <header className={`fixed top-0 left-0 right-0 w-full z-[999] transition-all duration-300 ${
       isScrolled
-        ? `h-24 shadow-sm ${
+        ? `h-24 shadow-sm backdrop-blur-md ${
             pathname === `/${locale}` || pathname === `/` // Home page
-              ? 'bg-executive-gold'
+              ? 'bg-gradient-to-r from-executive-gold/80 via-executive-gold/60 to-executive-gold/40'
               : pathname.startsWith(`/${locale}/about`) // About page (check for /about or /about/subpath)
-              ? 'bg-evergreen-intel'
-              : 'bg-cyber-navy' // Default for other pages
+              ? 'bg-gradient-to-r from-evergreen-intel/80 via-evergreen-intel/60 to-evergreen-intel/40'
+              : 'bg-gradient-to-r from-cyber-navy/80 via-cyber-navy/60 to-cyber-navy/40' // Default for other pages
           }`
-        : 'h-64 bg-transparent' // Adjust initial and scrolled header height and background
+        : 'h-64 bg-gradient-to-b from-cyber-navy/30 via-cyber-navy/20 to-transparent backdrop-blur-sm' // Significant transparency with gradient
     }`}>
-      <div className="container-custom flex items-center px-4 py-2"> {/* Adjusted padding */}
-        <Link href={`/${locale}`} className="flex items-center mr-auto">
+      <div className="container-custom flex items-center justify-between py-2"> {/* Changed to justify-between and adjusted padding */}
+        <Link href={`/${locale}`} className="flex items-center pl-0"> {/* Removed mr-auto to position logo at far left */}
           <Image
             src="/images/BRI-LOGO-NAMERIGHT.svg"
             alt="Big Rock Intelligence Logo"
@@ -97,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
         
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-cyber-navy shadow-md z-50">
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-gradient-to-b from-cyber-navy/90 via-cyber-navy/80 to-cyber-navy/70 backdrop-blur-md shadow-md z-50">
             <nav className="flex flex-col p-4">
               <Link
                 href={`/${locale}`}

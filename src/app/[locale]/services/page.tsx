@@ -49,12 +49,12 @@ export default function ServicesPage({ params }: ServicesPageProps) {
           <p className="font-futura text-light-stone text-lg md:text-xl max-w-2xl mb-8">
             {tServices('description')}
           </p>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-lg">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
             <Link href={`/${locale}/about`} className="primary-button text-2xl px-8 py-4 w-full">
-              {tAbout('title')}
+              {locale === 'en' ? 'Learn About Us' : 'Über uns erfahren'}
             </Link>
             <Link href={`/${locale}/contact`} className="secondary-button text-2xl px-8 py-4 w-full">
-              {tContact('title')}
+              {locale === 'en' ? 'Schedule Consultation' : 'Beratungstermin vereinbaren'}
             </Link>
           </div>
         </div>
