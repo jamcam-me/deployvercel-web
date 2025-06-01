@@ -36,10 +36,10 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
   }, []);
   
   return (
-    <header className={`bg-transparent fixed top-0 left-0 right-0 w-full z-[999] transition-all duration-300 ${
-      isScrolled ? 'h-24' : 'h-64' // Adjust initial and scrolled header height
+    <header className={`fixed top-0 left-0 right-0 w-full z-[999] transition-all duration-300 ${
+      isScrolled ? 'h-24 bg-gradient-to-t from-transparent via-cyber-navy/70 to-cyber-navy shadow-sm' : 'h-64 bg-transparent' // Adjust initial and scrolled header height and background
     }`}>
-      <div className="container-custom flex justify-between items-center pl-4">
+      <div className="container-custom flex justify-between items-center pl-1">
         <Link href={`/${locale}`} className="flex items-center">
           <img
             src="/images/BRI-LOGO-NAMERIGHT.svg"
