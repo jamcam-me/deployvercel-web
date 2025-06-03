@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         cinzel: ['Cinzel', 'serif'],
-        futura: ['Futura Std', 'Futura BK', 'sans-serif'],
+        futura: ['Futura Cyrillic', 'Futura Std', 'Futura BK', 'sans-serif'],
       },
       colors: {
         // Primary Brand Colors
