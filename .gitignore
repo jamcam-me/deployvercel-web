@@ -33,3 +33,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# Backup files
+*.bak
+cllaude_desktop_config.json.bak
+mcp_settings.json.bak
