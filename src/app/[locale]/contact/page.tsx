@@ -44,7 +44,7 @@ export default function ContactPage({ params }: ContactPageProps) {
     <>
       <Hero
         locale={locale}
-        imageUrl="/images/OIP (1).jpeg"
+        imageUrl="/images/Big Rock Formation-remix.png"
         altText="Contact Hero Image"
         overlayClass="bg-gradient-to-b from-cyber-navy/70 to-evergreen-intel/50"
         contentPosition="justify-center"

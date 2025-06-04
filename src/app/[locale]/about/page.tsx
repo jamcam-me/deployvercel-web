@@ -25,11 +25,11 @@ export default function About({ params }: AboutPageProps) {
     <>
       <Hero
         locale={locale}
-        imageUrl="/images/202002~1.JPG"
-        altText="Big Rocks in Blue Sky"
+        imageUrl="/images/Big Rock Formation-remix-grn.png"
+        altText="Big Rock Formation Green"
         overlayClass="bg-cyber-navy/40"
         contentPosition="justify-center"
-        imagePosition="object-bottom"
+        imagePosition="object-[60%_55%]"
       >
         <h1 className="font-futura text-green-500 z-30 text-4xl pb-8">
           The Foundation of Strategic Security

@@ -24,6 +24,7 @@ const config: Config = {
         'light-stone': '#d9ded9',
         'warm-rock': '#574536',
         'desaturated-green': '#5d9182',
+        'kiwi-green': '#8dff2a', // New contrasting green color
         
         // Primary Color Variations - Cyber Navy Blue
         'navy-90': '#05101f',

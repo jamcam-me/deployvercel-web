@@ -12,52 +12,44 @@ const ExecutiveOverview: React.FC<ExecutiveOverviewProps> = ({ locale }) => {
   interface Translations {
     title: string;
     metric: string;
-    mission_title: string;
-    mission: string;
-    description: string;
-    cultural_ref: string;
-    strategic_q: string;
+    new_title: string;
+    truth1: string;
+    truth2: string;
+    truth3: string;
+    transformation_statement: string;
+    strategic_question_box: string;
     expertise: string;
     tailored: string;
     recognized: string;
-    security_question: string; // Added new property
     contact: string;
-    accelerate_security: string; // Add new property for "ACCELERATE SECURITY TRANSFORMATION"
+    mini_cta: string; // New property for mini CTA
   }
 
   const translations: Translations = { // Explicitly typed
     title: locale === 'en' ? 'INDUSTRY INSIGHT' : 'BRANCHENEINBLICK',
     metric: locale === 'en'
-      ? '85% of executives cite AI security governance as their top digital transformation concern'
+      ? '85% of leaders cite AI security governance as their top digital transformation concern'
       : '85% der Führungskräfte nennen KI-Sicherheits-Governance als ihre größte Sorge bei der digitalen Transformation',
-    mission_title: locale === 'en' ? 'OUR MISSION' : 'UNSERE MISSION',
-    mission: locale === 'en'
-      ? 'Empower organizations with strategic cybersecurity guidance and seamless AI integration, enabling secure digital transformation.'
-      : 'Wir befähigen Organisationen durch strategische Cybersicherheit-Beratung und nahtlose KI-Integration, um eine sichere digitale Transformation zu ermöglichen.',
-    description: locale === 'en'
-      ? 'Big Rock Intelligence operates at the intersection of cybersecurity excellence and AI innovation, providing board-level advisory and implementation expertise to organizations navigating complex digital landscapes.'
-      : 'Big Rock Intelligence agiert an der Schnittstelle zwischen Cybersicherheits-Exzellenz und KI-Innovation und bietet Beratung und Implementierungsexpertise auf Vorstandsebene für Organisationen, die komplexe digitale Landschaften navigieren.',
-    cultural_ref: locale === 'en'
-      ? 'You wouldn\'t bet blind in M&A. Why do it with your AI stack?'
-      : 'Sie würden bei M&A nicht blind wetten. Warum sollten Sie es mit Ihrem KI-Stack tun?',
-    strategic_q: locale === 'en'
-      ? 'How would reducing security friction impact your product launch timelines?'
-      : 'Wie würde die Reduzierung von Sicherheitsreibung Ihre Produkteinführungszeiten beeinflussen?',
+    new_title: locale === 'en' ? 'THE BIGROCK INTEL ADVANTAGE' : 'DER BIGROCK INTEL VORTEIL',
+    truth1: locale === 'en' ? 'Security is either your moat or your millstone' : 'Sicherheit ist entweder Ihr Schutzwall oder Ihr Mühlstein',
+    truth2: locale === 'en' ? 'AI governance gaps cost €4.7M per incident' : 'KI-Governance-Lücken kosten 4,7 Mio. € pro Vorfall',
+    truth3: locale === 'en' ? 'The right framework delivers 347% ROI in 18 months' : 'Das richtige Framework liefert 347% ROI in 18 Monaten',
+    transformation_statement: locale === 'en' ? 'We transform security from friction to fuel for growth.' : 'Wir verwandeln Sicherheit von Reibung in Treibstoff für Wachstum.',
+    strategic_question_box: locale === 'en'
+      ? 'If your security team became a revenue center tomorrow, <br />what would change?'
+      : 'Wenn Ihr Sicherheitsteam morgen zu einem Umsatzzentrum würde,<br />was würde sich ändern?',
     expertise: locale === 'en'
       ? 'EXECUTIVE-LEVEL EXPERTISE'
       : 'EXPERTISE AUF FÜHRUNGSEBENE',
     tailored: locale === 'en'
-      ? 'SEGMENT-SPECIFIC SOLUTIONS'
-      : 'SEGMENTSPEZIFISCHE LÖSUNGEN',
+      ? 'PRECISION SOLUTIONS'
+      : 'PRECISION SOLUTIONS',
     recognized: locale === 'en'
       ? 'RECOGNIZED AUTHORITY'
       : 'ANERKANNTE AUTORITÄT',
-    security_question: locale === 'en'
-      ? 'Is your security strategy accelerating digital transformation or hindering it?'
-      : 'Beschleunigt Ihre Sicherheitsstrategie die digitale Transformation oder behindert sie sie?',
-    accelerate_security: locale === 'en'
-      ? 'ACCELERATE SECURITY TRANSFORMATION'
-      : 'BESCHLEUNIGEN SIE DIE SICHERHEITSTRANSFORMATION',
+    mini_cta: locale === 'en'
+      ? 'Big Rock Intelligence delivers the difference between security friction and security advantage—because in the AI era, every decision is a bet on your future.'
+      : 'Big Rock Intelligence liefert den Unterschied zwischen Sicherheitsreibung und Sicherheitsvorteil – denn im Zeitalter der KI ist jede Entscheidung eine Wette auf Ihre Zukunft.',
     contact: locale === 'en' ? 'Contact' : 'Kontakt' // Still needed for footer and about page
   };
 
@@ -66,51 +58,40 @@ const ExecutiveOverview: React.FC<ExecutiveOverviewProps> = ({ locale }) => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Leading with metric - now using gold-800 color */}
-          <p className="font-cinzel text-gold-800 font-bold text-lg md:text-xl lg:text-2xl mb-6 text-center">
-            {translations.metric}
+          <p className="font-cinzel text-gold-800 font-bold text-xl md:text-2xl lg:text-3xl mb-6 text-center">
+            <span>{locale === 'en' ? '85% of leaders cite AI security governance as their top digital transformation concern' : '85% der Führungskräfte nennen KI-Sicherheits-Governance als ihre größte Sorge bei der digitalen Transformation'}</span>
+            <br />
+            <span>{locale === 'en' ? '—our advisors decode this complexity.' : '—unsere Berater entschlüsseln diese Komplexität.'}</span>
           </p>
           
           <h2 className="section-title mb-6">
-            {translations.mission_title}
-          </h2>
-          
-          {/* Value proposition statement */}
-          <p className="content-value-prop">
-            {translations.mission}
-          </p>
-          
-          <p className="mb-6 italic text-soft-steel text-xl"> {/* Added italic, text-soft-steel and text-xl for styling */}
-            {translations.security_question}
-          </p>
-          
-          <h2 className="font-cinzel uppercase font-bold text-evergreen-intel tracking-wider text-3xl md:text-4xl lg:text-5xl mb-8 mt-12"> {/* Changed to evergreen-intel color */}
-            {translations.accelerate_security}
+            {translations.new_title}
           </h2>
 
-          <p className="mb-6">
-            {translations.description}
+          <ul className="list-disc list-inside text-lg text-cyber-graphite mb-6 space-y-2">
+            <li>{translations.truth1}</li>
+            <li>{translations.truth2}</li>
+            <li>{translations.truth3}</li>
+          </ul>
+
+          <p className="content-value-prop mb-8">
+            {translations.transformation_statement}
           </p>
-          
-          {/* Cultural reference */}
-          <p className="cultural-reference">
-            {translations.cultural_ref}
-          </p>
-          
-          {/* Strategic question */}
-          <p className="strategic-question">
-            {translations.strategic_q}
-          </p>
+
+          <div className="bg-gradient-to-r from-evergreen-intel to-cyber-navy p-6 rounded-lg shadow-lg text-center text-executive-gold italic text-xl md:text-2xl lg:text-3xl mb-12">
+            <p dangerouslySetInnerHTML={{ __html: translations.strategic_question_box }} />
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mt-16">
           <div>
             {/* Use regular img tag for SVG files instead of Next.js Image component */}
             <Image
-              src="/images/ai_cyber_illustration.png"
-              alt="AI and Cybersecurity Illustration"
-              width={500}
-              height={400}
-              className="mx-auto"
+              src="/images/BigRock-AI-Fissure-brown.png"
+              alt="BigRock AI Fissure"
+              width={800}
+              height={600}
+              className="w-full h-full object-cover rounded-lg shadow-lg"
             />
           </div>
 
@@ -152,20 +133,26 @@ const ExecutiveOverview: React.FC<ExecutiveOverviewProps> = ({ locale }) => {
                 </div>
                 <div>
                   <h4 className="text-executive-gold mb-2">
-                    {translations.tailored}
+                    {locale === 'en' ? 'PRECISION SOLUTIONS' : 'PRECISION SOLUTIONS'}
                   </h4>
                   
-                  {/* Added a metric */}
+                  {/* New Content for Precision Solutions */}
                   <p className="service-metric">
                     {locale === 'en'
-                      ? 'Customized frameworks for enterprise, SMBs, VCs/PEs, and Boards'
-                      : 'Maßgeschneiderte Frameworks für Unternehmen, KMUs, VCs/PEs und Vorstände'}
+                      ? 'Your Structure. Your Strategy. Your Success.'
+                      : 'Your Structure. Your Strategy. Your Success.'}
                   </p>
                   
-                  <p className="text-cyber-graphite">
+                  <ul className="list-none space-y-3 pl-0 text-cyber-graphite">
+                    <li>{locale === 'en' ? 'Enterprise: AI governance that scales with complexity' : 'Enterprise: AI governance that scales with complexity'}</li>
+                    <li>{locale === 'en' ? 'SMB: Right-sized security without enterprise overhead' : 'SMB: Right-sized security without enterprise overhead'}</li>
+                    <li>{locale === 'en' ? 'VC/PE: Due diligence acceleration & portfolio protection' : 'VC/PE: Due diligence acceleration & portfolio protection'}</li>
+                    <li>{locale === 'en' ? 'Boards: Fiduciary confidence through clear frameworks' : 'Boards: Fiduciary confidence through clear frameworks'}</li>
+                  </ul>
+                  <p className="text-cyber-graphite mt-4 italic">
                     {locale === 'en'
-                      ? 'We recognize that different organizational structures require tailored advisory approaches that address unique security and AI governance needs.'
-                      : 'Wir erkennen an, dass unterschiedliche Organisationsstrukturen maßgeschneiderte Beratungsansätze erfordern, die auf einzigartige Sicherheits- und KI-Governance-Bedürfnisse eingehen.'}
+                      ? `"One size fits none in security. That's why we don't sell templates - we architect outcomes."`
+                      : `"One size fits none in security. That's why we don't sell templates - we architect outcomes."`}
                   </p>
                 </div>
               </div>
@@ -199,6 +186,19 @@ const ExecutiveOverview: React.FC<ExecutiveOverviewProps> = ({ locale }) => {
               </div>
             </div>
           </div>
+        </div>
+        {/* New mini CTA */}
+        <div className="max-w-4xl mx-auto mt-16">
+          <h1 className="font-futura text-evergreen-intel text-center text-xl md:text-2xl lg:text-3xl mb-8">
+            {translations.mini_cta}
+          </h1>
+          <blockquote className="text-xl md:text-2xl italic text-gray-300 relative z-10 text-center">
+            {locale === 'en' ? (
+              <p>"One size fits none in security. That's why we don't sell templates - we architect outcomes."</p>
+            ) : (
+              <p>"One size fits none in security. That's why we don't sell templates - we architect outcomes."</p>
+            )}
+          </blockquote>
         </div>
       </div>
     </section>

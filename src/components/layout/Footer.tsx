@@ -14,7 +14,9 @@ export const Footer: React.FC<FooterProps> = ({ locale }) => {
   const pathname = usePathname(); // Get current path
 
   const footerBgClass =
-    pathname.startsWith(`/${locale}/services`) // If it's a services page
+    pathname.startsWith(`/${locale}/contact`)
+      ? 'bg-white'
+      : pathname.startsWith(`/${locale}/services`) // If it's a services page
       ? 'bg-white' // Use white background for footer
       : pathname === `/${locale}` ||
         pathname === `/` ||

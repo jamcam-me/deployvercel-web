@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Hero from '@/components/home/Hero';
 import ExecutiveOverview from '@/components/home/ExecutiveOverview';
+import ExecutiveOutcomes from '@/components/home/ExecutiveOutcomes';
 import { Locale } from '@/lib/i18n';
 
 interface HomePageProps {
@@ -68,6 +69,7 @@ export default function HomePage({ params }: HomePageProps) {
         </div>
       </Hero>
       <ExecutiveOverview locale={locale} />
+      <ExecutiveOutcomes locale={locale} />
     </div>
   );
 }

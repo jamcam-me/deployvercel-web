@@ -40,7 +40,7 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
   return (
     <header className={`fixed top-0 left-0 right-0 w-full z-[999] transition-all duration-300 ${
       isScrolled
-        ? `h-20 shadow-sm backdrop-blur-md bg-gradient-to-b from-cyber-navy/80 via-cyber-navy/60 to-cyber-navy/40`
+        ? `h-20 shadow-sm backdrop-blur-md ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'bg-gradient-to-b from-light-stone/80 via-light-stone/60 to-light-stone/40' : pathname.includes('/about') ? 'bg-gradient-to-b from-evergreen-intel/80 via-evergreen-intel/60 to-evergreen-intel/40' : 'bg-gradient-to-b from-cyber-navy/80 via-cyber-navy/60 to-cyber-navy/40'}`
         : 'h-32 bg-transparent'
     }`}>
       <div className="w-full flex items-center justify-between py-2 px-4"> {/* Removed max-w-7xl mx-auto, added px-4 */}
@@ -61,19 +61,19 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
         <div className="flex items-center space-x-8"> {/* Added ml-auto to push to right */}
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href={`/${locale}`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
+            <Link href={`/${locale}`} className={`hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}>
               {navTranslations.home}
             </Link>
-            <Link href={`/${locale}/services`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
+            <Link href={`/${locale}/services`} className={`hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}>
               {navTranslations.services}
             </Link>
-            <Link href={`/${locale}/about`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
+            <Link href={`/${locale}/about`} className={`hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}>
               {navTranslations.about}
             </Link>
-            <Link href={`${process.env.NEXT_PUBLIC_RESOURCES_LINK || 'https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/'}`} target="_blank" rel="noopener noreferrer" className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
+            <Link href={`${process.env.NEXT_PUBLIC_RESOURCES_LINK || 'https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/'}`} target="_blank" rel="noopener noreferrer" className={`hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}>
               {navTranslations.resources}
             </Link>
-            <Link href={`/${locale}/contact`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
+            <Link href={`/${locale}/contact`} className={`hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}>
               {navTranslations.contact}
             </Link>
             <LanguageSwitcher locale={locale} />
@@ -96,21 +96,21 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
             <nav className="flex flex-col p-4">
               <Link
                 href={`/${locale}`}
-                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel text-lg"
+                className={`py-2 hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {navTranslations.home}
               </Link>
               <Link
                 href={`/${locale}/services`}
-                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel text-lg"
+                className={`py-2 hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {navTranslations.services}
               </Link>
               <Link
                 href={`/${locale}/about`}
-                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel text-lg"
+                className={`py-2 hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {navTranslations.about}
@@ -119,14 +119,14 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
                 href={`${process.env.NEXT_PUBLIC_RESOURCES_LINK || 'https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/'}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel text-lg"
+                className={`py-2 hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {navTranslations.resources}
               </Link>
               <Link
                 href={`/${locale}/contact`}
-                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel text-lg"
+                className={`py-2 hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {navTranslations.contact}
