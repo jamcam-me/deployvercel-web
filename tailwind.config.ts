@@ -29,7 +29,10 @@ const config: Config = {
         // Primary Color Variations - Cyber Navy Blue
         'navy-90': '#05101f',
         'navy-70': '#071732',
-        'navy-base': '#0a1f44',
+        'navy-700': '#0a1f44',
+        'navy-600': '#0f2a5a',
+        'navy-500': '#1a3970',
+        'navy-400': '#4a6391',
         'navy-30': '#3a4c6c',
         'navy-60': '#6b7a94',
         

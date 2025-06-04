@@ -58,7 +58,7 @@ export default function HomePage({ params }: HomePageProps) {
         </h1>
         
         {/* Buttons */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl mx-auto justify-items-center">
           <Link href={`/${locale}/services`} className="primary-button">
             {locale === 'en' ? 'Explore Strategic Services' : 'Strategische Dienste entdecken'}
           </Link>

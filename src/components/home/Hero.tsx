@@ -36,8 +36,8 @@ const Hero: React.FC<HeroProps> = ({
         priority
       />
       <div className={`absolute inset-0 z-10 ${overlayClass}`} />
-      <div className={`absolute inset-0 z-20 flex flex-col ${contentPosition} items-center text-center px-4 sm:px-8 md:px-16 lg:px-24 pt-24`}>
-        <div className="max-w-3xl">
+      <div className={`absolute inset-0 z-20 flex flex-col ${contentPosition} items-center text-center px-4 sm:px-8 md:px-16 xl:px-24 pt-24`}>
+        <div className="w-full mx-auto">
           {children}
         </div>
       </div>

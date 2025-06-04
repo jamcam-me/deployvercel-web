@@ -34,7 +34,7 @@ export default function About({ params }: AboutPageProps) {
         <h1 className="font-futura text-green-500 z-30 text-4xl pb-8">
           The Foundation of Strategic Security
         </h1>
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto justify-items-center">
           <Link href={`/${locale}/services`} className="primary-button">
             {locale === 'en' ? 'Explore Strategic Services' : 'Strategische Dienste entdecken'}
           </Link>

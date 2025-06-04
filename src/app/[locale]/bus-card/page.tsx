@@ -39,13 +39,13 @@ export default function BusinessCardPage({ params }: BusinessCardPageProps) {
         overlayClass="bg-gradient-to-b from-cyber-navy/70 to-evergreen-intel/50"
         contentPosition="justify-center"
       >
-        <h1 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-4xl md:text-5xl lg:text-6xl mb-6 text-center">
+        <h2 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-4xl md:text-5xl lg:text-6xl mb-6 text-center">
           James Cameron
-        </h1>
+        </h2>
         <p className="font-futura text-light-stone text-lg md:text-xl max-w-2xl mb-8 text-center">
           Founder | Executive AI Security & Data Strategist
         </p>
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl mx-auto justify-items-center">
           <Link href={`/${locale}/services`} className="primary-button">
             {locale === 'en' ? 'Explore Strategic Services' : 'Strategische Dienste entdecken'}
           </Link>

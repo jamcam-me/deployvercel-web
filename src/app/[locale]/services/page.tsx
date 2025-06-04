@@ -40,17 +40,16 @@ export default function ServicesPage({ params }: ServicesPageProps) {
         overlayClass="bg-gradient-to-b from-cyber-navy/70 to-evergreen-intel/50"
         contentPosition="justify-center"
       >
-        <h1 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-4xl md:text-5xl lg:text-6xl mb-6">
-          {tServices('title')}
+        <h1 className="font-futura uppercase font-bold tracking-wider text-2xl md:text-3xl lg:text-4xl pb-8">
+          <span className="text-executive-gold block">Comprehensive cybersecurity,</span>
+          <span className="text-executive-gold block">data & AI advisory services</span>
+          <span className="text-navy-400 block">tailored to your organization's needs.</span>
         </h1>
-        <p className="font-futura text-light-stone text-lg md:text-xl max-w-2xl mb-8">
-          {tServices('description')}
-        </p>
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl mx-auto justify-items-center">
           <Link href={`/${locale}/about`} className="primary-button">
             {tAbout('about')}
           </Link>
-          <Link href={`/${locale}/contact`} className="secondary-button">
+          <Link href="https://outlook.office.com/book/contactbigrockintelai@bigrock-intelligence.com/?ismsaljsauthenabled" className="secondary-button">
             {locale === 'en' ? 'Schedule Consultation' : 'Beratungstermin vereinbaren'}
           </Link>
         </div>
