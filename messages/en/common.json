@@ -134,7 +134,7 @@
     "description": "Get in touch with our team to discuss how we can help your organization.",
     "name": "James Cameron",
     "role": "Founder & Executive Advisor",
-    "email": "james@jamcam.me",
+    "email": "james@bigrock-intel.ai",
     "phone": "+49 175 584 4546",
     "linkedin": "linkedin.com/in/jamcam-cyberleader"
   },
@@ -176,7 +176,7 @@
       },
       "meeting": {
         "label": "Schedule Meeting",
-        "value": "Book Strategic Consultation"
+        "value": "https://outlook.office.com/book/contactbigrockintelai@bigrock-intelligence.com/"
       },
       "phone": {
         "label": "Phone",
