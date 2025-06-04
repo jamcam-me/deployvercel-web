@@ -194,9 +194,9 @@ const ExecutiveOverview: React.FC<ExecutiveOverviewProps> = ({ locale }) => {
           </h1>
           <blockquote className="text-xl md:text-2xl italic text-gray-300 relative z-10 text-center">
             {locale === 'en' ? (
-              <p>"One size fits none in security. That's why we don't sell templates - we architect outcomes."</p>
+              <p>&ldquo;One size fits none in security. That&apos;s why we don&apos;t sell templates - we architect outcomes.&rdquo;</p>
             ) : (
-              <p>"One size fits none in security. That's why we don't sell templates - we architect outcomes."</p>
+              <p>&ldquo;One size fits none in security. That&apos;s why we don&apos;t sell templates - we architect outcomes.&rdquo;</p>
             )}
           </blockquote>
         </div>

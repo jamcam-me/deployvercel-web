@@ -25,7 +25,7 @@ const ExecutiveOutcomes: React.FC<ExecutiveOutcomesProps> = ({ locale }) => {
           <div className="space-y-6 text-lg md:text-xl leading-relaxed">
             {locale === 'en' ? (
               <>
-                <p>We've sat in your seat. Led the teams. Faced the auditors.</p>
+                <p>We&apos;ve sat in your seat. Led the teams. Faced the auditors.</p>
                 <p>Now we accelerate your journey from reactive to strategic.</p>
                 <p className="font-semibold text-executive-gold mt-8">Our frameworks deliver:</p>
                 <ul className="list-none space-y-3 pl-0">
@@ -37,7 +37,7 @@ const ExecutiveOutcomes: React.FC<ExecutiveOutcomesProps> = ({ locale }) => {
               </>
             ) : (
               <>
-                <p>We've sat in your seat. Led the teams. Faced the auditors.</p>
+                <p>We&apos;ve sat in your seat. Led the teams. Faced the auditors.</p>
                 <p>Now we accelerate your journey from reactive to strategic.</p>
                 <p className="font-semibold text-executive-gold mt-8">Our frameworks deliver:</p>
                 <ul className="list-none space-y-3 pl-0">
@@ -53,9 +53,9 @@ const ExecutiveOutcomes: React.FC<ExecutiveOutcomesProps> = ({ locale }) => {
           <div className="relative p-8 bg-gray-800 rounded-lg shadow-lg">
             <blockquote className="text-xl md:text-2xl italic text-gray-300 relative z-10">
               {locale === 'en' ? (
-                <p>"Explaining security investments to the board is always easier than explaining a breach."</p>
+                <p>&ldquo;Explaining security investments to the board is always easier than explaining a breach.&rdquo;</p>
               ) : (
-                <p>"Explaining security investments to the board is always easier than explaining a breach."</p>
+                <p>&ldquo;Explaining security investments to the board is always easier than explaining a breach.&rdquo;</p>
               )}
             </blockquote>
             <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-700 opacity-75 rounded-lg"></div>
