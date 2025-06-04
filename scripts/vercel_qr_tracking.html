@@ -11,7 +11,8 @@
         if (window.location.search.includes('source=qr') || window.location.search.includes('source=businesscard')) {
             // Send custom event to Vercel Analytics
             if (window.va) {
-                window.va('track', 'QR_Code_Scan', {
+                window.va('event', {
+                    name: 'QR_Code_Scan',
                     source: 'business_card',
                     timestamp: new Date().toISOString(),
                     page: window.location.pathname
@@ -288,7 +289,8 @@
         // Track specific actions
         function trackAction(action) {
             if (window.va) {
-                window.va('track', action, {
+                window.va('event', {
+                    name: action,
                     source: window.location.search.includes('source=qr') ? 'qr_code' : 'direct',
                     timestamp: new Date().toISOString()
                 });
@@ -300,7 +302,8 @@
         window.addEventListener('beforeunload', function() {
             let timeSpent = Math.round((Date.now() - startTime) / 1000);
             if (window.va && timeSpent > 5) { // Only track if spent more than 5 seconds
-                window.va('track', 'engagement_time', {
+                window.va('event', {
+                    name: 'engagement_time',
                     seconds: timeSpent,
                     source: window.location.search.includes('source=qr') ? 'qr_code' : 'direct'
                 });

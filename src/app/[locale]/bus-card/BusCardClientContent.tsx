@@ -40,7 +40,8 @@ export default function BusCardClientContent({ locale }: BusCardClientContentPro
     
     if (isQRSource) {
       if (typeof window.va !== 'undefined') {
-        window.va('track', 'QR_Code_Scan', {
+        window.va('event', {
+          name: 'QR_Code_Scan',
           source: 'business_card',
           timestamp: new Date().toISOString(),
           page: window.location.pathname
@@ -60,7 +61,8 @@ export default function BusCardClientContent({ locale }: BusCardClientContentPro
     const handleBeforeUnload = () => {
       const timeSpent = Math.round((Date.now() - startTime) / 1000);
       if (typeof window.va !== 'undefined' && timeSpent > 5) {
-        window.va('track', 'engagement_time', {
+        window.va('event', {
+          name: 'engagement_time',
           seconds: timeSpent,
           source: isQRSource ? 'qr_code' : 'direct'
         });
@@ -75,7 +77,8 @@ export default function BusCardClientContent({ locale }: BusCardClientContentPro
   
   const trackAction = (action: string) => {
     if (typeof window.va !== 'undefined') {
-      window.va('track', action, {
+      window.va('event', {
+        name: action,
         source: isFromQR ? 'qr_code' : 'direct',
         timestamp: new Date().toISOString()
       });
@@ -167,7 +170,7 @@ export default function BusCardClientContent({ locale }: BusCardClientContentPro
 
 declare global {
   interface Window {
-    va?: (event: string, action: string, params?: any) => void;
+    va?: (event: 'beforeSend' | 'event' | 'pageview', properties?: unknown) => void;
     gtag?: (event: string, action: string, params?: any) => void;
   }
 }
