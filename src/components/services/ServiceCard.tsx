@@ -3,10 +3,12 @@
 import React, { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 interface ServiceCardProps {
   title: string;
-  description: string;
+  mainDescription: string; // Changed from 'description'
+  additionalLine?: string; // New prop for the additional line
   metric?: string; // New metric field
   question?: string; // New strategic question field
   icon?: ReactNode;
@@ -14,19 +16,24 @@ interface ServiceCardProps {
   link?: string; // Optional link
   locale?: "en" | "de"; // Optional locale
   onClick?: () => void; // Optional onClick handler
+  showLearnMoreLink?: boolean; // New prop to control "Learn More" visibility
 }
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({
   title,
-  description,
+  mainDescription, // Changed from 'description'
+  additionalLine, // New prop
   metric,
   question,
   icon,
   className = '',
   link,
   locale = 'en',
-  onClick
+  onClick,
+  showLearnMoreLink = true // Default to true
 }) => {
+  const t = useTranslations();
+
   const CardContent = (
     <>
       <div className="flex items-center mb-4">
@@ -36,12 +43,13 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
             {React.isValidElement(icon) ? React.cloneElement(icon as React.ReactElement, { className: 'w-full h-full object-contain' }) : icon}
           </div>
         )}
-        <h4 className="text-executive-gold font-bold uppercase">{title}</h4>
+        <h4 className="text-executive-gold font-bold uppercase text-lg">{title}</h4>
       </div>
       
       {metric && <p className="service-metric mb-3">{metric}</p>}
       
-      <p className="service-description text-cyber-graphite flex-grow">{description}</p>
+      <p className="service-description text-cyber-graphite text-base">{mainDescription}</p>
+      {additionalLine && <p className="text-gold-30 text-sm mt-1">{additionalLine}</p>}
       
       {question && <p className="service-question mt-4">{question}</p>}
     </>
@@ -50,10 +58,17 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   if (link) {
     return (
       <Link href={link} onClick={onClick} className={cn(
-        'service-card block', // 'block' makes the link take the full width of the card
+        'service-card block relative flex flex-col aspect-[3/2] h-auto p-4', // Added p-4 for padding
         className
       )}>
-        {CardContent}
+        <div className="flex-grow flex flex-col">
+          {CardContent}
+        </div>
+        {showLearnMoreLink && link && (
+          <p className="service-learn-more-link mt-auto self-end text-right">
+              {t('services.learnMore')}
+          </p>
+        )}
       </Link>
     );
   } else {

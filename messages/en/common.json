@@ -127,7 +127,8 @@
     "footer": {
       "copyright": "© 2025 Big Rock Intelligence. All rights reserved.",
       "language": "Language"
-    }
+    },
+    "learnMore": "Learn More →"
   },
   "contact": {
     "title": "Contact Us",
@@ -164,7 +165,8 @@
     "contact": {
       "email": {
         "label": "Email",
-        "value": "james@bigrock-intel.ai"
+        "value": "james@bigrock-intel.ai",
+        "additional_text": "Ask about AI governance frameworks"
       },
       "website": {
         "label": "Website",
@@ -172,17 +174,22 @@
       },
       "linkedin": {
         "label": "LinkedIn",
-        "value": "Connect & Follow"
+        "value": "Connect & Follow",
+        "additional_text": "2,500+ cybersecurity leaders in network"
       },
       "meeting": {
         "label": "Schedule Meeting",
-        "value": "https://outlook.office.com/book/contactbigrockintelai@bigrock-intelligence.com/"
+        "main_text": "Set up some time to explore opportunities",
+        "value": "https://outlook.office.com/book/contactbigrockintelai@bigrock-intelligence.com/",
+        "additional_text": "30-min AI security strategy sessions"
       },
       "phone": {
         "label": "Phone",
-        "value": "+49(0)1511 3105 15242"
+        "main_text": "+49(0)1511 3105 15242",
+        "value": "tel:+4901511310515242",
+        "additional_text": "Direct line for urgent security matters"
       }
     },
-    "footer": "Secure digital transformation through strategic AI integration"
+    "footer": ""
   }
 }

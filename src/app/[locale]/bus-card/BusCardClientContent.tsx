@@ -86,15 +86,17 @@ export default function BusCardClientContent({ locale }: BusCardClientContentPro
     {
       id: 'email',
       title: t('contact.email.label'),
-      description: t('contact.email.value'),
-      link: `mailto:${t('contact.email.value')}?subject=Following up from our connection`,
+      mainDescription: t('contact.email.value'),
+      additionalLine: t('contact.email.additional_text'),
+      link: `mailto:${t('contact.email.value')}?subject=${encodeURIComponent(t('contact.email.additional_text'))}`,
       icon: 'email',
       action: 'email_click'
     },
     {
       id: 'linkedin',
       title: t('contact.linkedin.label'),
-      description: t('contact.linkedin.value'),
+      mainDescription: t('contact.linkedin.value'),
+      additionalLine: t('contact.linkedin.additional_text'),
       link: 'https://linkedin.com/in/jamcam-cyberleader',
       icon: 'linkedin',
       action: 'linkedin_click'
@@ -102,7 +104,8 @@ export default function BusCardClientContent({ locale }: BusCardClientContentPro
     {
       id: 'meeting',
       title: t('contact.meeting.label'),
-      description: 'Set up some time to explore opportunities',
+      mainDescription: t('contact.meeting.main_text'),
+      additionalLine: t('contact.meeting.additional_text'),
       link: 'https://outlook.office.com/book/contactbigrockintelai@bigrock-intelligence.com/',
       icon: 'meeting',
       action: 'booking_click'
@@ -110,7 +113,8 @@ export default function BusCardClientContent({ locale }: BusCardClientContentPro
     {
       id: 'phone',
       title: t('contact.phone.label'),
-      description: t('contact.phone.value'),
+      mainDescription: t('contact.phone.main_text'),
+      additionalLine: t('contact.phone.additional_text'),
       link: 'tel:+4901511310515242',
       icon: 'phone',
       action: 'phone_click'
@@ -125,38 +129,31 @@ export default function BusCardClientContent({ locale }: BusCardClientContentPro
               </div>
           )}
           
-          <h1 className="font-futura uppercase text-executive-gold tracking-wider text-3xl md:text-4xl lg:text-5xl pb-4">
-              {t('name')}
-          </h1>
-          
-          <p className="font-futura text-gray-800 text-lg md:text-xl max-w-2xl mb-8 mx-auto">
-              {t('jobTitle')}
-          </p>
-          
-          <p className="font-futura text-gray-800 text-lg md:text-xl max-w-2xl mb-8 mx-auto">
-              {t('company')}
-          </p>
 
-          <p className="text-base text-gray-600 mb-8 italic">
-              {t('tagline')}
-          </p>
-          
-          <div className="bg-[#dab86e]/10 rounded-lg p-4 mb-8 text-sm text-[#a4aba4]">
-              <strong className="text-[#dab86e]">{t('credentials.title')}</strong><br />
-              {t('credentials.subtitle')}
+          <div className="bg-gradient-to-r from-evergreen-intel to-cyber-navy p-6 rounded-lg shadow-lg text-center text-executive-gold mb-12">
+            <h1 className="font-futura font-bold text-xl md:text-2xl lg:text-3xl">25+ years of cybersecurity and global leadership experience</h1>
+            <p className="font-futura text-light-stone text-base md:text-lg mt-4">Bringing executive experience from Microsoft, AWS, and Avanade, translating complex security challenges into board-level insights.</p>
+            <h3 className="font-futura text-lg md:text-xl lg:text-2xl mt-2">UC Berkeley Executive AI Strategy</h3>
           </div>
           
+
+          <h2 className="font-futura text-evergreen-intel font-bold text-xl md:text-2xl lg:text-3xl text-center mb-8">
+            Secure digital transformation through strategic AI integration
+          </h2>
+
           <div className="grid grid-cols-2 gap-4 mb-8">
               {contactMethods.map((method) => (
                   <ServiceCard
                       key={method.id}
                       title={method.title}
-                      description={method.description}
+                      mainDescription={method.mainDescription}
+                      additionalLine={method.additionalLine}
                       icon={renderContactIcon(method.icon)}
                       link={method.link}
                       locale={locale}
                       className={method.id === 'meeting' ? 'bg-[#dab86e]/15 border-[#dab86e]/40' : ''} // Apply special styling for meeting tile
                       onClick={() => trackAction(method.action)}
+                      showLearnMoreLink={false} // Disable "Learn More" text for bus-card tiles
                   />
               ))}
           </div>

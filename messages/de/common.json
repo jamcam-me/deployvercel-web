@@ -83,6 +83,7 @@
     "copyright": "© 2025 Big Rock Intelligence. Alle Rechte vorbehalten.",
     "language": "Sprache"
   },
+  "learnMore": "Mehr erfahren →",
   "busCard": {
     "title": "James Cameron - Big Rock Intelligence",
     "welcome": "📱 Danke fürs Scannen! Sie haben sich mit Big Rock Intelligence verbunden.",
@@ -116,6 +117,6 @@
         "value": "+49(0)1511 3105 15242"
       }
     },
-    "footer": "Sichere digitale Transformation durch strategische KI-Integration"
+    "footer": ""
   }
 }
