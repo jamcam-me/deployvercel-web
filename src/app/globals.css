@@ -379,8 +379,9 @@
     min-height: 72px;
     padding: 16px 24px;
     line-height: 1.2;
-    word-wrap: break-word;
-    hyphens: auto;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
     max-width: 100%;
   }
   
@@ -403,8 +404,9 @@
     min-height: 72px;
     padding: 16px 24px;
     line-height: 1.2;
-    word-wrap: break-word;
-    hyphens: auto;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
     max-width: 100%;
   }
   

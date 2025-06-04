@@ -98,7 +98,8 @@
     "contact": {
       "email": {
         "label": "E-Mail",
-        "value": "james@bigrock-intel.ai"
+        "value": "james@bigrock-intel.ai",
+        "additional_text": "Fragen Sie nach KI-Governance-Frameworks"
       },
       "website": {
         "label": "Webseite",
@@ -106,15 +107,20 @@
       },
       "linkedin": {
         "label": "LinkedIn",
-        "value": "Verbinden & Folgen"
+        "value": "Verbinden & Folgen",
+        "additional_text": "2.500+ Cybersicherheitsexperten im Netzwerk"
       },
       "meeting": {
         "label": "Termin vereinbaren",
-        "value": "Strategische Beratung buchen"
+        "main_text": "Zeit einplanen für Gespräche über Möglichkeiten",
+        "value": "https://outlook.office.com/book/contactbigrockintelai@bigrock-intelligence.com/",
+        "additional_text": "30-Min KI-Sicherheitsstrategie-Sessions"
       },
       "phone": {
         "label": "Telefon",
-        "value": "+49(0)1511 3105 15242"
+        "main_text": "+49(0)1511 3105 15242",
+        "value": "tel:+4901511310515242",
+        "additional_text": "Direkte Leitung für dringende Sicherheitsangelegenheiten"
       }
     },
     "footer": ""
