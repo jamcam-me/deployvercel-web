@@ -69,10 +69,11 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
     <>
       <Hero
         locale={locale}
-        imageUrl="/images/ai_cyber_illustration.png"
+        imageUrl="/images/Services-portfolio.png"
         altText={serviceData.title}
         overlayClass="bg-gradient-to-b from-cyber-navy/70 to-evergreen-intel/50"
         contentPosition="justify-center"
+        heightClass="h-[40vh]"
       >
         <h1 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-4xl md:text-5xl lg:text-6xl mb-6">
           {serviceData.title}

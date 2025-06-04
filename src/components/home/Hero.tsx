@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({
         src={imageUrl}
         alt={altText}
         fill
-        className={`object-cover ${imagePosition}`}
+        className={`object-contain ${imagePosition}`}
         priority
       />
       <div className={`absolute inset-0 z-10 ${overlayClass}`} />
