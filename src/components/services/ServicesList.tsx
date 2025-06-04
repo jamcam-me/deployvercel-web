@@ -20,7 +20,7 @@ const ServicesList: React.FC<ServicesListProps> = ({ locale, servicesToRender })
               key={service.id}
               // Use direct properties from the service object
               title={service.title}
-              description={service.description}
+              mainDescription={service.description}
               metric={service.metric}
               question={service.question}
               icon={renderIcon(service.icon)}
