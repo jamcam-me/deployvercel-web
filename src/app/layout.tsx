@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import Footer from '@/components/layout/Footer';
 import { Cinzel } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 
 // Use Google Fonts for Cinzel
 const cinzel = Cinzel({
@@ -36,6 +37,7 @@ export default function RootLayout({
       </head>
       <body className="font-futura bg-white text-cyber-navy">
         {children}
+        <Analytics />
       </body>
     </html>
   );

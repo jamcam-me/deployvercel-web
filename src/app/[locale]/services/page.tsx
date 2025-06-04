@@ -43,7 +43,7 @@ export default function ServicesPage({ params }: ServicesPageProps) {
         <h1 className="font-futura uppercase font-bold tracking-wider text-2xl md:text-3xl lg:text-4xl pb-8">
           <span className="text-executive-gold block">Comprehensive cybersecurity,</span>
           <span className="text-executive-gold block">data & AI advisory services</span>
-          <span className="text-navy-400 block">tailored to your organization's needs.</span>
+          <span className="text-navy-400 block">tailored to your organization&apos;s needs.</span>
         </h1>
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl mx-auto justify-items-center">
           <Link href={`/${locale}/about`} className="primary-button">
