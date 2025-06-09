@@ -55,6 +55,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Futura Cyrillic Bold';
+  src: url('/fonts/futura/FuturaCyrillicBold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -1306,6 +1314,13 @@
   }
   
   /* Added for the services page to style the generated markdown */
+  .prose-h1-futura h1 {
+    font-family: 'Futura Cyrillic Bold', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700; /* Ensure bold */
+    @apply text-executive-gold text-3xl md:text-4xl lg:text-5xl mb-4; /* Keep existing size and color */
+  }
+
   .markdown-content h1 {
     @apply text-executive-gold text-3xl font-bold mb-4;
   }

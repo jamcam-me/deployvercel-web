@@ -75,7 +75,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
         contentPosition="justify-center"
         heightClass="h-[40vh]"
       >
-        <h1 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-4xl md:text-5xl lg:text-6xl mb-6">
+        <h1 className="font-futura uppercase font-bold text-executive-gold tracking-wider text-4xl md:text-5xl lg:text-6xl mb-6">
           {serviceData.title}
         </h1>
         <p className="font-futura text-light-stone text-lg md:text-xl max-w-2xl">
@@ -85,7 +85,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
 
       {/* Main Content Area */}
       <div className="container-custom section pt-16 pb-12"> {/* Adjusted padding-top */}
-        <div className="prose prose-lg dark:prose-invert max-w-none">
+        <div className="prose prose-lg dark:prose-invert max-w-none prose-h1-futura">
           <div dangerouslySetInnerHTML={{ __html: serviceContent.contentHtml }} />
         </div>
       </div>

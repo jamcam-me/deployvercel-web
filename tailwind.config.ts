@@ -11,6 +11,7 @@ const config: Config = {
       fontFamily: {
         cinzel: ['Cinzel', 'serif'],
         futura: ['Futura Std', 'Futura BK', 'sans-serif'],
+        'futura-cyrillic-bold': ['Futura Cyrillic Bold', 'sans-serif'],
       },
       colors: {
         // Primary Brand Colors
@@ -56,7 +57,20 @@ const config: Config = {
         'primary-gradient': 'linear-gradient(to right, var(--cyber-navy), var(--evergreen-intel))',
       },
     },
+    typography: ({ theme }: { theme: any }) => ({
+      DEFAULT: {
+        css: {
+          h1: {
+            fontFamily: theme('fontFamily.futura-cyrillic-bold'),
+            fontWeight: theme('fontWeight.bold'),
+            textTransform: 'uppercase',
+          },
+        },
+      },
+    }),
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
 export default config
