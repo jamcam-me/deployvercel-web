@@ -2,6 +2,8 @@
 title: "Cyber-Bildungsprogramm für Vorstände"
 description: "Steigern Sie die Sicherheitsexpertise Ihres Vorstands durch unser maßgeschneidertes Bildungsprogramm, das Cyber-Flüssigkeit durch kontextbezogenes Lernen ohne technische Überladung aufbaut."
 ---
+## Herausforderung der Branche
+"Viele Vorstände verfügen nicht über die spezialisierte Cybersicherheits- und KI-Kompetenz, die für eine effektive strategische Überwachung erforderlich ist, was zu Governance-Lücken und unberücksichtigten Risiken in einer zunehmend digitalen Landschaft führt."
 
 ## Kernangebote
 

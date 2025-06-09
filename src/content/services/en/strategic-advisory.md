@@ -2,6 +2,8 @@
 title: "Strategic Advisory"
 description: "Executive-level guidance on digital transformation journeys."
 ---
+## Industry Challenge
+"Digital transformation initiatives often face significant hurdles, requiring strategic executive guidance to align technology investments with business objectives and manage inherent risks effectively."
 
 ## Key Deliverables
 

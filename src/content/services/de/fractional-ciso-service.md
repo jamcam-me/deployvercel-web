@@ -2,6 +2,8 @@
 title: "Fractional CISO Service (DE)"
 description: "Zugang zu hochkarätiger Sicherheitsexpertise ohne die Kosten einer Vollzeit-Führungskraft."
 ---
+## Herausforderung der Branche
+"Kleine und mittlere Unternehmen (KMU) sowie Start-ups verfügen oft nicht über das Budget für einen Vollzeit-CISO, benötigen aber eine erfahrene Sicherheitsleitung, um komplexe Cyberbedrohungen zu bewältigen und sich entwickelnde Compliance-Anforderungen zu erfüllen."
 
 ## Kernangebote
 

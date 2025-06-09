@@ -2,6 +2,8 @@
 title: "Cyber Risk Quantification"
 description: "Replace subjective risk assessments with data-driven financial modeling that quantifies cyber risks in monetary terms."
 ---
+## Industry Challenge
+"Traditional qualitative risk assessments often fail to provide the financial clarity required for effective cyber investment decisions, leaving organizations vulnerable to misallocation of resources."
 
 ## Key Deliverables
 

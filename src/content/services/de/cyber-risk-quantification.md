@@ -2,6 +2,8 @@
 title: "Cyber-Risikobewertung"
 description: "Ersetzen Sie subjektive Risikobewertungen durch datengesteuerte Finanzmodelle, die Cyber-Risiken in monetären Begriffen quantifizieren."
 ---
+## Herausforderung der Branche
+"Herkömmliche qualitative Risikobewertungen liefern oft nicht die finanzielle Klarheit, die für effektive Cyber-Investitionsentscheidungen erforderlich ist, wodurch Organisationen anfällig für die Fehlallokation von Ressourcen werden."
 
 ## Kernangebote
 

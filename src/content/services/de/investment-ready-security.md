@@ -2,6 +2,8 @@
 title: "Investitionsbereite Sicherheit"
 description: "Bereiten Sie Ihre Sicherheitslage auf die Prüfung durch Investoren und die Due Diligence vor."
 ---
+## Herausforderung der Branche
+"Unternehmen, die Investitionen suchen, unterschätzen häufig die genaue Prüfung ihrer Cybersicherheitslage während der Due Diligence, was sich negativ auf die Bewertung und den Fortschritt der Transaktion auswirken kann."
 
 ## Kernangebote
 

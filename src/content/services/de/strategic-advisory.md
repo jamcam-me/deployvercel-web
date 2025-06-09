@@ -2,6 +2,8 @@
 title: "Strategische Beratung"
 description: "Führungskräfteberatung für digitale Transformationsprozesse."
 ---
+## Herausforderung der Branche
+"Initiativen zur digitalen Transformation stoßen oft auf erhebliche Hürden, die eine strategische Führung auf Führungsebene erfordern, um Technologieinvestitionen mit Geschäftszielen in Einklang zu bringen und inhärente Risiken effektiv zu managen."
 
 ## Kernangebote
 

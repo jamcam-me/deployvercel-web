@@ -2,6 +2,8 @@
 title: "Cybersecurity Leadership"
 description: "Strategic cybersecurity guidance for executives and boards."
 ---
+## Industry Challenge
+"Effective cybersecurity leadership is crucial but often lacking, leaving organizations without a clear strategic direction to navigate an evolving threat landscape and align security with business objectives."
 
 ## Key Deliverables
 

@@ -2,6 +2,8 @@
 title: "Technische Wertschöpfung"
 description: "Verwandeln Sie Sicherheit von einem Due-Diligence-Kontrollkästchen in einen strategischen Wertbeschleuniger für Ihr Portfolio."
 ---
+## Herausforderung der Branche
+"Für Private-Equity- und Venture-Capital-Firmen wird Cybersicherheit oft nur als Compliance-Checkliste und nicht als strategischer Hebel zur Steigerung der Unternehmensbewertung und Wettbewerbsfähigkeit im Portfolio betrachtet."
 
 ## Kernangebote
 

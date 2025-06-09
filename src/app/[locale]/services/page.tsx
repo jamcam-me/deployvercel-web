@@ -21,7 +21,7 @@ export default function ServicesPage({ params }: ServicesPageProps) {
   const tAbout = useTranslations('nav'); // Access translations for the 'nav' section
   const tContact = useTranslations('contact'); // Access translations for the 'contact' section
 
-  const [activeTab, setActiveTab] = useState<'enterprise' | 'smb' | 'vc_pe' | 'board'>('enterprise');
+  const [activeTab, setActiveTab] = useState<'board' | 'vc_pe' | 'smb' | 'enterprise'>('board');
 
   const generalServices = services.filter(service => service.category === 'general');
   const advisoryServices = services.filter(service => service.category === 'advisory');
@@ -68,17 +68,10 @@ export default function ServicesPage({ params }: ServicesPageProps) {
         <div className="flex justify-center flex-wrap mb-8">
           <button
             className={`px-6 py-3 mx-2 rounded-md font-bold transition-colors duration-200
-              ${activeTab === 'enterprise' ? 'bg-executive-gold text-cyber-navy' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
-            onClick={() => setActiveTab('enterprise')}
+              ${activeTab === 'board' ? 'bg-executive-gold text-cyber-navy' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+            onClick={() => setActiveTab('board')}
           >
-            {tServices('advisory.enterpriseLeaders')}
-          </button>
-          <button
-            className={`px-6 py-3 mx-2 rounded-md font-bold transition-colors duration-200
-              ${activeTab === 'smb' ? 'bg-executive-gold text-cyber-navy' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
-            onClick={() => setActiveTab('smb')}
-          >
-            {tServices('advisory.smbOwners')}
+            {tServices('advisory.boardMembers')}
           </button>
           <button
             className={`px-6 py-3 mx-2 rounded-md font-bold transition-colors duration-200
@@ -89,19 +82,26 @@ export default function ServicesPage({ params }: ServicesPageProps) {
           </button>
           <button
             className={`px-6 py-3 mx-2 rounded-md font-bold transition-colors duration-200
-              ${activeTab === 'board' ? 'bg-executive-gold text-cyber-navy' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
-            onClick={() => setActiveTab('board')}
+              ${activeTab === 'smb' ? 'bg-executive-gold text-cyber-navy' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+            onClick={() => setActiveTab('smb')}
           >
-            {tServices('advisory.boardMembers')}
+            {tServices('advisory.smbOwners')}
+          </button>
+          <button
+            className={`px-6 py-3 mx-2 rounded-md font-bold transition-colors duration-200
+              ${activeTab === 'enterprise' ? 'bg-executive-gold text-cyber-navy' : 'bg-gray-200 text-gray-700 hover:bg-gray-300'}`}
+            onClick={() => setActiveTab('enterprise')}
+          >
+            {tServices('advisory.enterpriseLeaders')}
           </button>
         </div>
 
         {/* Render Services based on active tab */}
         <div className="tab-content">
-          {activeTab === 'enterprise' && <ServicesList locale={locale} servicesToRender={enterpriseAdvisory} />}
-          {activeTab === 'smb' && <ServicesList locale={locale} servicesToRender={smbAdvisory} />}
-          {activeTab === 'vc_pe' && <ServicesList locale={locale} servicesToRender={vcPeAdvisory} />}
           {activeTab === 'board' && <ServicesList locale={locale} servicesToRender={boardAdvisory} />}
+          {activeTab === 'vc_pe' && <ServicesList locale={locale} servicesToRender={vcPeAdvisory} />}
+          {activeTab === 'smb' && <ServicesList locale={locale} servicesToRender={smbAdvisory} />}
+          {activeTab === 'enterprise' && <ServicesList locale={locale} servicesToRender={enterpriseAdvisory} />}
         </div>
 
         {/* General Services Section */}

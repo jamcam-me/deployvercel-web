@@ -2,6 +2,8 @@
 title: "Board Cyber Education Program"
 description: "Elevate your board's security expertise through our tailored education program that builds cyber fluency through contextual learning without technical overload."
 ---
+## Industry Challenge
+"Many boards lack the specialized cybersecurity and AI literacy needed to provide effective strategic oversight, leading to governance gaps and unaddressed risks in an increasingly digital landscape."
 
 ## Key Deliverables
 

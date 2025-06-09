@@ -2,6 +2,8 @@
 title: "Fractional CISO Service"
 description: "Access senior security leadership expertise without the full-time executive cost."
 ---
+## Industry Challenge
+"Small to medium-sized businesses and startups often lack the budget for a full-time CISO, yet require senior security leadership to navigate complex cyber threats and meet evolving compliance demands."
 
 ## Key Deliverables
 

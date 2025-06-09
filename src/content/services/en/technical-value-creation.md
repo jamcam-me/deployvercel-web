@@ -2,6 +2,8 @@
 title: "Technical Value Creation"
 description: "Transform security from a due diligence checkbox into a strategic value accelerator across your portfolio."
 ---
+## Industry Challenge
+"For private equity and venture capital firms, cybersecurity is often viewed merely as a compliance checklist rather than a strategic lever for enhancing portfolio company valuation and competitiveness."
 
 ## Key Deliverables
 

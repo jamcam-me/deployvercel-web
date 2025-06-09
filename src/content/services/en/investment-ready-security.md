@@ -2,6 +2,8 @@
 title: "Investment-Ready Security"
 description: "Prepare your security posture for investor scrutiny and due diligence."
 ---
+## Industry Challenge
+"Companies seeking investment frequently underestimate the scrutiny of their cybersecurity posture during due diligence, which can negatively impact valuation and deal progression."
 
 ## Key Deliverables
 

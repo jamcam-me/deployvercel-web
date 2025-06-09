@@ -2,6 +2,8 @@
 title: "Executive Communication Framework (DE)"
 description: "Strategische Cybersecurity-Führung für Führungskräfte und Vorstände."
 ---
+## Herausforderung der Branche
+"Viele Unternehmen kämpfen damit, die Kommunikationslücke zwischen hochtechnischen Cybersicherheitsteams und der Führungsebene zu überbrücken, was zu falsch ausgerichteten Prioritäten und unterbewerteten Sicherheitsinvestitionen führt."
 
 ## Kernangebote
 
