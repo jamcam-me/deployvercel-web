@@ -3,7 +3,7 @@ title: "Executive Communication Framework"
 description: "Transform technical security metrics into strategic business insights that resonate with board members and C-suite executives."
 ---
 
-## Key Offerings
+## Key Deliverables
 
 *   **Board-Ready Reporting:** Develop compelling narratives that translate complex cybersecurity risks into clear, concise, and actionable insights for non-technical executives.
 *   **C-Suite Alignment Workshops:** Facilitate interactive sessions to align security initiatives with broader business objectives, fostering a shared understanding of risk and investment priorities.

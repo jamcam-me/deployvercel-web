@@ -3,7 +3,7 @@ title: "AI Security Strategy"
 description: "Develop a comprehensive AI security roadmap that aligns with your enterprise's AI adoption journey."
 ---
 
-## Key Offerings
+## Key Deliverables
 
 *   **AI Risk Assessment:** Identify and evaluate unique security risks associated with AI model development, deployment, and operation, including data poisoning, model evasion, and privacy concerns.
 *   **Secure AI Lifecycle Integration:** Integrate security best practices across the entire AI lifecycle, from data ingestion and model training to deployment and monitoring.

@@ -3,7 +3,7 @@ title: "Regulatory Compliance"
 description: "Navigate complex regulatory environments with confidence."
 ---
 
-## Key Offerings
+## Key Deliverables
 
 *   **Compliance Gap Analysis:** Identifying discrepancies between current security practices and regulatory requirements (e.g., GDPR, NIS 2, DORA, CCPA).
 *   **Compliance Roadmap Development:** Creating a strategic plan to achieve and maintain regulatory adherence.

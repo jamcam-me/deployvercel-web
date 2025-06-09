@@ -41,18 +41,18 @@ export default function HomePage({ params }: HomePageProps) {
         altText="Frankfurt skyline"
       >
         {/* Main Hero Text */}
-        <h1 className="font-futura uppercase text-executive-gold tracking-wider text-2xl md:text-3xl lg:text-4xl pb-8">
+        <h1 className="font-futura uppercase font-bold text-executive-gold tracking-wider text-2xl md:text-3xl lg:text-4xl pb-8"> {/* Added font-bold */}
           {locale === 'en'
             ? (
                 <>
                   Bridging AI Innovation<br />
-                  <span className="text-green-600">with Enterprise Security</span>
+                  <span className="text-green-600">with Enterprise Security</span> {/* Reverted text-executive-gold to text-green-600 */}
                 </>
               )
             : (
                 <>
                   Brücke zwischen KI-Innovation<br />
-                  <span className="text-green-500">mit Unternehmenssicherheit</span><br />
+                  <span className="text-green-500">mit Unternehmenssicherheit</span><br /> {/* Reverted text-executive-gold to text-green-500 */}
                 </>
               )}
         </h1>

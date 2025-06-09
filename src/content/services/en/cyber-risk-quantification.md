@@ -3,7 +3,7 @@ title: "Cyber Risk Quantification"
 description: "Replace subjective risk assessments with data-driven financial modeling that quantifies cyber risks in monetary terms."
 ---
 
-## Key Offerings
+## Key Deliverables
 
 *   **FAIR Model Implementation:** Apply the Factor Analysis of Information Risk (FAIR) methodology to quantify cyber risks in financial terms, enabling objective decision-making.
 *   **Risk Scenario Development:** Develop specific, actionable cyber risk scenarios tailored to your organization's unique threat landscape and business context.

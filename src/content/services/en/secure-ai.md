@@ -3,7 +3,7 @@ title: "Secure AI Adoption"
 description: "Transform AI adoption from security blocker to business enabler with our framework-driven approach."
 ---
 
-## Key Offerings
+## Key Deliverables
 
 *   **AI Risk Assessment:** Identify and prioritize AI-specific risks, including model vulnerabilities, data privacy concerns, and compliance challenges.
 *   **Secure AI Development Lifecycle:** Integrate security best practices into your AI development pipeline, from data ingestion to model deployment.

@@ -3,7 +3,7 @@ title: "Cybersecurity Investment Advisory"
 description: "Gain strategic insight into cybersecurity market trends, investment opportunities, and technology evolution to inform investment theses and portfolio strategy."
 ---
 
-## Key Offerings
+## Key Deliverables
 
 *   **Market Trend Analysis:** Provide in-depth analysis of emerging cybersecurity market trends, identifying high-growth areas and disruptive technologies.
 *   **Technology Due Diligence:** Conduct thorough technical due diligence on cybersecurity startups and solutions, assessing their innovation, scalability, and market fit.

@@ -31,7 +31,7 @@ export default function About({ params }: AboutPageProps) {
         contentPosition="justify-center"
         imagePosition="object-[60%_55%]"
       >
-        <h1 className="font-futura text-green-500 z-30 text-4xl pb-8">
+        <h1 className="font-futura uppercase font-bold text-green-500 tracking-wider text-2xl md:text-3xl lg:text-4xl pb-8"> {/* Reverted color to text-green-500, standardized font style and size */}
           The Foundation of Strategic Security
         </h1>
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto justify-items-center">

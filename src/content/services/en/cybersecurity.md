@@ -3,7 +3,7 @@ title: "Cybersecurity Leadership"
 description: "Strategic cybersecurity guidance for executives and boards."
 ---
 
-## Key Offerings
+## Key Deliverables
 
 *   **Cybersecurity Strategy Development:** Crafting bespoke security strategies aligned with business objectives and risk appetite.
 *   **Security Program Management:** Overseeing the implementation and continuous improvement of comprehensive security programs.

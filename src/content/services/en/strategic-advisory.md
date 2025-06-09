@@ -3,7 +3,7 @@ title: "Strategic Advisory"
 description: "Executive-level guidance on digital transformation journeys."
 ---
 
-## Key Offerings
+## Key Deliverables
 
 *   **Digital Transformation Security:** Integrating security as a foundational element of your digital transformation initiatives.
 *   **Cyber-M&A Due Diligence:** Assessing cybersecurity risks and opportunities during mergers, acquisitions, and divestitures.

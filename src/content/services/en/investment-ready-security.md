@@ -3,7 +3,7 @@ title: "Investment-Ready Security"
 description: "Prepare your security posture for investor scrutiny and due diligence."
 ---
 
-## Key Offerings
+## Key Deliverables
 
 *   **Due Diligence Gap Analysis:** Identify and remediate security gaps that could impact valuation or raise red flags during investor due diligence.
 *   **Security Narrative Development:** Craft a compelling story around your security program that highlights its strengths, maturity, and alignment with business objectives for investors.

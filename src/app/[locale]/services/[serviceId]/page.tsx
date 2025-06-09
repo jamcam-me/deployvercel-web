@@ -73,19 +73,19 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
         altText={serviceData.title}
         overlayClass="bg-gradient-to-b from-cyber-navy/70 to-evergreen-intel/50"
         contentPosition="justify-center"
-        heightClass="h-[40vh]"
+        heightClass="h-[80vh]"
       >
-        <h1 className="font-futura uppercase font-bold text-executive-gold tracking-wider text-4xl md:text-5xl lg:text-6xl mb-6">
-          {serviceData.title}
-        </h1>
-        <p className="font-futura text-light-stone text-lg md:text-xl max-w-2xl">
-          {serviceData.description}
-        </p>
+          <h1 className="font-futura uppercase font-bold text-executive-gold tracking-wider text-2xl md:text-3xl lg:text-4xl pb-8"> {/* Added font-bold back to h1 */}
+            {serviceData.title}
+          </h1>
+          <p className="font-futura text-light-stone text-xl md:text-2xl max-w-2xl mx-auto text-center"> {/* Removed font-bold */}
+            {serviceData.description}
+          </p>
       </Hero>
 
       {/* Main Content Area */}
-      <div className="container-custom section pt-16 pb-12"> {/* Adjusted padding-top */}
-        <div className="prose prose-lg dark:prose-invert max-w-none prose-h1-futura">
+      <div className="container-custom section pt-4 pb-20"> {/* Further reduced padding by half */}
+        <div className="prose prose-lg dark:prose-invert max-w-none">
           <div dangerouslySetInnerHTML={{ __html: serviceContent.contentHtml }} />
         </div>
       </div>

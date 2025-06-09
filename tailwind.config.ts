@@ -12,6 +12,7 @@ const config: Config = {
         cinzel: ['Cinzel', 'serif'],
         futura: ['Futura Std', 'Futura BK', 'sans-serif'],
         'futura-cyrillic-bold': ['Futura Cyrillic Bold', 'sans-serif'],
+        'futura-cyrillic-medium': ['Futura Cyrillic Medium', 'sans-serif'],
       },
       colors: {
         // Primary Brand Colors
@@ -64,6 +65,50 @@ const config: Config = {
             fontFamily: theme('fontFamily.futura-cyrillic-bold'),
             fontWeight: theme('fontWeight.bold'),
             textTransform: 'uppercase',
+            fontSize: theme('fontSize.5xl'),
+            marginTop: theme('spacing.20'), // Increased margin-top for large sections
+            marginBottom: theme('spacing.8'), // Smaller margin-bottom for h1
+          },
+          h2: {
+            fontFamily: theme('fontFamily.futura-cyrillic-bold'),
+            fontWeight: theme('fontWeight.bold'),
+            textTransform: 'uppercase',
+            fontSize: theme('fontSize.4xl'),
+            marginTop: theme('spacing.16'), // Increased margin-top for sections
+            marginBottom: theme('spacing.6'), // Smaller margin-bottom for h2
+          },
+          h3: {
+            fontFamily: theme('fontFamily.futura-cyrillic-bold'),
+            fontWeight: theme('fontWeight.bold'),
+            textTransform: 'uppercase',
+            fontSize: theme('fontSize.3xl'),
+            marginTop: theme('spacing.12'), // Increased margin-top for sub-sections
+            marginBottom: theme('spacing.4'), // Smaller margin-bottom for h3
+          },
+          h4: {
+            fontFamily: theme('fontFamily.futura-cyrillic-bold'),
+            fontWeight: theme('fontWeight.bold'),
+            textTransform: 'uppercase',
+            marginTop: theme('spacing.10'),
+            marginBottom: theme('spacing.3'),
+          },
+          h5: {
+            fontFamily: theme('fontFamily.futura-cyrillic-bold'),
+            fontWeight: theme('fontWeight.bold'),
+            textTransform: 'uppercase',
+            marginTop: theme('spacing.8'),
+            marginBottom: theme('spacing.2'),
+          },
+          h6: {
+            fontFamily: theme('fontFamily.futura-cyrillic-bold'),
+            fontWeight: theme('fontWeight.bold'),
+            textTransform: 'uppercase',
+            marginTop: theme('spacing.6'),
+            marginBottom: theme('spacing.1'),
+          },
+          p: {
+            marginBottom: theme('spacing.6'), // Keep paragraph margin-bottom
+            marginTop: theme('spacing.2'), // Add a small margin-top for paragraphs
           },
         },
       },

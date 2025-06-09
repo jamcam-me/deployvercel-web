@@ -3,7 +3,7 @@ title: "AI Governance Advisory"
 description: "Develop board-level governance frameworks for responsible AI adoption and oversight."
 ---
 
-## Key Offerings
+## Key Deliverables
 
 *   **AI Policy Development:** Assist in drafting and implementing clear, ethical, and compliant AI usage policies that align with your organizational values and regulatory requirements.
 *   **Responsible AI Frameworks:** Establish comprehensive frameworks for responsible AI development and deployment, addressing fairness, transparency, accountability, and privacy.

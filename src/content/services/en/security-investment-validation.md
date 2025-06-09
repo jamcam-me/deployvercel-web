@@ -3,7 +3,7 @@ title: "Security Investment Validation"
 description: "Verify the effectiveness of your organization's security investments with independent validation of security program performance and spending efficiency."
 ---
 
-## Key Offerings
+## Key Deliverables
 
 *   **Security Program Effectiveness Review:** Conduct an independent assessment of your existing security program to determine its efficacy in mitigating risks and achieving stated objectives.
 *   **ROI Analysis for Security Investments:** Evaluate the return on investment for your cybersecurity spending, identifying areas of over- or under-investment and optimizing resource allocation.

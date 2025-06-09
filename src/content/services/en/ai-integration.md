@@ -3,7 +3,7 @@ title: "AI Integration"
 description: "Seamless integration of AI technologies with enterprise security frameworks."
 ---
 
-## Key Offerings
+## Key Deliverables
 
 *   **Secure AI Deployment:** Guiding the secure integration of AI models and applications into existing IT infrastructures.
 *   **Data Security for AI:** Implementing robust controls to protect sensitive data used in AI training and inference.

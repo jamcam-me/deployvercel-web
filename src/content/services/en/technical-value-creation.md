@@ -3,7 +3,7 @@ title: "Technical Value Creation"
 description: "Transform security from a due diligence checkbox into a strategic value accelerator across your portfolio."
 ---
 
-## Key Offerings
+## Key Deliverables
 
 *   **Security Post-Acquisition Integration:** Develop and execute plans for seamlessly integrating acquired companies' security programs into the parent organization's framework.
 *   **Security Value Realization:** Identify opportunities to enhance the value of portfolio companies through targeted security improvements that reduce risk and enable growth.

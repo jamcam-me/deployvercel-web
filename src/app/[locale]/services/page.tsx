@@ -57,7 +57,7 @@ export default function ServicesPage({ params }: ServicesPageProps) {
 
       <div className="container-custom section bg-white text-gray-800 pt-16"> {/* Added pt-16 for consistent padding */}
         {/* Advisory Services Section */}
-        <h2 className="section-title text-center mb-8">
+        <h2 className="section-title text-center mb-8 text-4xl"> {/* Increased font size */}
           {tServices('advisory.title')}
         </h2>
         <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
@@ -105,7 +105,7 @@ export default function ServicesPage({ params }: ServicesPageProps) {
         </div>
 
         {/* General Services Section */}
-        <h2 className="section-title text-center mt-16 mb-8">
+        <h2 className="section-title text-center mt-16 mb-8 text-4xl"> {/* Increased font size */}
           {tServices('general.title')}
         </h2>
         <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
