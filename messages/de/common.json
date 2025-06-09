@@ -60,7 +60,8 @@
       "smbOwners": "SMB Owners",
       "vcPeFirms": "VC & Private Equity Firms",
       "boardMembers": "Board Members"
-    }
+    },
+    "learnMore": "Mehr erfahren →"
   },
   "contact": {
     "title": "Kontakt",
