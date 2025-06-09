@@ -1,0 +1,46 @@
+[
+  {
+    "id": "title",
+    "name": "title",
+    "label": "Feature Title",
+    "required": true,
+    "type": "text",
+    "default": "Feature Title"
+  },
+  {
+    "id": "description",
+    "name": "description",
+    "label": "Feature Description",
+    "required": true,
+    "type": "richtext",
+    "default": "A short, descriptive text for the feature."
+  },
+  {
+    "id": "icon",
+    "name": "icon",
+    "label": "Feature Icon (URL)",
+    "required": true,
+    "type": "image"
+  },
+  {
+    "id": "link",
+    "name": "link",
+    "label": "Call to Action Link",
+    "type": "group",
+    "children": [
+      {
+        "id": "text",
+        "name": "text",
+        "label": "Link Text",
+        "type": "text",
+        "default": "Learn More"
+      },
+      {
+        "id": "url",
+        "name": "url",
+        "label": "Link URL",
+        "type": "url"
+      }
+    ]
+  }
+]

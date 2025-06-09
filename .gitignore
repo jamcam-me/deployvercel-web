@@ -37,3 +37,6 @@ next-env.d.ts
 *.bak
 cllaude_desktop_config.json.bak
 mcp_settings.json.bak
+
+# HubSpot config file
+hubspot.config.yml

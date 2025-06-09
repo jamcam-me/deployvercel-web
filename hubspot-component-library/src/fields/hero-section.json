@@ -1,0 +1,44 @@
+[
+  {
+    "id": "heading",
+    "name": "heading", 
+    "label": "Heading",
+    "required": true,
+    "type": "text",
+    "default": "Welcome to Our Site"
+  },
+  {
+    "id": "subheading",
+    "name": "subheading",
+    "label": "Subheading", 
+    "type": "richtext",
+    "default": ""
+  },
+  {
+    "id": "background_image",
+    "name": "background_image",
+    "label": "Background Image",
+    "type": "image"
+  },
+  {
+    "id": "cta_button",
+    "name": "cta_button",
+    "label": "Call to Action",
+    "type": "group",
+    "children": [
+      {
+        "id": "text",
+        "name": "text",
+        "label": "Button Text",
+        "type": "text",
+        "default": "Learn More"
+      },
+      {
+        "id": "url", 
+        "name": "url",
+        "label": "Button URL",
+        "type": "url"
+      }
+    ]
+  }
+]

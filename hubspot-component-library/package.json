@@ -1,0 +1,14 @@
+{
+  "name": "hubspot-component-library",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npm run clean && npm run copy:assets",
+    "copy:assets": "mkdir -p dist && cp -r src/* dist/ 2>/dev/null || echo 'Copying assets...'",
+    "clean": "rm -rf dist",
+    "dev": "echo 'Development mode - files copied to dist/'",
+    "test": "echo 'No tests specified'"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "title",
+    "name": "title",
+    "label": "Title",
+    "required": false,
+    "type": "text",
+    "default": ""
+  },
+  {
+    "id": "subtitle",
+    "name": "subtitle",
+    "label": "Subtitle",
+    "required": false,
+    "type": "richtext",
+    "default": ""
+  },
+  {
+    "id": "alignment",
+    "name": "alignment",
+    "label": "Content Alignment",
+    "required": false,
+    "type": "choice",
+    "choices": [
+      ["left", "Left"],
+      ["center", "Center"],
+      ["right", "Right"]
+    ],
+    "default": "left"
+  },
+  {
+    "id": "background_color",
+    "name": "backgroundColor",
+    "label": "Background Color (CSS or BRI Variable)",
+    "required": false,
+    "type": "text",
+    "help_text": "e.g., #0a1f44 or var(--bri-navy-800)"
+  },
+  {
+    "id": "text_color",
+    "name": "textColor",
+    "label": "Text Color (CSS or BRI Variable)",
+    "required": false,
+    "type": "text",
+    "help_text": "e.g., #d9ded9 or var(--bri-light-stone)"
+  }
+]

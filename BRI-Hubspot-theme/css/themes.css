@@ -1,0 +1,23 @@
+:root {
+  --bri-primary-color: #003366;
+  --bri-secondary-color: #0066CC;
+  --bri-accent-color: #FF6B35;
+  --bri-text-color: #333333;
+  --bri-spacing-sm: 1rem;
+  --bri-spacing-md: 1.5rem;
+  --bri-border-radius: 8px;
+}
+
+.bri-card {
+  background: white;
+  border-radius: var(--bri-border-radius);
+  padding: var(--bri-spacing-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bri-hero {
+  background: linear-gradient(135deg, var(--bri-primary-color), var(--bri-secondary-color));
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+}

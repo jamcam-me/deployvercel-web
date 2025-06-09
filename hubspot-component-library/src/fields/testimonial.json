@@ -1,0 +1,72 @@
+[
+  {
+    "id": "title",
+    "name": "title",
+    "label": "Section Title",
+    "required": false,
+    "type": "text",
+    "default": "What Our Clients Say"
+  },
+  {
+    "id": "subtitle",
+    "name": "subtitle",
+    "label": "Section Subtitle",
+    "required": false,
+    "type": "richtext",
+    "default": ""
+  },
+  {
+    "id": "alignment",
+    "name": "alignment",
+    "label": "Layout Alignment",
+    "required": false,
+    "type": "choice",
+    "choices": [
+      ["left", "Left Aligned"],
+      ["center", "Center Aligned"],
+      ["right", "Right Aligned"]
+    ],
+    "default": "center"
+  },
+  {
+    "id": "testimonials",
+    "name": "testimonials",
+    "label": "Testimonials",
+    "required": true,
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 6
+    },
+    "children": [
+      {
+        "id": "quote",
+        "name": "quote",
+        "label": "Testimonial Quote",
+        "required": true,
+        "type": "richtext"
+      },
+      {
+        "id": "author",
+        "name": "author",
+        "label": "Author Name",
+        "required": true,
+        "type": "text"
+      },
+      {
+        "id": "role",
+        "name": "role",
+        "label": "Author Role/Title",
+        "required": false,
+        "type": "text"
+      },
+      {
+        "id": "image",
+        "name": "image",
+        "label": "Author Image",
+        "required": false,
+        "type": "image"
+      }
+    ]
+  }
+]
