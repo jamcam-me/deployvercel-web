@@ -31,7 +31,7 @@ export default function RootLayout({
         {/* Add optional fallback for Futura using CSS */}
         <style dangerouslySetInnerHTML={{ __html: `
           :root {
-            --font-futura: 'Futura', 'Trebuchet MS', sans-serif;
+            --font-futura: 'Jost', 'Trebuchet MS', sans-serif;
           }
         `}} />
       </head>

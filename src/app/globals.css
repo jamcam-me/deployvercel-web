@@ -19,48 +19,8 @@
 }
 
 
-@font-face {
-  font-family: 'Futura Std';
-  src: url('/fonts/futura/FuturaStd-Book.woff2') format('woff2'),
-       url('/fonts/futura/FuturaStd-Book.woff') format('woff');
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap&subset=latin,cyrillic');
 
-@font-face {
-  font-family: 'Futura Std';
-  src: url('/fonts/futura/FuturaStd-Medium.woff2') format('woff2'),
-       url('/fonts/futura/FuturaStd-Medium.woff') format('woff');
-  font-weight: 500;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Futura Std';
-  src: url('/fonts/futura/FuturaStd-Bold.woff2') format('woff2'),
-       url('/fonts/futura/FuturaStd-Bold.woff') format('woff');
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Futura Cyrillic Medium';
-  src: url('/fonts/futura/FuturaCyrillicMedium.ttf') format('truetype');
-  font-weight: 500;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Futura Cyrillic Bold';
-  src: url('/fonts/futura/FuturaCyrillicBold.ttf') format('truetype');
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-}
 
 @tailwind base;
 @tailwind components;
