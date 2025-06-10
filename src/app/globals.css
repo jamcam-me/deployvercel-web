@@ -18,15 +18,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Cinzel';
-  src: url('/fonts/cinzel/Cinzel-Bold.woff2') format('woff2'),
-       url('/fonts/cinzel/Cinzel-Bold.woff') format('woff'),
-       url('/fonts/cinzel/cinzel-bold.ttf') format('truetype');
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-}
 
 @font-face {
   font-family: 'Futura Std';
