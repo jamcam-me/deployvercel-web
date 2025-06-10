@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Hero from '@/components/home/Hero';
 import ExecutiveOverview from '@/components/home/ExecutiveOverview';
 import ExecutiveOutcomes from '@/components/home/ExecutiveOutcomes';
+import TheDifferenceYouFeel from '@/components/home/TheDifferenceYouFeel';
 import { Locale } from '@/lib/i18n';
 
 interface HomePageProps {
@@ -69,6 +70,7 @@ export default function HomePage({ params }: HomePageProps) {
         </div>
       </Hero>
       <ExecutiveOverview locale={locale} />
+      <TheDifferenceYouFeel locale={locale} />
       <ExecutiveOutcomes locale={locale} />
     </div>
   );
