@@ -43,7 +43,7 @@ const TheDifferenceYouFeel: React.FC<TheDifferenceYouFeelProps> = ({ locale }) =
 
         <div className="border-t-2 border-executive-gold pt-8">
           <p className="italic text-lg md:text-xl">
-            "One size fits none in security. That's why we don't sell templates—we architect outcomes."
+            "One size fits none in security. Thats why we dont sell templates—we architect outcomes."
           </p>
         </div>
       </div>
