@@ -35,7 +35,7 @@ export default function RootLayout({
           }
         `}} />
         {/* Start of HubSpot Embed Code */}
-        <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/47932576.js"></script>
+        <script type="text/javascript" id="hs-script-loader" async defer src="https://js.hs-scripts.com/47932576.js"></script>
         {/* End of HubSpot Embed Code */}
       </head>
       <body className="font-futura bg-white text-cyber-navy">
