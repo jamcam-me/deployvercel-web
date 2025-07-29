@@ -33,16 +33,28 @@ export default function AboutContentOverview({ locale }: AboutContentOverviewPro
             technical hurdle into a business advantage, fostering innovation and resilience in an evolving digital landscape."
           </p>
         </section>
-
-        {/* The BRI Difference / Value */}
+        {/* THE OKOTOKS INSIGHT Section Content */}
         <section className="mb-16">
-          <h2 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-xl md:text-2xl lg:text-3xl mb-6 text-center">The BRI Difference / Value</h2>
-          <ul className="list-none space-y-4 text-center font-sans">
-            <li><strong className="text-evergreen-intel">Trusted by global leaders:</strong> Our strategies are validated in the world's most demanding environments.</li>
-            <li><strong className="text-evergreen-intel">Proven impact:</strong> We deliver measurable outcomes that enhance enterprise value.</li>
-            <li><strong className="text-evergreen-intel">Executive-ready insights:</strong> Translating complex security challenges into clear, actionable business strategies.</li>
-            <li><strong className="text-evergreen-intel">Agile & adaptive:</strong> Tailored solutions that evolve with your organization's unique needs and the threat landscape.</li>
+          <h2 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-xl md:text-2xl lg:text-3xl mb-6 text-center">
+            THE OKOTOKS INSIGHT: Why 'Big Rock Intelligence'
+          </h2>
+          <p className="font-sans text-center text-lg md:text-xl leading-relaxed mb-4">
+            Like the Okotoks erratic—a massive glacial boulder deposited with precision and purpose—our approach emerged from a fundamental recognition after 25+ years in cybersecurity leadership:
+          </p>
+          <h3 className="font-cinzel uppercase font-bold text-evergreen-intel mb-2">THE FOUNDING INSIGHT:</h3>
+          <p className="font-sans text-lg leading-relaxed mb-4">
+            True enterprise security doesn't come from impenetrable walls. It comes from intelligent fissures that reveal strategic opportunity.
+          </p>
+          <h3 className="font-cinzel uppercase font-bold text-evergreen-intel mb-2">THE METAPHOR BECOMES METHODOLOGY:</h3>
+          <ul className="list-disc list-inside font-sans mb-4">
+            <li><strong>The Rock:</strong> Your enterprise's foundational security strength</li>
+            <li><strong>The Fissure:</strong> AI-powered intelligence pathways that emerge from structure</li>
+            <li><strong>The Bridge:</strong> Strategic connection between innovation and protection</li>
+            <li><strong>The Circuit:</strong> Living intelligence systems that create competitive advantage</li>
           </ul>
+          <p className="font-sans text-center text-lg md:text-xl leading-relaxed">
+            Every enterprise has foundational strength. The breakthrough comes when AI-powered intelligence emerges from that foundation to bridge innovation with protection.
+          </p>
         </section>
 
         {/* Strategic Insights That Drive Action Table (Optional) */}
@@ -103,6 +115,24 @@ export default function AboutContentOverview({ locale }: AboutContentOverviewPro
           </div>
         </section>
 
+<section className="mb-16">
+           <h2 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-xl md:text-2xl lg:text-3xl mb-6 text-center">WHY WE'RE NOT LIKE OTHER CYBERSECURITY ADVISORS</h2>
+           <h3 className="font-cinzel uppercase font-bold text-evergreen-intel mb-2">WE'VE SAT IN YOUR SEAT:</h3>
+           <p className="font-sans text-lg leading-relaxed mb-4">
+             After leading cybersecurity transformations at Microsoft, AWS, and Avanade, one pattern became clear: The most successful organizations didn't just protect their foundations—they created intelligence pathways that transformed security from cost center to competitive advantage.
+           </p>
+           <h3 className="font-cinzel uppercase font-bold text-evergreen-intel mb-2">THE ANTI-TEMPLATE APPROACH:</h3>
+           <ul className="list-disc list-inside font-sans mb-4">
+             <li>Others: Apply same frameworks regardless of context → BRI: Architect outcomes specific to your strategic challenges</li>
+             <li>Others: Focus on technical team implementation → BRI: Board-level strategic advisory with technical excellence</li>
+             <li>Others: US frameworks applied to European challenges → BRI: Regional regulatory intelligence as competitive advantage</li>
+             <li>Others: Security as necessary cost → BRI: Security as strategic enabler of AI-powered growth</li>
+           </ul>
+           <h3 className="font-cinzel uppercase font-bold text-evergreen-intel mb-2">THE AUTHORITY DIFFERENCE:</h3>
+           <p className="font-sans text-lg leading-relaxed">
+             "We don't just advise on cybersecurity—we've navigated German regulatory precision, defended €350M+ M&A valuations, and transformed security teams from cost centers into revenue drivers. We know the difference between security theater and strategic advantage."
+           </p>
+         </section>
         {/* Our Expertise Areas */}
         <section className="mb-16">
           <h2 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-xl md:text-2xl lg:text-3xl mb-6 text-center">Our Expertise Areas</h2>
@@ -115,29 +145,39 @@ export default function AboutContentOverview({ locale }: AboutContentOverviewPro
           </ul>
         </section>
 
-        {/* 3-Column Tiles */}
+        {/* Regional Expertise Section */}
         <section className="mb-16">
+          <h2 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-xl md:text-2xl lg:text-3xl mb-6 text-center">
+            EUROPEAN + MIDDLE EASTERN INTELLIGENCE ARCHITECTURE
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* GLOBAL REACH, EUROPEAN CORE */}
+            {/* REGULATORY MASTERY */}
             <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-              {/* Icon/Motif goes here */}
-              <h3 className="font-cinzel uppercase font-bold text-executive-gold text-xl mb-4">Global Reach, European Core</h3>
-              <p className="font-sans text-gray-700">Headquartered in continental Europe and operating on CET, BRI delivers advisory excellence across Europe and the Middle East while maintaining global client engagements. Professional German proficiency enables nuanced regional service delivery.</p>
+              <h3 className="font-cinzel uppercase font-bold text-executive-gold text-xl mb-4">Regulatory Mastery</h3>
+              <ul className="list-disc list-inside font-sans text-gray-700 space-y-2">
+                <li>EU AI Act compliance frameworks that accelerate innovation</li>
+                <li>German business practice integration with global security standards</li>
+                <li>Cross-border data governance for European market expansion</li>
+                <li>Middle Eastern regulatory navigation for technology sector growth</li>
+              </ul>
             </div>
 
-            {/* THE QUESTION THAT DRIVES US */}
+            {/* CULTURAL & LINGUISTIC INTELLIGENCE */}
             <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-              {/* Icon/Motif goes here */}
-              <h3 className="font-cinzel uppercase font-bold text-executive-gold text-xl mb-4">The Question That Drives Us</h3>
-              <p className="font-sans text-gray-700">How could transforming your security from cost center to strategic enabler accelerate your next product launch, acquisition, or market expansion?</p>
-              <blockquote className="font-sans italic text-gray-600 mt-4">"What we protect today powers the value of tomorrow."</blockquote>
+              <h3 className="font-cinzel uppercase font-bold text-executive-gold text-xl mb-4">Cultural & Linguistic Intelligence</h3>
+              <ul className="list-disc list-inside font-sans text-gray-700 space-y-2">
+                <li>Professional German proficiency for direct C-level engagement</li>
+                <li>Central European Time (CET) operations advantage</li>
+                <li>Cultural competency in German precision engineering mindset</li>
+                <li>Cross-cultural team leadership across European and Middle Eastern markets</li>
+              </ul>
             </div>
 
-            {/* PROVEN WHEN IT COUNTS */}
+            {/* THE GEOGRAPHIC COMPETITIVE EDGE */}
             <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center">
-              {/* Icon/Motif goes here */}
-              <h3 className="font-cinzel uppercase font-bold text-executive-gold text-xl mb-4">Proven When It Counts</h3>
-              <p className="font-sans text-gray-700">Field-tested in high-stakes environments—BRI has led some of the world’s largest organizations through their most critical cybersecurity incidents. When the stakes are highest, clients trust BRI for hands-on leadership, calm under pressure, and results that protect reputation and enterprise value.</p>
+              <h3 className="font-cinzel uppercase font-bold text-executive-gold text-xl mb-4">The Geographic Competitive Edge</h3>
+              <p className="font-sans text-gray-700 mb-4">Unlike US-based consultants applying American frameworks to European challenges, we architect solutions that work within European regulatory complexity and cultural expectations.</p>
+              <p className="font-sans text-gray-700">Our advisory network spans from German automotive precision to Middle Eastern technology growth strategies—giving clients intelligence advantages that transcend geographic limitations.</p>
             </div>
           </div>
         </section>

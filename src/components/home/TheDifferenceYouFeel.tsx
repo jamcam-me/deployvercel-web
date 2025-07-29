@@ -4,7 +4,6 @@ import { Locale } from '@/lib/i18n';
 interface TheDifferenceYouFeelProps {
   locale: Locale;
 }
-
 const TheDifferenceYouFeel: React.FC<TheDifferenceYouFeelProps> = ({ locale }) => {
   return (
     <section className="w-full py-16 bg-gray-900 text-white">
@@ -43,7 +42,7 @@ const TheDifferenceYouFeel: React.FC<TheDifferenceYouFeelProps> = ({ locale }) =
 
         <div className="border-t-2 border-executive-gold pt-8">
           <p className="italic text-lg md:text-xl">
-            "One size fits none in security. That's why we don't sell templates—we architect outcomes."
+            &ldquo;One size fits none in security. That&rsquo;s why we don&rsquo;t sell templates&mdash;we architect outcomes.&rdquo;
           </p>
         </div>
       </div>

@@ -9,10 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        cinzel: ['Cinzel', 'serif'],
-        futura: ['Jost', 'sans-serif'],
-        'futura-cyrillic-bold': ['Jost', 'sans-serif'],
-        'futura-cyrillic-medium': ['Jost', 'sans-serif'],
+        Jost: ['Jost', 'sans-serif'],
+        'Jost-Bold': ['Jost', 'sans-serif'],
+        'Jost-Medium': ['Jost', 'sans-serif'],
       },
       colors: {
         // Primary Brand Colors
@@ -62,7 +61,7 @@ const config: Config = {
       DEFAULT: {
         css: {
           h1: {
-            fontFamily: theme('fontFamily.futura-cyrillic-bold'),
+            fontFamily: theme('fontFamily.Jost-Bold'),
             fontWeight: theme('fontWeight.bold'),
             textTransform: 'uppercase',
             fontSize: theme('fontSize.5xl'),
@@ -70,7 +69,7 @@ const config: Config = {
             marginBottom: theme('spacing.8'), // Smaller margin-bottom for h1
           },
           h2: {
-            fontFamily: theme('fontFamily.futura-cyrillic-bold'),
+            fontFamily: theme('fontFamily.Jost-Bold'),
             fontWeight: theme('fontWeight.bold'),
             textTransform: 'uppercase',
             fontSize: theme('fontSize.4xl'),
@@ -78,7 +77,7 @@ const config: Config = {
             marginBottom: theme('spacing.6'), // Smaller margin-bottom for h2
           },
           h3: {
-            fontFamily: theme('fontFamily.futura-cyrillic-bold'),
+            fontFamily: theme('fontFamily.Jost-Bold'),
             fontWeight: theme('fontWeight.bold'),
             textTransform: 'uppercase',
             fontSize: theme('fontSize.3xl'),
@@ -86,14 +85,14 @@ const config: Config = {
             marginBottom: theme('spacing.4'), // Smaller margin-bottom for h3
           },
           h4: {
-            fontFamily: theme('fontFamily.futura-cyrillic-bold'),
+            fontFamily: theme('fontFamily.Jost-Bold'),
             fontWeight: theme('fontWeight.bold'),
             textTransform: 'uppercase',
             marginTop: theme('spacing.10'),
             marginBottom: theme('spacing.3'),
           },
           h5: {
-            fontFamily: theme('fontFamily.futura-cyrillic-bold'),
+            fontFamily: theme('fontFamily.Jost-Bold'),
             fontWeight: theme('fontWeight.bold'),
             textTransform: 'uppercase',
             marginTop: theme('spacing.8'),

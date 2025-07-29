@@ -31,19 +31,23 @@ export default function About({ params }: AboutPageProps) {
         contentPosition="justify-center"
         imagePosition="object-[60%_55%]"
       >
-        <h1 className="font-futura uppercase font-bold text-green-500 tracking-wider text-2xl md:text-3xl lg:text-4xl pb-8"> {/* Reverted color to text-green-500, standardized font style and size */}
-          The Foundation of Strategic Security
-        </h1>
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto justify-items-center">
-          <Link href={`/${locale}/services`} className="primary-button">
-            {locale === 'en' ? 'Explore Strategic Services' : 'Strategische Dienste entdecken'}
-          </Link>
-          <Link href={`${process.env.NEXT_PUBLIC_RESOURCES_LINK || 'https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/'}`} target="_blank" rel="noopener noreferrer" className="secondary-button">
-            {locale === 'en' ? 'View Resources' : 'Ressourcen anzeigen'}
-          </Link>
+        <div className="py-20 text-center space-y-6">
+          <h1 className="font-cinzel text-executive-gold text-4xl md:text-5xl lg:text-6xl">
+            Building Unbreakable Value—Not Just Unbreakable Walls.
+          </h1>
+          <p className="text-xl md:text-2xl lg:text-3xl text-gray-200 max-w-2xl mx-auto">
+            Empowering organizations with AI-driven security, for boards that demand resilience and trust.
+          </p>
         </div>
       </Hero>
       <AboutContentOverview locale={locale} />
+      {/* THE OKOTOKS INSIGHT Section Header */}
+      <section className="mb-16">
+        <h2 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-xl md:text-2xl lg:text-3xl mb-6 text-center">
+          THE OKOTOKS INSIGHT: Why 'Big Rock Intelligence'
+        </h2>
+        {/* TODO: Integrate visual representation of rock/fissure/bridge metaphor with gold light effects */}
+      </section>
     </>
   );
 }

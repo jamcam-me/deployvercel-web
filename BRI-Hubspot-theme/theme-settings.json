@@ -294,7 +294,7 @@
           "help_text": "Company LinkedIn profile"
         },
         {
-          "id": "calendly_url",
+        "id": "calendly_url",  
           "label": "Calendly Booking URL",
           "type": "url", 
           "default": "https://calendly.com/james-cameron-bri/strategic-assessment",

@@ -1,22 +1,5 @@
-@font-face {
-  font-family: 'Cinzel';
-  src: url('/fonts/cinzel/Cinzel-Regular.woff2') format('woff2'),
-       url('/fonts/cinzel/Cinzel-Regular.woff') format('woff'),
-       url('/fonts/cinzel/cinzel-regular.ttf') format('truetype');
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&display=swap');
 
-@font-face {
-  font-family: 'Cinzel';
-  src: url('/fonts/cinzel/Cinzel-Medium.woff2') format('woff2'),
-       url('/fonts/cinzel/Cinzel-Medium.woff') format('woff'),
-       url('/fonts/cinzel/cinzel-medium.ttf') format('truetype');
-  font-weight: 500;
-  font-display: swap;
-  font-style: normal;
-}
 
 
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap&subset=latin,cyrillic');
@@ -100,13 +83,13 @@
   /* === TYPOGRAPHY HIERARCHY (Enhanced for Brand Compliance) === */
   
   p, a, li, button {
-    @apply font-futura;
+    @apply font-Jost;
     line-height: 1.6; /* Improved readability */
   }
   
   /* === BODY DEFAULTS FOR BRAND CONSISTENCY === */
   body {
-    @apply font-futura;
+    @apply font-Jost;
     color: var(--light-stone);
     background-color: var(--navy-900); /* Using deepest navy for premium feel */
   }
@@ -154,7 +137,7 @@
   /* === EXECUTIVE CONTENT STRUCTURE CLASSES (Enhanced) === */
   .metric-highlight {
     color: var(--gold-700);
-    @apply font-futura font-bold text-2xl mb-4;
+    @apply font-Jost font-bold text-2xl mb-4;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   }
   
@@ -187,7 +170,7 @@
   /* === PREMIUM CONTENT VARIATIONS === */
   .premium-metric {
     color: var(--gold-800);
-    @apply font-futura font-bold text-3xl mb-4;
+    @apply font-Jost font-bold text-3xl mb-4;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
   
