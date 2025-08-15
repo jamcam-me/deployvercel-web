@@ -1,0 +1,199 @@
+{
+  "site": {
+    "title": "Big Rock Intelligence",
+    "description": "AI-driven cybersecurity advisory firm headquartered in Frankfurt and operating across Germany and Europe.",
+    "tagline": "Bridging AI Innovation with Enterprise Security"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact",
+    "frankfurtHub": "Frankfurt Hub",
+    "about": "About",
+    "resources": "Resources"
+  },
+  "home": {
+    "hero": {
+      "title": "Strategic Cybersecurity & AI Advisory",
+      "subtitle": "Empowering organizations with strategic guidance in cybersecurity and AI integration to enable secure digital transformation.",
+      "cta": "Explore Our Services"
+    },
+    "overview": {
+      "title": "Executive Overview",
+      "description": "Big Rock Intelligence provides executive-level advisory services in cybersecurity and AI integration. With 25+ years of experience in global leadership, we offer tailored solutions for enterprises, SMBs, VCs/PEs, and Boards.",
+      "expertise": "Expertise in cybersecurity, AI and global leadership",
+      "tailored": "Services tailored for Enterprise Leaders, SMB Owners, VC & Private Equity Firms, and Board Members",
+      "recognized": "Recognized \"Leading Voice\" in Security & AI"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Comprehensive cybersecurity and AI advisory services tailored to your organization's needs.",
+    "general": {
+      "title": "General Services",
+      "description": "Our core offerings in cybersecurity and AI integration."
+    },
+    "strategic": {
+      "title": "Strategic Services",
+      "description": "Specialized groups of intellectual property and bespoke advisory engagements for unique business challenges."
+    },
+    "advisory": {
+      "title": "Advisory Services",
+      "description": "Strategic guidance for specific leadership roles.",
+      "enterpriseLeaders": "Enterprise Leaders",
+      "smbOwners": "SMB Owners",
+      "vcPeFirms": "VC & Private Equity Firms",
+    "boardMembers": "Board Members",
+      "executive-communication-framework": {
+        "title": "Executive Communication Framework",
+        "description": "Transform technical security metrics into strategic business insights that resonate with board members and C-suite executives.",
+        "metric": "85% improvement in executive alignment on security priorities",
+        "question": "Does your board see security as a cost center or strategic enabler? How effectively are you translating technical security metrics into business impact language your executives understand and value?"
+      },
+      "cyber-risk-quantification": {
+        "title": "Cyber Risk Quantification",
+        "description": "Replace subjective risk assessments with data-driven financial modeling that quantifies cyber risks in monetary terms.",
+        "metric": "60% more targeted security investments",
+        "question": "Can you express your top cyber risks in revenue impact terms your CFO will understand? How are you currently deciding which security investments deliver the highest risk reduction per dollar spent?"
+      },
+      "ai-security-strategy-enterprise": {
+        "title": "AI Security Strategy",
+        "description": "Develop a comprehensive AI security roadmap that aligns with your enterprise's AI adoption journey.",
+        "metric": "70% more secure AI deployments",
+        "question": "How are you securing your AI initiatives differently from traditional applications? What protection mechanisms have you implemented against uniquely AI-centric threats like model poisoning or inference manipulation?"
+      },
+      "fractional-ciso-service": {
+        "title": "Fractional CISO Service",
+        "description": "Access senior security leadership expertise without the full-time executive cost.",
+        "metric": "75% cost savings vs. full-time CISO",
+        "question": "What security expertise gaps are limiting your business growth? How is the lack of executive security leadership impacting your ability to enter new markets or close enterprise deals?"
+      },
+      "investment-ready-security": {
+        "title": "Investment-Ready Security",
+        "description": "Prepare your security posture for investor scrutiny and due diligence.",
+        "metric": "85% improved investor security confidence",
+        "question": "Would your security program withstand investor due diligence today? What security gaps might be negatively impacting your company's valuation or creating post-investment surprises?"
+      },
+      "cloud-security-optimization": {
+        "title": "Cloud Security Optimization",
+        "description": "Maximize cloud security while minimizing costs and complexity for growing businesses.",
+        "metric": "55% reduction in cloud security costs",
+        "question": "Is your cloud environment both secure and cost-optimized? How effectively are you leveraging native security capabilities in your cloud platforms versus paying for additional security tools?"
+      },
+      "technical-value-creation": {
+        "title": "Technical Value Creation",
+        "description": "Transform security from a due diligence checkbox into a strategic value accelerator across your portfolio.",
+        "metric": "Up to 15% valuation improvement through security optimization",
+        "question": "Is your security strategy enhancing or limiting company valuations? How effectively have you translated security investments into tangible business value that investors recognize and reward?"
+      },
+      "cybersecurity-investment-advisory": {
+        "title": "Cybersecurity Investment Advisory",
+        "description": "Gain strategic insight into cybersecurity market trends, investment opportunities, and technology evolution to inform investment theses and portfolio strategy.",
+        "metric": "3x better identification of security market opportunities",
+        "question": "What emerging security categories represent the highest growth potential over the next 24-36 months? How effectively can you evaluate the technical differentiation claims of security startups?"
+      },
+      "board-cyber-education-program": {
+        "title": "Board Cyber Education Program",
+        "description": "Elevate your board's security expertise through our tailored education program that builds cyber fluency through contextual learning without technical overload.",
+        "metric": "90% increase in board cyber confidence",
+        "question": "How confident is your board in evaluating AI and security investments? What knowledge gaps prevent directors from providing effective security governance and appropriate challenge to management?"
+      },
+      "security-investment-validation": {
+        "title": "Security Investment Validation",
+        "description": "Verify the effectiveness of your organization's security investments with independent validation of security program performance and spending efficiency.",
+        "metric": "35% identification of misaligned investments",
+        "question": "How do you know your security investments are delivering intended outcomes? What objective validation confirms your security spending is optimally allocated against actual risks?"
+      },
+      "ai-governance-advisory": {
+        "title": "AI Governance Advisory",
+        "description": "Develop board-level governance frameworks for responsible AI adoption and oversight.",
+        "metric": "80% improvement in AI governance clarity",
+        "question": "What governance mechanisms has your board established specifically for AI oversight? How do you ensure appropriate balance between AI innovation and responsible deployment?"
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with our team to discuss how we can help your organization.",
+      "name": "James Cameron",
+      "role": "Founder & Executive Advisor",
+      "email": "james@jamcam.me",
+      "phone": "+49 175 584 4546",
+      "linkedin": "linkedin.com/in/jamcam-cyberleader"
+    },
+    "frankfurtHub": {
+      "title": "Frankfurt Hub",
+      "description": "Our European headquarters in Frankfurt, Germany.",
+      "europeanReach": "European Reach",
+      "reachDescription": "From our Frankfurt hub, we serve clients across Europe with a focus on Germany, Austria, Switzerland, and the UK.",
+      "expertise": "Local Expertise, Global Perspective",
+      "expertiseDescription": "Our team combines deep local knowledge with global cybersecurity and AI expertise."
+    },
+    "footer": {
+      "copyright": "© 2025 Big Rock Intelligence. All rights reserved.",
+      "language": "Language"
+    },
+    "learnMore": "Learn More →"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with our team to discuss how we can help your organization.",
+    "name": "James Cameron",
+    "role": "Founder & Executive Advisor",
+    "email": "james@bigrock-intel.ai",
+    "phone": "+49 175 584 4546",
+    "linkedin": "linkedin.com/in/jamcam-cyberleader"
+  },
+  "frankfurtHub": {
+    "title": "Frankfurt Hub",
+    "description": "Our European headquarters in Frankfurt, Germany.",
+    "europeanReach": "European Reach",
+    "reachDescription": "From our Frankfurt hub, we serve clients across Europe with a focus on Germany, Austria, Switzerland, and the UK.",
+    "expertise": "Local Expertise, Global Perspective",
+    "expertiseDescription": "Our team combines deep local knowledge with global cybersecurity and AI expertise."
+  },
+  "footer": {
+    "copyright": "© 2025 Big Rock Intelligence. All rights reserved.",
+    "language": "Language"
+  },
+  "busCard": {
+    "title": "James Cameron - Big Rock Intelligence",
+    "welcome": "📱 Thanks for scanning! You've connected with Big Rock Intelligence.",
+    "name": "James Cameron",
+    "jobTitle": "Founder | AI Security & Data Strategist",
+    "company": "Big Rock Intelligence",
+    "tagline": "Bridging AI Innovation with Enterprise Security",
+    "credentials": {
+      "title": "UC Berkeley Executive AI Strategy",
+      "subtitle": "Microsoft | Amazon Web Services | Avanade Alumni"
+    },
+    "contact": {
+      "email": {
+        "label": "Email",
+        "value": "james@bigrock-intel.ai",
+        "additional_text": "Ask about AI governance frameworks"
+      },
+      "website": {
+        "label": "Website",
+        "value": "bigrock-intelligence.com"
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "value": "Connect & Follow",
+        "additional_text": "2,500+ cybersecurity leaders in network"
+      },
+      "meeting": {
+        "label": "Schedule Meeting",
+        "main_text": "Set up some time to explore opportunities",
+        "value": "https://outlook.office.com/book/contactbigrockintelai@bigrock-intelligence.com/",
+        "additional_text": "30-min AI security strategy sessions"
+      },
+      "phone": {
+        "label": "Phone",
+        "main_text": "+49(0)1511 3105 15242",
+        "value": "tel:+4901511310515242",
+        "additional_text": "Direct line for urgent security matters"
+      }
+    },
+    "footer": ""
+  }
+}

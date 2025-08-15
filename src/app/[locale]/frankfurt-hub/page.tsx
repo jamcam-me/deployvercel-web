@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { Locale } from '@/lib/i18n';
-import Image from 'next/image';
+import Hero from '@/components/home/Hero'; // Import the Hero component
 
 interface FrankfurtHubPageProps {
   params: {
@@ -47,20 +47,17 @@ export default function FrankfurtHubPage({ params }: FrankfurtHubPageProps) {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <div className="relative h-[50vh] w-full">
-        <Image
-          src="/images/hero_frankfurt.jpg"
-          alt="Frankfurt skyline"
-          fill
-          style={{ objectFit: 'cover' }}
-          priority
-        />
-        <div className="absolute inset-0 bg-cyber-navy bg-opacity-50 flex items-center justify-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">{translations.title}</h1>
-        </div>
-      </div>
+      <Hero
+        locale={locale}
+        imageUrl="/images/hero_frankfurt.jpg"
+        altText="Frankfurt skyline"
+        overlayClass="bg-cyber-navy bg-opacity-50"
+        contentPosition="justify-center"
+      >
+        <h1 className="text-4xl md:text-5xl font-bold text-white">{translations.title}</h1>
+      </Hero>
 
-      <div className="container-custom section">
+      <div className="container-custom section pt-16"> {/* Added pt-16 for consistent padding */}
         <div className="max-w-4xl mx-auto">
           <p className="text-xl text-center mb-16">{translations.description}</p>
 

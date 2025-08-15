@@ -74,3 +74,4 @@ Overview of all pages and key components used on each.
 ## Frankfurt Hub
 - Header
 - Footer
+Trigger Vercel redeploy

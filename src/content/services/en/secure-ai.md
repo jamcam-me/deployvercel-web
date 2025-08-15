@@ -10,7 +10,7 @@ description: "Strategic frameworks for board-level AI oversight and risk managem
 *   **AI Risk Exposure:** 47% increase in AI-related incidents affecting shareholder value.
 *   **Regulatory Pressure:** Growing demands from EU AI Act, SEC disclosure requirements, and global regulations.
 
-## Key Offerings
+## Key Deliverables
 
 *   **AI Risk Management Framework:** Develop and implement robust frameworks for identifying, assessing, and mitigating AI-specific risks, including model vulnerabilities, data privacy, and ethical concerns.
 *   **Secure AI Development Lifecycle Integration:** Integrate security best practices throughout your AI development pipeline, from data ingestion and model training to deployment and monitoring.

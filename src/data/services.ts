@@ -1,4 +1,5 @@
 // File: src/data/services.ts
+// Services are ordered with Advisory Services first, followed by General Services
 
 export interface Service {
   id: string;
@@ -23,6 +24,18 @@ export const services: Service[] = [
     categoryType: "general"
   },
   {
+    id: 'secure-ai',
+    title: 'SECURE AI ADOPTION',
+    description: 'Transform AI adoption from security blocker to business enabler with our framework-driven approach.',
+    icon: 'brain',
+    category: 'general',
+    categoryType: "general",
+    metric: '60% faster AI deployment with enterprise-grade security',
+    metricDe: '60% schnellere KI-Bereitstellung mit Sicherheit auf Unternehmensebene',
+    question: 'Is your security team equipped to evaluate AI model risk?',
+    questionDe: 'Ist Ihr Sicherheitsteam ausgerüstet, um KI-Modellrisiken zu bewerten?'
+  },
+  {
     id: "ai-integration",
     title: "AI Integration",
     description: "Seamless integration of AI technologies with enterprise security frameworks.",
@@ -45,49 +58,6 @@ export const services: Service[] = [
     icon: "chart-bar", // Changed from 'strategy' to 'chart-bar'
     category: "general",
     categoryType: "general"
-  },
-  // Strategic Services
-  {
-    id: 'secure-ai',
-    title: 'SECURE AI ADOPTION',
-    description: 'Transform AI adoption from security blocker to business enabler with our framework-driven approach.',
-    icon: 'brain',
-    category: 'strategic',
-    categoryType: "general",
-    metric: '60% faster AI deployment with enterprise-grade security',
-    metricDe: '60% schnellere KI-Bereitstellung mit Sicherheit auf Unternehmensebene',
-    question: 'Is your security team equipped to evaluate AI model risk?',
-    questionDe: 'Ist Ihr Sicherheitsteam ausgerüstet, um KI-Modellrisiken zu bewerten?'
-  },
-  {
-    id: "cyber-m&a-due-diligence",
-    title: "Cyber M&A Due Diligence",
-    description: "Comprehensive cybersecurity risk assessment and opportunity identification for mergers, acquisitions, and divestitures.",
-    icon: "ma_due_diligence",
-    category: "strategic",
-    categoryType: "general",
-    metric: "25% reduction in post-acquisition cyber risks",
-    question: "Are you fully aware of the cybersecurity risks and liabilities embedded within your target acquisition? How can cybersecurity be optimized as a value driver in your M&A strategy?"
-  },
-  {
-    id: "security-innovation-advisory",
-    title: "Security Innovation Advisory",
-    description: "Guidance on emerging security technologies, market trends, and strategic investments to future-proof your security posture.",
-    icon: "ai_security",
-    category: "strategic",
-    categoryType: "general",
-    metric: "20% faster adoption of relevant security innovations",
-    question: "How do you identify and integrate cutting-edge security innovations without disrupting current operations? Are you leveraging the latest advancements to stay ahead of evolving threats?"
-  },
-  {
-    id: "strategic-risk-management",
-    title: "Strategic Risk Management",
-    description: "Developing executive-level frameworks for identifying, assessing, and mitigating enterprise-wide cyber and AI risks.",
-    icon: "governance_risk",
-    category: "strategic",
-    categoryType: "general",
-    metric: "30% improvement in enterprise risk visibility",
-    question: "Is your organization's risk management strategy adequately addressing the convergence of cyber and AI risks? How effectively are you aligning risk mitigation efforts with strategic business objectives?"
   },
   // Enterprise Leader Advisory Services
   {
@@ -202,7 +172,7 @@ export const services: Service[] = [
     categoryType: "board",
     metric: "80% improvement in AI governance clarity",
     question: "What governance mechanisms has your board established specifically for AI oversight? How do you ensure appropriate balance between AI innovation and responsible deployment?"
-  },
+  }
 ];
 
 export default services;

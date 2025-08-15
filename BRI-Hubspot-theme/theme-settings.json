@@ -1,0 +1,306 @@
+{
+  "groups": [
+    {
+      "name": "bri_brand_colors",
+      "label": "BRI Brand Colors",
+      "tab": "CONTENT",
+      "children": [
+        {
+          "id": "cyber_navy_primary",
+          "label": "Cyber Navy Blue (Primary)",
+          "type": "color",
+          "default": {
+            "color": "#0a1f44",
+            "opacity": 100
+          },
+          "help_text": "Primary brand color - use for headers, navigation, and key elements"
+        },
+        {
+          "id": "executive_gold_accent",
+          "label": "Executive BRI Gold (Accent)",
+          "type": "color", 
+          "default": {
+            "color": "#dab86e",
+            "opacity": 100
+          },
+          "help_text": "Accent color - use for CTAs, highlights, and executive elements"
+        },
+        {
+          "id": "evergreen_intel_secondary",
+          "label": "Evergreen Intelligence Green",
+          "type": "color",
+          "default": {
+            "color": "#1f302d", 
+            "opacity": 100
+          },
+          "help_text": "Secondary color - use for sections and complementary elements"
+        },
+        {
+          "id": "cyber_graphite_text",
+          "label": "Cyber Graphite",
+          "type": "color",
+          "default": {
+            "color": "#2b2b2d",
+            "opacity": 100
+          },
+          "help_text": "Primary text color for dark backgrounds"
+        },
+        {
+          "id": "soft_steel_gray",
+          "label": "Soft Steel Gray",
+          "type": "color",
+          "default": {
+            "color": "#a4aba4",
+            "opacity": 100
+          },
+          "help_text": "Secondary text and border color"
+        },
+        {
+          "id": "light_stone_background",
+          "label": "Light Stone Gray",
+          "type": "color",
+          "default": {
+            "color": "#d9ded9",
+            "opacity": 100
+          },
+          "help_text": "Light background and text color"
+        }
+      ]
+    },
+    {
+      "name": "bri_typography",
+      "label": "BRI Typography System",
+      "tab": "CONTENT",
+      "children": [
+        {
+          "id": "primary_font_headings",
+          "label": "Primary Font (Headings - Cinzel)",
+          "type": "font",
+          "default": {
+            "font": "Cinzel",
+            "font_set": "GOOGLE",
+            "variant": "700",
+            "fallback": "serif"
+          },
+          "help_text": "Executive heading font - use for H1, H2, logo"
+        },
+        {
+          "id": "secondary_font_subheadings", 
+          "label": "Secondary Font (Subheadings - Open Sans Bold)",
+          "type": "font",
+          "default": {
+            "font": "Open Sans",
+            "font_set": "GOOGLE", 
+            "variant": "700",
+            "fallback": "sans-serif"
+          },
+          "help_text": "Subheading font - use for H3, H4, navigation"
+        },
+        {
+          "id": "body_font_text",
+          "label": "Body Font (Open Sans)",
+          "type": "font",
+          "default": {
+            "font": "Open Sans",
+            "font_set": "GOOGLE",
+            "variant": "400", 
+            "fallback": "sans-serif"
+          },
+          "help_text": "Body text font - use for paragraphs, content"
+        }
+      ]
+    },
+    {
+      "name": "bri_executive_content",
+      "label": "Executive Content Settings",
+      "tab": "CONTENT",
+      "children": [
+        {
+          "id": "enable_executive_metrics",
+          "label": "Enable Executive Metrics Display",
+          "type": "boolean",
+          "default": true,
+          "help_text": "Show front-loaded metrics in hero sections"
+        },
+        {
+          "id": "enable_strategic_questions",
+          "label": "Enable Strategic Questions",
+          "type": "boolean", 
+          "default": true,
+          "help_text": "Display strategic questions throughout content"
+        },
+        {
+          "id": "enable_cultural_references",
+          "label": "Enable Cultural References",
+          "type": "boolean",
+          "default": true,
+          "help_text": "Include business metaphors and cultural tie-ins"
+        },
+        {
+          "id": "lv_swagger_level",
+          "label": "Executive Confidence Level",
+          "type": "choice",
+          "choices": [
+            ["conservative", "Conservative"],
+            ["balanced", "Balanced"], 
+            ["assertive", "Assertive"]
+          ],
+          "default": "balanced",
+          "help_text": "Adjust the confidence level in messaging"
+        }
+      ]
+    },
+    {
+      "name": "bri_layout_settings",
+      "label": "Layout & Design Settings", 
+      "tab": "STYLE",
+      "children": [
+        {
+          "id": "container_max_width",
+          "label": "Container Max Width",
+          "type": "number",
+          "min": 1200,
+          "max": 1600,
+          "step": 50,
+          "default": 1400,
+          "suffix": "px",
+          "help_text": "Maximum width for content containers"
+        },
+        {
+          "id": "enable_circuit_backgrounds",
+          "label": "Enable Circuit Pattern Backgrounds",
+          "type": "boolean",
+          "default": true,
+          "help_text": "Show AI circuit pattern animations"
+        },
+        {
+          "id": "header_style",
+          "label": "Header Style",
+          "type": "choice",
+          "choices": [
+            ["transparent", "Transparent"],
+            ["solid", "Solid Background"],
+            ["gradient", "Gradient Background"]
+          ],
+          "default": "gradient",
+          "help_text": "Header background style"
+        },
+        {
+          "id": "button_style",
+          "label": "Button Style",
+          "type": "choice", 
+          "choices": [
+            ["standard", "Standard"],
+            ["executive", "Executive (Large)"],
+            ["minimal", "Minimal"]
+          ],
+          "default": "executive",
+          "help_text": "Default button styling approach"
+        }
+      ]
+    },
+    {
+      "name": "bri_animation_settings",
+      "label": "Animation & Effects",
+      "tab": "STYLE",
+      "children": [
+        {
+          "id": "enable_scroll_animations",
+          "label": "Enable Scroll Animations", 
+          "type": "boolean",
+          "default": true,
+          "help_text": "Animate elements as they enter viewport"
+        },
+        {
+          "id": "enable_hover_effects",
+          "label": "Enable Hover Effects",
+          "type": "boolean",
+          "default": true,
+          "help_text": "Add hover animations to cards and buttons"
+        },
+        {
+          "id": "animation_speed",
+          "label": "Animation Speed",
+          "type": "choice",
+          "choices": [
+            ["slow", "Slow (Executive)"],
+            ["normal", "Normal"],
+            ["fast", "Fast"]
+          ],
+          "default": "slow",
+          "help_text": "Overall animation timing"
+        }
+      ]
+    },
+    {
+      "name": "bri_seo_settings",
+      "label": "SEO & Analytics",
+      "tab": "ADVANCED",
+      "children": [
+        {
+          "id": "default_meta_description",
+          "label": "Default Meta Description",
+          "type": "textarea",
+          "default": "Big Rock Intelligence bridges AI innovation with enterprise security. Strategic cybersecurity advisory for boards, executives, and growth companies.",
+          "help_text": "Default meta description for pages without custom descriptions"
+        },
+        {
+          "id": "enable_structured_data",
+          "label": "Enable Structured Data",
+          "type": "boolean",
+          "default": true,
+          "help_text": "Add JSON-LD structured data for better SEO"
+        },
+        {
+          "id": "ga_tracking_id",
+          "label": "Google Analytics Tracking ID",
+          "type": "text",
+          "default": "",
+          "help_text": "Google Analytics 4 Measurement ID (G-XXXXXXXXXX)"
+        }
+      ]
+    },
+    {
+      "name": "bri_contact_info",
+      "label": "Contact Information",
+      "tab": "ADVANCED", 
+      "children": [
+        {
+          "id": "company_name",
+          "label": "Company Name",
+          "type": "text",
+          "default": "Big Rock Intelligence",
+          "help_text": "Full company name"
+        },
+        {
+          "id": "company_tagline",
+          "label": "Company Tagline", 
+          "type": "text",
+          "default": "Bridging AI Innovation with Enterprise Security",
+          "help_text": "Company tagline/mission statement"
+        },
+        {
+          "id": "primary_email",
+          "label": "Primary Contact Email",
+          "type": "text",
+          "default": "james@bigrock-intel.ai",
+          "help_text": "Main contact email address"
+        },
+        {
+          "id": "linkedin_url",
+          "label": "LinkedIn Profile URL",
+          "type": "url",
+          "default": "https://linkedin.com/company/big-rock-intelligence",
+          "help_text": "Company LinkedIn profile"
+        },
+        {
+          "id": "calendly_url",
+          "label": "Calendly Booking URL",
+          "type": "url", 
+          "default": "https://calendly.com/james-cameron-bri/strategic-assessment",
+          "help_text": "Calendly link for strategic assessments"
+        }
+      ]
+    }
+  ]
+}

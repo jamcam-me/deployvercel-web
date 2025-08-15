@@ -1,8 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Metadata } from 'next';
-import Image from 'next/image';
 import { Locale } from '@/lib/i18n';
+import { setRequestLocale } from 'next-intl/server';
 import AboutContentOverview from '@/components/about/AboutContentOverview';
+import Link from 'next/link';
+import Hero from '@/components/home/Hero'; // Import the Hero component
 
 interface AboutPageProps {
   params: {
@@ -17,25 +19,30 @@ export const metadata: Metadata = {
 
 export default function About({ params }: AboutPageProps) {
   const { locale } = params;
+  setRequestLocale(locale);
 
   return (
     <>
-      {/* Page Hero - Moved outside main for full width */}
-      <div className="relative h-[70vh] w-full"> {/* Adjust height as needed */}
-        <Image
-          src="/images/202002~1.JPG"
-          alt="Big Rocks in Blue Sky"
-          fill
-          className="object-cover object-bottom" /* Image aligns to bottom */
-          priority
-        />
-        <div className="absolute inset-0 bg-cyber-navy/40 z-20" /> {/* Changed overlay opacity to 50% */}
-        <div className="absolute inset-0 z-20 flex flex-col justify-end items-center text-center px-4 sm:px-8 pb-8 pt-16"> {/* Increased pt to move content down */}
-          <h1 className="font-cinzel text-green-30 z-30 text-4xl"> {/* Changed p to h1, lighter green text, removed max-w */}
-            The Foundation of Strategic Security
-          </h1>
+      <Hero
+        locale={locale}
+        imageUrl="/images/Big Rock Formation-remix-grn.png"
+        altText="Big Rock Formation Green"
+        overlayClass="bg-cyber-navy/40"
+        contentPosition="justify-center"
+        imagePosition="object-[60%_55%]"
+      >
+        <h1 className="font-futura uppercase font-bold text-green-500 tracking-wider text-2xl md:text-3xl lg:text-4xl pb-8"> {/* Reverted color to text-green-500, standardized font style and size */}
+          The Foundation of Strategic Security
+        </h1>
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto justify-items-center">
+          <Link href={`/${locale}/services`} className="primary-button">
+            {locale === 'en' ? 'Explore Strategic Services' : 'Strategische Dienste entdecken'}
+          </Link>
+          <Link href={`${process.env.NEXT_PUBLIC_RESOURCES_LINK || 'https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/'}`} target="_blank" rel="noopener noreferrer" className="secondary-button">
+            {locale === 'en' ? 'View Resources' : 'Ressourcen anzeigen'}
+          </Link>
         </div>
-      </div>
+      </Hero>
       <AboutContentOverview locale={locale} />
     </>
   );

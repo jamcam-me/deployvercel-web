@@ -2,7 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { usePathname } from 'next/navigation'; // Added import
 
 interface HeaderProps {
   locale: 'en' | 'de';
@@ -18,6 +20,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname(); // Added pathname constant
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,42 +38,42 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
   }, []);
   
   return (
-    <header className={`bg-gradient-to-t from-transparent via-cyber-navy/70 to-cyber-navy shadow-sm fixed top-0 left-0 right-0 w-full z-[999] transition-all duration-300 ${
-      isScrolled ? 'h-24' : 'h-64' // Adjust initial and scrolled header height
+    <header className={`fixed top-0 left-0 right-0 w-full z-[999] transition-all duration-300 ${
+      isScrolled
+        ? `h-20 shadow-sm backdrop-blur-md ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'bg-gradient-to-b from-light-stone/80 via-light-stone/60 to-light-stone/40' : pathname.includes('/about') ? 'bg-gradient-to-b from-evergreen-intel/80 via-evergreen-intel/60 to-evergreen-intel/40' : 'bg-gradient-to-b from-cyber-navy/80 via-cyber-navy/60 to-cyber-navy/40'}`
+        : 'h-32 bg-transparent'
     }`}>
-      <div className="container-custom flex justify-between items-center pl-4">
-        <Link href={`/${locale}`} className="flex items-center">
-          <img
-            src="/images/logo_white.png"
-            alt="Big Rock Intelligence"
-            className={`w-auto transition-all duration-300 ${
-              isScrolled ? 'h-16' : 'h-32' // Adjust logo size based on scroll
+      <div className="w-full flex items-center justify-between py-2 px-4"> {/* Removed max-w-7xl mx-auto, added px-4 */}
+        <Link href={`/${locale}`} className="flex items-center pl-0"> {/* Ensure logo is far left */}
+          <Image
+            src="/images/BRI-LOGO-NAMERIGHT.svg"
+            alt="Big Rock Intelligence Logo"
+            width={isScrolled ? 256 : 512}
+            height={isScrolled ? 64 : 96}
+            className={`w-auto transition-all duration-300 opacity-100 ${
+              isScrolled ? 'h-16' : 'h-24' // Adjust logo size based on scroll, ensure full opacity
             }`}
+            style={{ opacity: 1 }} // Force full opacity
           />
-          <span className={`font-cinzel uppercase font-bold text-executive-gold tracking-wider transition-all duration-300 ${
-            isScrolled ? 'text-xl ml-4' : 'text-3xl ml-6' // Adjust text size and margin based on scroll
-          }`}>
-            BigRock Intelligence
-          </span>
         </Link>
 
         {/* Right Section (Navigation + Mobile Button) */}
-        <div className="flex items-center space-x-8"> {/* Removed ml-auto */}
+        <div className="flex items-center space-x-8"> {/* Added ml-auto to push to right */}
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href={`/${locale}`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
+            <Link href={`/${locale}`} className={`hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}>
               {navTranslations.home}
             </Link>
-            <Link href={`/${locale}/services`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
+            <Link href={`/${locale}/services`} className={`hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}>
               {navTranslations.services}
             </Link>
-            <Link href={`/${locale}/about`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
+            <Link href={`/${locale}/about`} className={`hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}>
               {navTranslations.about}
             </Link>
-            <Link href={`${process.env.NEXT_PUBLIC_RESOURCES_LINK || 'https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/'}`} target="_blank" rel="noopener noreferrer" className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
+            <Link href={`${process.env.NEXT_PUBLIC_RESOURCES_LINK || 'https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/'}`} target="_blank" rel="noopener noreferrer" className={`hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}>
               {navTranslations.resources}
             </Link>
-            <Link href={`/${locale}/contact`} className="text-light-stone hover:text-executive-gold transition font-cinzel text-lg">
+            <Link href={`/${locale}/contact`} className={`hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}>
               {navTranslations.contact}
             </Link>
             <LanguageSwitcher locale={locale} />
@@ -89,25 +92,25 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
         
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-cyber-navy shadow-md z-50">
+          <div className="md:hidden absolute top-16 left-0 right-0 bg-gradient-to-b from-cyber-navy/90 via-cyber-navy/80 to-cyber-navy/70 backdrop-blur-md shadow-md z-50">
             <nav className="flex flex-col p-4">
               <Link
                 href={`/${locale}`}
-                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel text-lg"
+                className={`py-2 hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {navTranslations.home}
               </Link>
               <Link
                 href={`/${locale}/services`}
-                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel text-lg"
+                className={`py-2 hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {navTranslations.services}
               </Link>
               <Link
                 href={`/${locale}/about`}
-                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel text-lg"
+                className={`py-2 hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {navTranslations.about}
@@ -116,14 +119,14 @@ export const Header: React.FC<HeaderProps> = ({ locale, navTranslations }) => {
                 href={`${process.env.NEXT_PUBLIC_RESOURCES_LINK || 'https://www.linkedin.com/in/jamcam-cyberleader/recent-activity/articles/'}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel text-lg"
+                className={`py-2 hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {navTranslations.resources}
               </Link>
               <Link
                 href={`/${locale}/contact`}
-                className="py-2 text-light-stone hover:text-executive-gold transition font-cinzel text-lg"
+                className={`py-2 hover:text-executive-gold transition font-cinzel text-lg ${pathname.includes('/privacy') || pathname.includes('/terms') ? 'text-evergreen-intel' : 'text-light-stone'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {navTranslations.contact}

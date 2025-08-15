@@ -5,9 +5,9 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import { services } from '@/data/services';
 import { Locale } from '@/lib/i18n';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { getTranslations } from 'next-intl/server'; // Use server-side translations
+import { getTranslations, setRequestLocale } from 'next-intl/server'; // Import setRequestLocale
+import Hero from '@/components/home/Hero'; // Import the Hero component
 
 interface ServiceDetailPageProps {
   params: {
@@ -49,7 +49,9 @@ export async function generateStaticParams() {
 
 export default async function ServiceDetailPage({ params }: ServiceDetailPageProps) {
   const { locale, serviceId } = params;
-  const t = await getTranslations({ locale, namespace: 'common' }); // Use getTranslations with await
+  // Set the locale for the request to enable static rendering
+  setRequestLocale(locale);
+  const t = await getTranslations('services'); // Access the 'services' namespace directly
 
   const serviceData = services.find(s => s.id === serviceId);
 
@@ -65,28 +67,24 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
 
   return (
     <>
-      {/* Hero Section */}
-      <div className="relative h-[40vh] w-full">
-        <Image
-          src="/images/ai_cyber_illustration.png" // Default hero image
-          alt={serviceData.title}
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-cyber-navy/70 to-evergreen-intel/50 z-10" />
-        <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center px-4 sm:px-8">
-          <h1 className="font-cinzel uppercase font-bold text-executive-gold tracking-wider text-4xl md:text-5xl lg:text-6xl mb-6">
+      <Hero
+        locale={locale}
+        imageUrl="/images/Services-portfolio.png"
+        altText={serviceData.title}
+        overlayClass="bg-gradient-to-b from-cyber-navy/70 to-evergreen-intel/50"
+        contentPosition="justify-center"
+        heightClass="h-[80vh]"
+      >
+          <h1 className="font-futura uppercase font-bold text-executive-gold tracking-wider text-2xl md:text-3xl lg:text-4xl pb-8"> {/* Added font-bold back to h1 */}
             {serviceData.title}
           </h1>
-          <p className="font-futura text-light-stone text-lg md:text-xl max-w-2xl">
+          <p className="font-futura text-light-stone text-xl md:text-2xl max-w-2xl mx-auto text-center"> {/* Removed font-bold */}
             {serviceData.description}
           </p>
-        </div>
-      </div>
+      </Hero>
 
       {/* Main Content Area */}
-      <div className="container-custom section py-12">
+      <div className="container-custom section pt-4 pb-20"> {/* Further reduced padding by half */}
         <div className="prose prose-lg dark:prose-invert max-w-none">
           <div dangerouslySetInnerHTML={{ __html: serviceContent.contentHtml }} />
         </div>

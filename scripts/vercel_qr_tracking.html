@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Cameron - Big Rock Intelligence</title>
+    
+    <!-- Vercel Analytics -->
+    <script>
+        // Track QR code scans specifically
+        if (window.location.search.includes('source=qr') || window.location.search.includes('source=businesscard')) {
+            // Send custom event to Vercel Analytics
+            if (window.va) {
+                window.va('event', {
+                    name: 'QR_Code_Scan',
+                    source: 'business_card',
+                    timestamp: new Date().toISOString(),
+                    page: window.location.pathname
+                });
+            }
+            
+            // Optional: Google Analytics 4 tracking
+            if (window.gtag) {
+                gtag('event', 'qr_scan', {
+                    'source': 'business_card',
+                    'medium': 'offline',
+                    'campaign': 'networking'
+                });
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Jost', 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a1f44 0%, #1f302d 100%);
+            color: #d9ded9;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.6;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(218, 184, 110, 0.3);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .qr-welcome {
+            background: rgba(218, 184, 110, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #dab86e;
+            display: none;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #dab86e, #5d9182);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            margin: 0 auto 2rem;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        
+        .name {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #dab86e;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .title {
+            font-size: 1.2rem;
+            color: #dab86e;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .company {
+            font-size: 1.4rem;
+            color: #d9ded9;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .tagline {
+            font-size: 1rem;
+            color: #5d9182;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .credentials {
+            background: rgba(218, 184, 110, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #a4aba4;
+        }
+        
+        .credentials strong {
+            color: #dab86e;
+        }
+        
+        .contact-grid {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(218, 184, 110, 0.2);
+            border-radius: 10px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .contact-item:hover {
+            background: rgba(218, 184, 110, 0.1);
+            border-color: #dab86e;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(218, 184, 110, 0.2);
+        }
+        
+        .contact-item.priority-action {
+            background: rgba(218, 184, 110, 0.15);
+            border: 1px solid rgba(218, 184, 110, 0.4);
+            position: relative;
+        }
+        
+        .contact-item.priority-action::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #dab86e, #5d9182);
+            border-radius: 12px;
+            z-index: -1;
+        }
+        
+        .contact-item.priority-action:hover {
+            background: rgba(218, 184, 110, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(218, 184, 110, 0.3);
+        }
+        
+        .contact-item.priority-action .contact-value {
+            color: #dab86e;
+            font-weight: 700;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .contact-label {
+            font-size: 0.9rem;
+            color: #a4aba4;
+            margin-bottom: 0.25rem;
+        }
+        
+        .contact-value {
+            font-weight: 600;
+            color: #d9ded9;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #a4aba4;
+            font-size: 0.8rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(218, 184, 110, 0.2);
+        }
+        
+        @media (max-width: 600px) {
+            .name { font-size: 2rem; }
+            .container { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="qr-welcome" id="qrWelcome">
+            📱 Thanks for scanning! You've connected with Big Rock Intelligence.
+        </div>
+        
+        <div class="logo"></div>
+        
+        <h1 class="name">James Cameron</h1>
+        <p class="title">Founder | AI Security & Data Strategist</p>
+        <p class="company">Big Rock Intelligence</p>
+        <p class="tagline">Bridging AI Innovation with Enterprise Security</p>
+        
+        <div class="credentials">
+            <strong>UC Berkeley Executive AI Strategy</strong><br>
+            Microsoft | Amazon Web Services | Avanade Alumni
+        </div>
+        
+        <div class="contact-grid">
+            <a href="mailto:james@bigrock-intel.ai?subject=Following up from our connection" 
+               class="contact-item" 
+               onclick="trackAction('email_click')">
+                <div class="contact-icon">📧</div>
+                <div class="contact-label">Email</div>
+                <div class="contact-value">james@bigrock-intel.ai</div>
+            </a>
+            
+            <a href="https://www.bigrock-intelligence.com?ref=contact" 
+               class="contact-item" 
+               target="_blank"
+               onclick="trackAction('website_click')">
+                <div class="contact-icon">🌐</div>
+                <div class="contact-label">Website</div>
+                <div class="contact-value">bigrock-intelligence.com</div>
+            </a>
+            
+            <a href="https://linkedin.com/in/jamcam-cyberleader" 
+               class="contact-item" 
+               target="_blank"
+               onclick="trackAction('linkedin_click')">
+                <div class="contact-icon">💼</div>
+                <div class="contact-label">LinkedIn</div>
+                <div class="contact-value">Connect & Follow</div>
+            </a>
+            
+            <a href="https://outlook.office.com/book/contactbigrockintelai@bigrock-intelligence.com/" 
+               class="contact-item priority-action" 
+               target="_blank"
+               onclick="trackAction('booking_click')">
+                <div class="contact-icon">📅</div>
+                <div class="contact-label">Schedule Meeting</div>
+                <div class="contact-value">Book Strategic Consultation</div>
+            </a>
+            
+            <a href="tel:+4901511310515242" 
+               class="contact-item"
+               onclick="trackAction('phone_click')">
+                <div class="contact-icon">📱</div>
+                <div class="contact-label">Phone</div>
+                <div class="contact-value">+49(0)1511 3105 15242</div>
+            </a>
+        </div>
+        
+        <div class="footer">
+            Secure digital transformation through strategic AI integration
+        </div>
+    </div>
+    
+    <script>
+        // Show QR welcome message if coming from QR code
+        if (window.location.search.includes('source=qr') || window.location.search.includes('source=businesscard')) {
+            document.getElementById('qrWelcome').style.display = 'block';
+        }
+        
+        // Track specific actions
+        function trackAction(action) {
+            if (window.va) {
+                window.va('event', {
+                    name: action,
+                    source: window.location.search.includes('source=qr') ? 'qr_code' : 'direct',
+                    timestamp: new Date().toISOString()
+                });
+            }
+        }
+        
+        // Track time on page for engagement metrics
+        let startTime = Date.now();
+        window.addEventListener('beforeunload', function() {
+            let timeSpent = Math.round((Date.now() - startTime) / 1000);
+            if (window.va && timeSpent > 5) { // Only track if spent more than 5 seconds
+                window.va('event', {
+                    name: 'engagement_time',
+                    seconds: timeSpent,
+                    source: window.location.search.includes('source=qr') ? 'qr_code' : 'direct'
+                });
+            }
+        });
+    </script>
+</body>
+</html>
