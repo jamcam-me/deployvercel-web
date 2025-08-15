@@ -21,6 +21,7 @@ export default function ServicesPage({ params }: ServicesPageProps) {
 
   const generalServices = services.filter(service => service.category === 'general');
   const advisoryServices = services.filter(service => service.category === 'advisory');
+  const strategicServices = services.filter(service => service.category === 'strategic'); // New line
 
   const enterpriseAdvisory = advisoryServices.filter(service => service.categoryType === 'enterprise');
   const smbAdvisory = advisoryServices.filter(service => service.categoryType === 'smb');
@@ -49,15 +50,6 @@ export default function ServicesPage({ params }: ServicesPageProps) {
       </div>
 
       <div className="container-custom section">
-        {/* General Services Section */}
-        <h2 className="section-title text-center mb-8">
-          {t('general.title')}
-        </h2>
-        <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
-          {t('general.description')}
-        </p>
-        <ServicesList locale={locale} servicesToRender={generalServices} />
-
         {/* Advisory Services Section */}
         <h2 className="section-title text-center mt-16 mb-8">
           {t('advisory.title')}
@@ -105,6 +97,24 @@ export default function ServicesPage({ params }: ServicesPageProps) {
           {activeTab === 'vc_pe' && <ServicesList locale={locale} servicesToRender={vcPeAdvisory} />}
           {activeTab === 'board' && <ServicesList locale={locale} servicesToRender={boardAdvisory} />}
         </div>
+
+        {/* Strategic Services Section - NEW */}
+        <h2 className="section-title text-center mt-16 mb-8">
+          {t('strategic.title')}
+        </h2>
+        <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
+          {t('strategic.description')}
+        </p>
+        <ServicesList locale={locale} servicesToRender={strategicServices} />
+        
+        {/* General Services Section */}
+        <h2 className="section-title text-center mt-16 mb-8"> {/* Added mt-16 for spacing */}
+          {t('general.title')}
+        </h2>
+        <p className="text-lg text-center mb-12 max-w-3xl mx-auto">
+          {t('general.description')}
+        </p>
+        <ServicesList locale={locale} servicesToRender={generalServices} />
       </div>
     </>
   );

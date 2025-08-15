@@ -27,25 +27,87 @@
   "services": {
     "title": "Unsere Dienstleistungen",
     "description": "Umfassende Beratungsdienste für Cybersicherheit und KI, maßgeschneidert für die Bedürfnisse Ihrer Organisation.",
-    "aiSecurity": {
-      "title": "KI-Sicherheitsberatung",
-      "description": "Strategische KI-Integration in die Unternehmenssicherheit mit Risikobewertung durch fortschrittliche KI/ML-Modelle. Maßgeschneidert für mittelgroße bis große Unternehmen und Vorstände."
+    "general": {
+      "title": "Allgemeine Dienstleistungen",
+      "description": "Unsere Kernangebote in Cybersicherheit und KI-Integration."
     },
-    "governance": {
-      "title": "Governance & Risikoberatung",
-      "description": "CISO-Level-Beratung für Vorstände und Gründer mit Governance-Frameworks und Compliance-Ausrichtung. Fokussiert auf Vorstände und KMUs."
+    "strategic": {
+      "title": "Strategische Dienstleistungen",
+      "description": "Spezialisierte Gruppen von geistigem Eigentum und maßgeschneiderte Beratungsleistungen für einzigartige geschäftliche Herausforderungen."
     },
-    "dueDiligence": {
-      "title": "M&A Due Diligence",
-      "description": "Spezialisierte technische Bewertung für Investoren, die eine umfassende Sicherheits- und Technologiebewertung für Akquisitionsziele bietet. Konzipiert für VC, PE und strategische Käufer."
-    },
-    "education": {
-      "title": "Executive Education",
-      "description": "Maßgeschneiderte Schulungen für C-Suite-Führungskräfte und Vorstandsausschüsse zu Strategien für Cybersicherheit und KI-Integration."
-    },
-    "audits": {
-      "title": "Plattform-Sicherheitsaudits",
-      "description": "Umfassende Sicherheitsaudits, Tech-Stack-Reviews und Funktionstests, mit speziellem Fokus auf Fintech- und Crowdinvesting-Plattformen."
+    "advisory": {
+      "title": "Beratungsdienstleistungen",
+      "description": "Strategische Beratung für spezifische Führungspositionen.",
+      "enterpriseLeaders": "Unternehmensführer",
+      "smbOwners": "KMU-Inhaber",
+      "vcPeFirms": "VC- & Private-Equity-Firmen",
+      "boardMembers": "Vorstandsmitglieder",
+      "executive-communication-framework": {
+        "title": "Executive Communication Framework",
+        "description": "Wandeln Sie technische Sicherheitskennzahlen in strategische Geschäftseinblicke um, die bei Vorstandsmitgliedern und C-Suite-Führungskräften Anklang finden.",
+        "metric": "85% Verbesserung der Abstimmung der Führungsebene bei Sicherheits-Prioritäten",
+        "question": "Betrachtet Ihr Vorstand Sicherheit als Kostenfaktor oder strategischen Enabler? Wie effektiv übersetzen Sie technische Sicherheitskennzahlen in eine Geschäftssprache, die Ihre Führungskräfte verstehen und schätzen?"
+      },
+      "cyber-risk-quantification": {
+        "title": "Cybersicherheits-Risikobewertung",
+        "description": "Ersetzen Sie subjektive Risikobewertungen durch datengesteuerte Finanzmodellierung, die Cyberrisiken in monetären Begriffen quantifiziert.",
+        "metric": "60% gezieltere Sicherheitsinvestitionen",
+        "question": "Können Sie Ihre Top-Cyberrisiken in Umsatz-Auswirkungs-Begriffen ausdrücken, die Ihr CFO verstehen wird? Wie entscheiden Sie aktuell, welche Sicherheitsinvestitionen die höchste Risikominderung pro ausgegebenem Dollar liefern?"
+      },
+      "ai-security-strategy-enterprise": {
+        "title": "KI-Sicherheitsstrategie",
+        "description": "Entwickeln Sie eine umfassende KI-Sicherheits-Roadmap, die auf die KI-Einführungsreise Ihres Unternehmens abgestimmt ist.",
+        "metric": "70% sicherere KI-Bereitstellungen",
+        "question": "Wie sichern Sie Ihre KI-Initiativen anders als traditionelle Anwendungen? Welche Schutzmechanismen haben Sie gegen einzigartig KI-zentrierte Bedrohungen wie Modellvergiftung oder Inferenzmanipulation implementiert?"
+      },
+      "fractional-ciso-service": {
+        "title": "Fractional CISO Service",
+        "description": "Zugang zu hochrangiger Führungsexpertise im Bereich Sicherheit ohne die Kosten einer Vollzeit-Führungskraft.",
+        "metric": "75% Kosteneinsparungen gegenüber einem Vollzeit-CISO",
+        "question": "Welche Lücken in der Sicherheitsexpertise schränken Ihr Geschäftswachstum ein? Wie ist der Mangel an Führungskräften im Bereich Sicherheit auf Ihre Fähigkeit aus, neue Märkte zu erschließen oder Unternehmensabschlüsse zu tätigen?"
+      },
+      "investment-ready-security": {
+        "title": "Investment-Ready Security",
+        "description": "Bereiten Sie Ihre Sicherheitsposition auf die Prüfung durch Investoren und Due Diligence vor.",
+        "metric": "85% verbessertes Vertrauen der Investoren in die Sicherheit",
+        "question": "Würde Ihr Sicherheitsprogramm heute einer Investoren-Due-Diligence standhalten? Welche Sicherheitslücken könnten die Bewertung Ihres Unternehmens negativ beeinflussen oder nach der Investition Überraschungen verursachen?"
+      },
+      "cloud-security-optimization": {
+        "title": "Cloud-Sicherheitsoptimierung",
+        "description": "Maximieren Sie die Cloud-Sicherheit bei gleichzeitiger Minimierung von Kosten und Komplexität für wachsende Unternehmen.",
+        "metric": "55% Reduzierung der Cloud-Sicherheitskosten",
+        "question": "Ist Ihre Cloud-Umgebung sowohl sicher als auch kostenoptimiert? Wie effektiv nutzen Sie native Sicherheitsfunktionen in Ihren Cloud-Plattformen im Vergleich zur Bezahlung zusätzlicher Sicherheitstools?"
+      },
+      "technical-value-creation": {
+        "title": "Technische Wertschöpfung",
+        "description": "Verwandeln Sie Sicherheit von einem Due-Diligence-Häkchen in einen strategischen Wertbeschleuniger über Ihr Portfolio hinweg.",
+        "metric": "Bis zu 15% Bewertungsverbesserung durch Sicherheitsoptimierung",
+        "question": "Verbessert oder begrenzt Ihre Sicherheitsstrategie die Unternehmensbewertungen? Wie effektiv haben Sie Sicherheitsinvestitionen in einen greifbaren Geschäftswert umgesetzt, den Investoren anerkennen und belohnen?"
+      },
+      "cybersecurity-investment-advisory": {
+        "title": "Cybersicherheits-Investitionsberatung",
+        "description": "Gewinnen Sie strategische Einblicke in Cybersicherheits-Markttrends, Investitionsmöglichkeiten und Technologieentwicklung, um Investitionsthesen und Portfolio-Strategien zu informieren.",
+        "metric": "3x bessere Identifizierung von Sicherheitsmarktchancen",
+        "question": "Welche aufstrebenden Sicherheitskategorien bieten das höchste Wachstumspotenzial in den nächsten 24-36 Monaten? Wie effektiv können Sie die technischen Differenzierungsansprüche von Sicherheits-Startups bewerten?"
+      },
+      "board-cyber-education-program": {
+        "title": "Vorstands-Cyber-Bildungsprogramm",
+        "description": "Erhöhen Sie die Sicherheitsexpertise Ihres Vorstands durch unser maßgeschneidertes Bildungsprogramm, das Cyber-Kenntnisse durch kontextbezogenes Lernen ohne technische Überladung aufbaut.",
+        "metric": "90% Steigerung des Cyber-Vertrauens des Vorstands",
+        "question": "Wie zuversichtlich ist Ihr Vorstand bei der Bewertung von KI- und Sicherheitsinvestitionen? Welche Wissenslücken verhindern, dass Direktoren eine effektive Sicherheits-Governance und eine angemessene Herausforderung an das Management bieten?"
+      },
+      "security-investment-validation": {
+        "title": "Validierung von Sicherheitsinvestitionen",
+        "description": "Überprüfen Sie die Wirksamkeit der Sicherheitsinvestitionen Ihrer Organisation mit unabhängiger Validierung der Leistung des Sicherheitsprogramms und der Effizienz der Ausgaben.",
+        "metric": "35% Identifizierung von fehlausgerichteten Investitionen",
+        "question": "Woher wissen Sie, dass Ihre Sicherheitsinvestitionen die beabsichtigten Ergebnisse liefern? Welche objektive Validierung bestätigt, dass Ihre Sicherheitsausgaben optimal auf tatsächliche Risiken verteilt sind?"
+      },
+      "ai-governance-advisory": {
+        "title": "KI-Governance-Beratung",
+        "description": "Entwickeln Sie Governance-Frameworks auf Vorstandsebene für eine verantwortungsvolle KI-Einführung und -Aufsicht.",
+        "metric": "80% Verbesserung der KI-Governance-Klarheit",
+        "question": "Welche Governance-Mechanismen hat Ihr Vorstand speziell für die KI-Aufsicht etabliert? Wie stellen Sie ein angemessenes Gleichgewicht zwischen KI-Innovation und verantwortungsvoller Bereitstellung sicher?"
+      }
     }
   },
   "contact": {

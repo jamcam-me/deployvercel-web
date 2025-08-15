@@ -33,6 +33,10 @@
       "title": "General Services",
       "description": "Our core offerings in cybersecurity and AI integration."
     },
+    "strategic": {
+      "title": "Strategic Services",
+      "description": "Specialized groups of intellectual property and bespoke advisory engagements for unique business challenges."
+    },
     "advisory": {
       "title": "Advisory Services",
       "description": "Strategic guidance for specific leadership roles.",
